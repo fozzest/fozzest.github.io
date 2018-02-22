@@ -4,7 +4,7 @@ https://www.gradient-animator.com/ */
 
 body {
 color: #fff;
-	background: linear-gradient(-45deg, #A8DB92, #76B75B, #2D6E12, #164900);
+	background: linear-gradient(-45deg, #6149c8, #de2975, #fecc61, #ce476a);
 	background-size: 400% 400%;
 	-webkit-animation: Gradient 30s ease infinite;
 	-moz-animation: Gradient 30s ease infinite;
