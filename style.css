@@ -1,7 +1,10 @@
 
+/* trying to learn more about animated backgrounds, currently adjusting code from 
+https://www.gradient-animator.com/ */
+
 body {
 color: #fff;
-	background: linear-gradient(-45deg, #74a8fc, #7798ce, #707a8c, #28457a);
+	background: linear-gradient(-45deg, #A8DB92, #76B75B, #2D6E12, #164900);
 	background-size: 400% 400%;
 	-webkit-animation: Gradient 30s ease infinite;
 	-moz-animation: Gradient 30s ease infinite;
