@@ -1,11 +1,10 @@
-// code 2
-// section a
-// bfa dt
-// spring 2018
-// bryan ma
+// forrest whitcomb
 
 // week 4
 // pong with all colliders
+// switch states
+
+
 
 var ball;
 var p1, p2;
@@ -19,6 +18,26 @@ var margin = 20;
 var cnv;
 var paddleBounceSFX, hitColliderSFX;
 var colliders = [];
+
+var sceneState = {
+  INTRO: 0,
+  TUTORIAL: 1,
+  GAME: 2,
+  WIN: 3,
+  LOSE: 4
+};
+
+var currentState = sceneState.INTRO;
+
+
+var keyOn = false;
+var tutorialTimer;
+var gameTimer;
+var gameTimePressed;
+const timeForTutorial = 3000;
+const timeForGame = 5000;
+
+
 
 function preload() {
 
@@ -44,12 +63,34 @@ function setup() {
   p2 = new Paddle(1);
 }
 
-function draw() {
-  background(0);
-  drawField();
+function draw (){
+  drawAll(currentState);
+  checkTransition(currentState);
+  keyOn = false;
+}
 
-  p1.move(p1Up, p1Down);
-  p2.move(p2Up, p2Down);
+
+
+function drawAll(whichScene) {
+
+
+switch (currentState) {
+    case sceneState.INTRO:
+      background(100 + sin(frameCount * 0.05) * 50, 100 + sin(frameCount * 0.06) * 50, 100 + sin(frameCount * 0.07) * 50);
+      fill(255);
+      textSize(80);
+      textAlign(CENTER, CENTER);
+      text("welcome to the\nPUSH BUTTON\n\"game\"", width/2, height/2);
+      break;
+
+    case sceneState.TUTORIAL:
+
+
+    background(0);
+    drawField();
+
+    p1.move(p1Up, p1Down);
+    p2.move(p2Up, p2Down);
 
   ball.update();
   p1.update();
@@ -73,6 +114,15 @@ function draw() {
   for (var i = 0; i < colliders.length; i++) {
     checkCollisionWithBall(ball, colliders[i]);
   }
+break;
+    case sceneState.GAME:
+    break;
+    case sceneState.WIN:
+    break; 
+    case sceneState.LOSE:
+    default:
+      break;
+
 }
 
 function drawField() {
@@ -350,3 +400,73 @@ function Yang() {
     // do something cool here! do something to yourself,
     // and also something to the other thing?
   }
+
+
+
+
+  function checkTransition(whichScene) {
+  switch (whichScene) {
+    case sceneState.INTRO:
+      if (keyOn) {
+        currentState++;
+        setUpScene(currentState);
+      }
+      break;
+    case sceneState.TUTORIAL:
+      if (millis() > tutorialTimer + timeForTutorial) {
+        if (keyOn) {
+          currentState++;
+          setUpScene(currentState);      
+        }
+      }
+      break;
+    case sceneState.GAME:
+      if (keyOn) {
+        gameTimePressed = (timeForGame - (millis() - gameTimer))/1000;
+        gameTimePressed = gameTimePressed.toFixed(3);
+
+        if (gameTimePressed < 0.1 && gameTimePressed > -0.1) {
+          currentState = sceneState.WIN;      
+        } else {
+          currentState = sceneState.LOSE;
+        }
+        setUpScene(currentState);
+      }
+      break;
+    case sceneState.WIN:
+      if (keyOn) {
+        currentState = sceneState.INTRO;
+        setUpScene(currentState);
+      }
+      break;
+    case sceneState.LOSE:
+      if (keyOn) {
+        currentState = sceneState.GAME;
+        setUpScene(currentState);
+      }
+      break;
+    default:
+      break;
+  }
+}
+
+function setUpScene(whichScene) {
+  switch (whichScene) {
+    case sceneState.INTRO:
+      break;
+    case sceneState.TUTORIAL:
+      tutorialTimer = millis();
+      break;
+    case sceneState.GAME:
+      gameTimer = millis();
+      break;
+    case sceneState.END:
+      break;
+    default:
+      break;
+  }
+}
+
+function keyPressed() {
+  keyOn = true;
+}
