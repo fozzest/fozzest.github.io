@@ -214,9 +214,8 @@ function checkTransition(whichScene) {
     //if score +1 (aka point lost), some colliders exit
     //idea is that as score increases, as well as paddle hits, colliders increase
     if (colliding = true){
-      colliders.push(new Bryan());
-      colliding = false;
-      
+     
+
     }
 
 
