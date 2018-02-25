@@ -399,7 +399,7 @@ function Paddle(num) {
 
 function keyPressed() {
   if (key === ' ') {
-    switch (floor(random(9))) {
+    switch () {
       case 0:
         colliders.push(new Bryan());
         break;
