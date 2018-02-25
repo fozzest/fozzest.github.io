@@ -298,10 +298,14 @@ function Ball() {
     if (this.pos.x < -this.width) {
       p2Score++;
       this.resetAfterPoint(0);
+      scoreUP();
     } else if (this.pos.x > width) {
       p1Score++;
       this.resetAfterPoint(1);
+      scoreUP();
     }
+
+
 
     if (this.pos.y < margin || 
         this.pos.y > height - margin - this.height) {
