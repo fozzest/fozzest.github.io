@@ -30,7 +30,7 @@ var sceneState = {
 
 var currentState = sceneState.INTRO;
 
-var keyOn = false;
+var mouseOn = false;
 var tutorialTimer;
 var gameTimer;
 var gameTimePressed;
@@ -67,7 +67,7 @@ function draw() {
   drawScene(currentState);
   checkTransition(currentState);
   
-  keyOn = false;
+  mouseOn = false;
 }
 
 
@@ -193,13 +193,13 @@ function everything() {
 function checkTransition(whichScene) {
   switch (whichScene) {
     case sceneState.INTRO:
-      if (keyOn) {
+      if (mouseOn) {
         currentState++;
         setUpScene(currentState);
       }
       break;
     case sceneState.TUTORIAL:
-        if (keyOn) {
+        if (mouseOn) {
           currentState++;
           setUpScene(currentState);      
         }
@@ -213,13 +213,13 @@ function checkTransition(whichScene) {
       }
       break;
     case sceneState.WIN:
-      if (keyOn) {
+      if (mouseOn) {
         currentState = sceneState.INTRO;
         setUpScene(currentState);
       }
       break;
     case sceneState.LOSE:
-      if (keyOn) {
+      if (mouseOn) {
         currentState = sceneState.GAME;
         setUpScene(currentState);
       }
@@ -244,8 +244,8 @@ function setUpScene(whichScene) {
   }
 }
 
-function keyPressed() {
-  keyOn = true;
+function mousePressed() {
+  mouseOn = true;
 }
 
 
@@ -372,40 +372,40 @@ function Paddle(num) {
 
 
 
-// function keyPressed() {
-//   if (key === ' ') {
-//     switch (floor(random(9))) {
-//       case 0:
-//         colliders.push(new Bryan());
-//         break;
-//       case 1:
-//         colliders.push(new Yizhou());
-//         break;
-//       case 2:
-//         colliders.push(new Ellie());
-//         break;
-//       case 3:
-//         colliders.push(new Yanwen());
-//         break;
-//       case 4:
-//         colliders.push(new MaddyRed());
-//         colliders.push(new MaddyGreen());
-//         colliders.push(new MaddyBlue());
-//         break;
-//       case 5:
-//         colliders.push(new AlyssaForrest());
-//         break;
-//       case 6:
-//         colliders.push(new Sarah());
-//         break;
-//       case 7:
-//         colliders.push(new Jackie());
-//         break;
-//       case 8:
-//         colliders,push(new Cat());
-//         break;
-//     }
-//   }
+function keyPressed() {
+  if (key === ' ') {
+    switch (floor(random(9))) {
+      case 0:
+        colliders.push(new Bryan());
+        break;
+      case 1:
+        colliders.push(new Yizhou());
+        break;
+      case 2:
+        colliders.push(new Ellie());
+        break;
+      case 3:
+        colliders.push(new Yanwen());
+        break;
+      case 4:
+        colliders.push(new MaddyRed());
+        colliders.push(new MaddyGreen());
+        colliders.push(new MaddyBlue());
+        break;
+      case 5:
+        colliders.push(new AlyssaForrest());
+        break;
+      case 6:
+        colliders.push(new Sarah());
+        break;
+      case 7:
+        colliders.push(new Jackie());
+        break;
+      case 8:
+        colliders,push(new Cat());
+        break;
+    }
+  }
 
   if (key === 'W') {
     p1Up = true;
