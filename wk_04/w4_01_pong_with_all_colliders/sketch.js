@@ -192,6 +192,39 @@ function everything() {
   for (var i = 0; i < colliders.length; i++) {
     checkCollisionWithBall(ball, colliders[i]);
   }
+
+   if (p1Score ++) {
+    switch (floor(random(9))) {
+      case 0:
+        colliders.push(new Bryan());
+        break;
+      case 1:
+        colliders.push(new Yizhou());
+        break;
+      case 2:
+        colliders.push(new Ellie());
+        break;
+      case 3:
+        colliders.push(new Yanwen());
+        break;
+      case 4:
+        colliders.push(new MaddyRed());
+        colliders.push(new MaddyGreen());
+        colliders.push(new MaddyBlue());
+        break;
+      case 5:
+        colliders.push(new AlyssaForrest());
+        break;
+      case 6:
+        colliders.push(new Sarah());
+        break;
+      case 7:
+        colliders.push(new Jackie());
+        break;
+      case 8:
+        colliders,push(new Cat());
+        break;
+    }
 }
 
 function checkTransition(whichScene) {
@@ -213,9 +246,9 @@ function checkTransition(whichScene) {
     //if the ball hits a crtain amount of times, queue another collider
     //if score +1 (aka point lost), some colliders exit
     //idea is that as score increases, as well as paddle hits, colliders increase
-    if (p1Score>=1 || p2Score>=1){
+    // if (p1Score >=1 ){
 
-      colliders.push(new Bryan());
+    //   colliders.push(new Bryan());
 
     //   switch (floor(random(9))) {
     //   case 0:
@@ -250,7 +283,7 @@ function checkTransition(whichScene) {
     // }
      
 
-    }
+    //}
 
 
       if (p1Score >= 10 || p2Score >= 10) {
