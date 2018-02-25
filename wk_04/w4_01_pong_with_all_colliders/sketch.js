@@ -193,6 +193,12 @@ function everything() {
   for (var i = 0; i < colliders.length; i++) {
     checkCollisionWithBall(ball, colliders[i]);
   }
+
+  if (p1Score >= 5 || p2Score >= 5) {
+    colliders.push(new Bryan());
+
+}
+
 }
 
 function checkTransition(whichScene) {
@@ -214,7 +220,7 @@ function checkTransition(whichScene) {
     //if the ball hits a crtain amount of times, queue another collider
     //if score +1 (aka point lost), some colliders exit
     //idea is that as score increases, as well as paddle hits, colliders increase
-    
+      
 
 
       if (p1Score >= 10 || p2Score >= 10) {
@@ -462,6 +468,16 @@ function keyReleased() {
     p2Down = false;
   }
 }
+
+
+
+
+
+
+
+
+
+
 
 
 
