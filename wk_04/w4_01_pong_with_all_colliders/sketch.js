@@ -68,7 +68,8 @@ function setup() {
 function draw() {
   drawScene(currentState);
   checkTransition(currentState);
-  
+  drawCollide(currentCollider);
+  checkLevelUP(currentCollider);
   mouseOn = false;
   colliding = false;
 }
@@ -194,86 +195,12 @@ function everything() {
     checkCollisionWithBall(ball, colliders[i]);
   }
 
-  if (p1Score >= 5 || p2Score >= 5) {
-    colliders.push(new Bryan());
+//   if (p1Score >= 5 || p2Score >= 5) {
+//     colliders.push(new Bryan());
+
+// }
 
 }
-
-}
-
-function checkTransition(whichScene) {
-  switch (whichScene) {
-    case sceneState.INTRO:
-      if (mouseOn) {
-        currentState++;
-        setUpScene(currentState);
-      }
-      break;
-    case sceneState.TUTORIAL:
-        if (mouseOn) {
-          currentState++;
-          setUpScene(currentState);      
-        }
-      break;
-    case sceneState.GAME:
-
-    //if the ball hits a crtain amount of times, queue another collider
-    //if score +1 (aka point lost), some colliders exit
-    //idea is that as score increases, as well as paddle hits, colliders increase
-      
-
-
-      if (p1Score >= 10 || p2Score >= 10) {
-
-          currentState = sceneState.WIN;      
-        
-        setUpScene(currentState);
-      }
-      break;
-    case sceneState.WIN:
-      if (mouseOn) {
-        p1Score = 0;
-        p2Score =0;
-        currentState = sceneState.INTRO;
-        setUpScene(currentState);
-      }
-      break;
-    case sceneState.LOSE:
-      if (mouseOn) {
-        currentState = sceneState.GAME;
-        setUpScene(currentState);
-      }
-      break;
-    default:
-      break;
-  }
-}
-
-function setUpScene(whichScene) {
-  switch (whichScene) {
-    case sceneState.INTRO:
-      break;
-    case sceneState.TUTORIAL:
-      break;
-    case sceneState.GAME:
-      break;
-    case sceneState.END:
-      break;
-    default:
-      break;
-  }
-}
-
-function mousePressed() {
-  mouseOn = true;
-}
-
-
-
-
-
-
-
 
 
 
@@ -471,7 +398,230 @@ function keyReleased() {
 
 
 
+//SCENES
 
+
+
+function checkTransition(whichScene) {
+  switch (whichScene) {
+    case sceneState.INTRO:
+      if (mouseOn) {
+        currentState++;
+        setUpScene(currentState);
+      }
+      break;
+    case sceneState.TUTORIAL:
+        if (mouseOn) {
+          currentState++;
+          setUpScene(currentState);      
+        }
+      break;
+    case sceneState.GAME:
+
+    //if the ball hits a crtain amount of times, queue another collider
+    //if score +1 (aka point lost), some colliders exit
+    //idea is that as score increases, as well as paddle hits, colliders increase
+      
+
+
+      if (p1Score >= 10 || p2Score >= 10) {
+
+          currentState = sceneState.WIN;      
+        
+        setUpScene(currentState);
+      }
+      break;
+    case sceneState.WIN:
+      if (mouseOn) {
+        p1Score = 0;
+        p2Score =0;
+        currentState = sceneState.INTRO;
+        setUpScene(currentState);
+      }
+      break;
+    case sceneState.LOSE:
+      if (mouseOn) {
+        currentState = sceneState.GAME;
+        setUpScene(currentState);
+      }
+      break;
+    default:
+      break;
+  }
+}
+
+function setUpScene(whichScene) {
+  switch (whichScene) {
+    case sceneState.INTRO:
+      break;
+    case sceneState.TUTORIAL:
+      break;
+    case sceneState.GAME:
+      break;
+    case sceneState.END:
+      break;
+    default:
+      break;
+  }
+}
+
+function mousePressed() {
+  mouseOn = true;
+}
+
+
+
+
+
+
+//Colliders State Machine
+var currentCollider = collideState.ZERO;
+
+var collideState = {
+  ZERO: 0,
+  ONE: 1,
+  TWO: 2,
+  THREE: 3,
+  FOUR: 4,
+  FIVE: 5,
+  SIX: 6,
+  SEVEN: 7,
+  EIGHT: 8
+};
+
+function drawCollide(whichCollide) {
+  switch (currentCollider) {
+    case collidetate.ZERO:
+      colliders.push(new Bryan());
+      break;
+    case collideState.ONE:
+      colliders.push(new Yizhou());
+      break;
+    case collideState.TWO:
+      colliders.push(new Ellie());
+      break;
+    case collideState.THREE:
+      colliders.push(new Yanwen());
+      break; 
+    case collideState.FOUR:
+      colliders.push(new MaddyRed());
+      colliders.push(new MaddyGreen());
+      colliders.push(new MaddyBlue());
+        break;
+    case collideState.FIVE:
+      colliders.push(new AlyssaForrest());
+        break;
+    case collideState.SIX:
+      colliders.push(new Sarah());
+        break;
+    case collideSTATE.SEVEN:
+    colliders.push(new Jackie());
+        break;
+    case collideSTATE.EIGHT:
+      colliders,push(new Cat());
+    default:
+      break;
+  }
+}
+
+function checkLevelUP(whichCollide) {
+  switch (whichCollide) {
+    case sceneState.INTRO:
+      if (mouseOn) {
+        currentState++;
+        setUpCollider(currentState);
+      }
+      case collidestate.ZERO:
+      if (p1Score>=1 || p2Score >=1){
+        currentState++;
+        setUpCollider(currentState);
+      }
+      break;
+    case collideState.ONE:
+      if (p1Score>=2 || p2Score >=2){
+        currentState++;
+        setUpCollider(currentState);
+      }
+      break;
+    case collideState.TWO:
+      if (p1Score>=3 || p2Score >=3){
+        currentState++;
+        setUpCollider(currentState);
+      }
+      break;
+    case collideState.THREE:
+      if (p1Score>=4 || p2Score >=4){
+        currentState++;
+        setUpCollider(currentState);
+      }
+      break; 
+    case collideState.FOUR:
+      if (p1Score>=5 || p2Score >=5){
+        currentState++;
+        setUpCollider(currentState);
+      }
+        break;
+    case collideState.FIVE:
+      if (p1Score>=6 || p2Score >=6){
+        currentState++;
+        setUpCollider(currentState);
+      }
+        break;
+    case collideState.SIX:
+      if (p1Score>=7 || p2Score >=7){
+        currentState++;
+        setUpCollider(currentState);
+      }
+        break;
+    case collideSTATE.SEVEN:
+    if (p1Score>=8 || p2Score >=8){
+        currentState++;
+        setUpCollider(currentState);
+      }
+        break;
+    case collideSTATE.EIGHT:
+      if (p1Score>=9 || p2Score >=9){
+        currentState++;
+        setUpCollider(currentState);
+      }
+    default:
+      break;
+  }
+}
+
+
+function setUpCollider(whichCollide) {
+ switch (currentCollider) {
+    case collidetate.ZERO:
+      
+      break;
+    case collideState.ONE:
+      
+      break;
+    case collideState.TWO:
+      
+      break;
+    case collideState.THREE:
+      
+      break; 
+    case collideState.FOUR:
+     
+        break;
+    case collideState.FIVE:
+      
+        break;
+    case collideState.SIX:
+      
+        break;
+    case collideSTATE.SEVEN:
+    
+        break;
+    case collideSTATE.EIGHT:
+      
+    default:
+      break;
+  }
+}
 
 
 
