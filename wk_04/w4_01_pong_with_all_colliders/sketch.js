@@ -167,7 +167,7 @@ function drawScene(whichScene) {
 function everything() {
   background(0);
   drawField();
-
+  scoreUP();
   p1.move(p1Up, p1Down);
   p2.move(p2Up, p2Down);
 
@@ -397,8 +397,8 @@ function Paddle(num) {
 
 
 
-function keyPressed() {
-  if (key === ' ') {
+function scoreUP() {
+  if (p1Score++ || p2Score++) {
     switch (floor(random(9))) {
       case 0:
         colliders.push(new Bryan());
