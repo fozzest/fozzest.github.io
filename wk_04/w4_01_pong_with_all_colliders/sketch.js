@@ -20,6 +20,8 @@ var cnv;
 var paddleBounceSFX, hitColliderSFX;
 var colliders = [];
 
+var colliding;
+
 var sceneState = {
   INTRO: 0,
   TUTORIAL: 1,
@@ -68,6 +70,7 @@ function draw() {
   checkTransition(currentState);
   
   mouseOn = false;
+  colliding = false;
 }
 
 
@@ -97,15 +100,16 @@ function drawField() {
 function drawScene(whichScene) {
   switch (currentState) {
     case sceneState.INTRO:
-      background(100 + sin(frameCount * 0.05) * 50, 100 + sin(frameCount * 0.06) * 50, 100 + sin(frameCount * 0.07) * 50);
+      background(0);
       fill(255);
       textSize(80);
       textAlign(CENTER, CENTER);
-      text("welcome to pong", width/2, height/2);
+      text("Welcome to Pong", width/2, height/2);
+      text("press the mouse to continue", width/2, height/2);
       break;
     case sceneState.TUTORIAL:
       if (millis() > tutorialTimer + timeForTutorial) {
-        background(150, 200, 200);
+        background(0);
         fill(0);
         textSize(48);
         textAlign(CENTER, CENTER);
@@ -117,23 +121,23 @@ function drawScene(whichScene) {
         text("win by hitting the ball behind the opposition", width/2, height/2 + 120);
         
       } else {
-        background(150, 200, 250);
+        background(0);
         fill(0);
         textSize(48);
         textAlign(CENTER, CENTER);
         text("HOW TO PLAY...", width/2, height/2 - 100);
         textSize(32);
-        text("try to hit a key exactly when\nthe counter hits zero", width/2, height/2);
+        text("use the W and S, or the Up and Down Arrows to move", width/2, height/2);
 
         textSize(24);
-        text("notice that this screen progresses\nwhen hitting a key only after a\ntimer has been completed", width/2, height/2 + 120);
+        text("win by hitting the ball behind the opposition", width/2, height/2 + 120);
       }
       break;
     case sceneState.GAME:
         everything();
       break;
     case sceneState.WIN:
-      background(127 + sin(frameCount * 0.05) * 127, 127 + sin(frameCount * 0.06) * 127, 127 + sin(frameCount * 0.07) * 127);
+      background(0);
       fill(0);
       textSize(64);
       textAlign(CENTER, CENTER);
@@ -147,7 +151,7 @@ function drawScene(whichScene) {
       text("Press any key to return to title", width/2 + 2, height - 102);
       break; 
     case sceneState.LOSE:
-      background(10, 10, 10);
+      background(0);
       fill(255);
       textSize(64);
       textAlign(CENTER, CENTER);
@@ -205,7 +209,17 @@ function checkTransition(whichScene) {
         }
       break;
     case sceneState.GAME:
-      if (p1Score > 10 || p2Score >10) {
+
+    //if the ball hits a crtain amount of times, queue another collider
+    //if score +1 (aka point lost), some colliders exit
+    //idea is that as score increases, as well as paddle hits, colliders increase
+      if (colliding = true){
+        colliders.push(new Bryan());
+        
+      }
+
+
+      if (p1Score >= 10 || p2Score >= 10) {
 
           currentState = sceneState.WIN;      
         
@@ -256,6 +270,7 @@ function checkCollisionWithBall(ball, other) {
       ball.pos.y + ball.height/2 < other.pos.y + other.height) {
     ball.collided(other);
     other.collided(ball);
+    colliding = true;
   }
 }
 
