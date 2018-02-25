@@ -105,12 +105,12 @@ function drawScene(whichScene) {
       textSize(80);
       textAlign(CENTER, CENTER);
       text("Welcome to Pong", width/2, height/2);
-      text("press the mouse to continue", width/2, height/2 + 120);
+      text("press the mouse to continue", width/2, height/2);
       break;
     case sceneState.TUTORIAL:
       if (millis() > tutorialTimer + timeForTutorial) {
         background(0);
-        fill(255);
+        fill(0);
         textSize(48);
         textAlign(CENTER, CENTER);
         text("HOW TO PLAY...", width/2, height/2 - 100);
@@ -213,11 +213,7 @@ function checkTransition(whichScene) {
     //if the ball hits a crtain amount of times, queue another collider
     //if score +1 (aka point lost), some colliders exit
     //idea is that as score increases, as well as paddle hits, colliders increase
-      if (colliding = true){
-        colliders.push(new Bryan());
-        colliding = false;
-
-      }
+    
 
 
       if (p1Score >= 10 || p2Score >= 10) {
