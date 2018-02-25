@@ -105,12 +105,12 @@ function drawScene(whichScene) {
       textSize(80);
       textAlign(CENTER, CENTER);
       text("Welcome to Pong", width/2, height/2);
-      text("press the mouse to continue", width/2, height/2);
+      text("press the mouse to continue", width/2, height/2 + 120);
       break;
     case sceneState.TUTORIAL:
       if (millis() > tutorialTimer + timeForTutorial) {
         background(0);
-        fill(0);
+        fill(255);
         textSize(48);
         textAlign(CENTER, CENTER);
         text("HOW TO PLAY...", width/2, height/2 - 100);
@@ -215,7 +215,8 @@ function checkTransition(whichScene) {
     //idea is that as score increases, as well as paddle hits, colliders increase
       if (colliding = true){
         colliders.push(new Bryan());
-        
+        colliding = false;
+
       }
 
 
