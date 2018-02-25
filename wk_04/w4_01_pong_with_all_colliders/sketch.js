@@ -417,7 +417,7 @@ function keyPressed() {
   if (key === ' ') {
     switch (floor(random(9))) {
       case 0:
-        colliders.push(new Bryan());
+        colliders.push(new Ellie());
         break;
       case 1:
         colliders.push(new Yizhou());
