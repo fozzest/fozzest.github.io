@@ -476,7 +476,7 @@ function keyReleased() {
 
 
 //Colliders State Machine
-var currentCollider = collideState.ZERO;
+
 
 var collideState = {
   ZERO: 0,
@@ -489,6 +489,8 @@ var collideState = {
   SEVEN: 7,
   EIGHT: 8
 };
+
+var currentCollider = collideState.ZERO;
 
 function drawCollide(whichCollide) {
   switch (currentCollider) {
@@ -520,6 +522,7 @@ function drawCollide(whichCollide) {
         break;
     case collideSTATE.EIGHT:
       colliders,push(new Cat());
+      break;
     default:
       break;
   }
@@ -581,6 +584,7 @@ function checkLevelUP(whichCollide) {
         currentState++;
         setUpCollider(currentCollider);
       }
+      break;
     default:
       break;
   }
@@ -614,7 +618,7 @@ function setUpCollider(whichCollide) {
     
         break;
     case collideSTATE.EIGHT:
-      
+      break;
     default:
       break;
   }
