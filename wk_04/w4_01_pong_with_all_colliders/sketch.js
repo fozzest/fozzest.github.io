@@ -222,7 +222,15 @@ function checkTransition(whichScene) {
     //if the ball hits a crtain amount of times, queue another collider
     //if score +1 (aka point lost), some colliders exit
     //idea is that as score increases, as well as paddle hits, colliders increase
-      
+      if (p1Score >= 5 || p2Score >= 5) {
+        textSize(24);
+        text("Things are heating up", width/2, height - 100);
+      }
+
+       if (p1Score >= 9 || p2Score >= 9) {
+        textSize(24);
+        text("MATCH POINT!!", width/2, height - 100);
+      }
 
 
       if (p1Score >= 10 || p2Score >= 10) {
