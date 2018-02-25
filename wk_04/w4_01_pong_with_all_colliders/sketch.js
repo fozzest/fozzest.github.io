@@ -20,6 +20,25 @@ var cnv;
 var paddleBounceSFX, hitColliderSFX;
 var colliders = [];
 
+var sceneState = {
+  INTRO: 0,
+  TUTORIAL: 1,
+  GAME: 2,
+  WIN: 3,
+  LOSE: 4
+};
+
+var currentState = sceneState.INTRO;
+
+var keyOn = false;
+var tutorialTimer;
+var gameTimer;
+var gameTimePressed;
+const timeForTutorial = 3000;
+const timeForGame = 5000;
+
+
+
 function preload() {
 
 }
@@ -45,6 +64,102 @@ function setup() {
 }
 
 function draw() {
+  drawScene(currentState);
+  checkTransition(currentState);
+  
+  keyOn = false;
+}
+
+
+
+function drawField() {
+  stroke(255);
+  noFill();
+  line(0, margin, width, margin);
+  line(0, height - margin, width, height - margin);
+  for (var i = margin; i < height - margin - 15; i += 35) {
+    var start = i;
+    var finish = start + 15;
+    line(width/2, start, width/2, finish);
+  }
+
+  fill(255);
+  noStroke();
+  textSize(64);
+  textAlign(CENTER, CENTER);
+  text(p1Score, width/2-50, 70);
+  text(p2Score, width/2+50, 70);
+}
+
+
+
+
+function drawScene(whichScene) {
+  switch (currentState) {
+    case sceneState.INTRO:
+      background(100 + sin(frameCount * 0.05) * 50, 100 + sin(frameCount * 0.06) * 50, 100 + sin(frameCount * 0.07) * 50);
+      fill(255);
+      textSize(80);
+      textAlign(CENTER, CENTER);
+      text("welcome to pong", width/2, height/2);
+      break;
+    case sceneState.TUTORIAL:
+      if (millis() > tutorialTimer + timeForTutorial) {
+        background(150, 200, 200);
+        fill(0);
+        textSize(48);
+        textAlign(CENTER, CENTER);
+        text("HOW TO PLAY...", width/2, height/2 - 100);
+        textSize(32);
+        text("use the W and S, or the Up and Down Arrows to move", width/2, height/2);
+
+        textSize(24);
+        text("win by hitting the ball behind the opposition", width/2, height/2 + 120);
+        
+      } else {
+        background(150, 200, 250);
+        fill(0);
+        textSize(48);
+        textAlign(CENTER, CENTER);
+        text("HOW TO PLAY...", width/2, height/2 - 100);
+        textSize(32);
+        text("try to hit a key exactly when\nthe counter hits zero", width/2, height/2);
+
+        textSize(24);
+        text("notice that this screen progresses\nwhen hitting a key only after a\ntimer has been completed", width/2, height/2 + 120);
+      }
+      break;
+    case sceneState.GAME:
+        everything();
+      break;
+    case sceneState.WIN:
+      background(127 + sin(frameCount * 0.05) * 127, 127 + sin(frameCount * 0.06) * 127, 127 + sin(frameCount * 0.07) * 127);
+      fill(0);
+      textSize(64);
+      textAlign(CENTER, CENTER);
+      text("You WIN!\n" , width/2, height/2 - 70);
+      textSize(24);
+      text("Press any key to return to title", width/2, height - 100);
+      fill(255);
+      textSize(64);
+      text("You WIN!\n", width/2 + 5, height/2 - 75);
+      textSize(24);
+      text("Press any key to return to title", width/2 + 2, height - 102);
+      break; 
+    case sceneState.LOSE:
+      background(10, 10, 10);
+      fill(255);
+      textSize(64);
+      textAlign(CENTER, CENTER);
+      text("You lose...\n" + "result: " + gameTimePressed, width/2, height/2);
+      textSize(24);
+      text("Press any key to try again", width/2, height - 100);
+    default:
+      break;
+  }
+}
+
+function everything() {
   background(0);
   drawField();
 
@@ -75,24 +190,64 @@ function draw() {
   }
 }
 
-function drawField() {
-  stroke(255);
-  noFill();
-  line(0, margin, width, margin);
-  line(0, height - margin, width, height - margin);
-  for (var i = margin; i < height - margin - 15; i += 35) {
-    var start = i;
-    var finish = start + 15;
-    line(width/2, start, width/2, finish);
-  }
+function checkTransition(whichScene) {
+  switch (whichScene) {
+    case sceneState.INTRO:
+      if (keyOn) {
+        currentState++;
+        setUpScene(currentState);
+      }
+      break;
+    case sceneState.TUTORIAL:
+        if (keyOn) {
+          currentState++;
+          setUpScene(currentState);      
+        }
+      break;
+    case sceneState.GAME:
+      if (p1Score > 10 || p2Score >10) {
 
-  fill(255);
-  noStroke();
-  textSize(64);
-  textAlign(CENTER, CENTER);
-  text(p1Score, width/2-50, 70);
-  text(p2Score, width/2+50, 70);
+          currentState = sceneState.WIN;      
+        
+        setUpScene(currentState);
+      }
+      break;
+    case sceneState.WIN:
+      if (keyOn) {
+        currentState = sceneState.INTRO;
+        setUpScene(currentState);
+      }
+      break;
+    case sceneState.LOSE:
+      if (keyOn) {
+        currentState = sceneState.GAME;
+        setUpScene(currentState);
+      }
+      break;
+    default:
+      break;
+  }
 }
+
+function setUpScene(whichScene) {
+  switch (whichScene) {
+    case sceneState.INTRO:
+      break;
+    case sceneState.TUTORIAL:
+      break;
+    case sceneState.GAME:
+      break;
+    case sceneState.END:
+      break;
+    default:
+      break;
+  }
+}
+
+function keyPressed() {
+  keyOn = true;
+}
+
 
 function checkCollisionWithBall(ball, other) {
   if (ball.pos.x + ball.width/2 > other.pos.x && 
