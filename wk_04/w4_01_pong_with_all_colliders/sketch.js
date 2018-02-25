@@ -503,7 +503,7 @@ var currentCollider = collideState.ZERO;
 function drawCollide(whichCollide) {
   switch (currentCollider) {
     case collideState.ZERO:
-      colliders.push(new Bryan());
+      colliders.push(new Ellie());
       break;
     case collideState.ONE:
       colliders.push(new Yizhou());
