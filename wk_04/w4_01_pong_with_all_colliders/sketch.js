@@ -167,7 +167,7 @@ function drawScene(whichScene) {
 function everything() {
   background(0);
   drawField();
-  scoreUP();
+
   p1.move(p1Up, p1Down);
   p2.move(p2Up, p2Down);
 
@@ -298,14 +298,10 @@ function Ball() {
     if (this.pos.x < -this.width) {
       p2Score++;
       this.resetAfterPoint(0);
-     
     } else if (this.pos.x > width) {
       p1Score++;
       this.resetAfterPoint(1);
-      
     }
-
-
 
     if (this.pos.y < margin || 
         this.pos.y > height - margin - this.height) {
