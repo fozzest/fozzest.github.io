@@ -68,8 +68,7 @@ function setup() {
 function draw() {
   drawScene(currentState);
   checkTransition(currentState);
-  drawCollide(currentCollider);
-  checkLevelUP(currentCollider);
+  
   mouseOn = false;
   colliding = false;
 }
@@ -195,10 +194,10 @@ function everything() {
     checkCollisionWithBall(ball, colliders[i]);
   }
 
-//   if (p1Score >= 5 || p2Score >= 5) {
-//     colliders.push(new Bryan());
+  if (p1Score >= 5 || p2Score >= 5) {
+colliders.push(new Bryan());
 
-// }
+}
 
 }
 
@@ -268,6 +267,12 @@ function setUpScene(whichScene) {
 function mousePressed() {
   mouseOn = true;
 }
+
+
+
+
+
+
 
 
 
@@ -467,151 +472,6 @@ function keyReleased() {
 
 
 
-
-//Colliders State Machine
-var currentCollider = collideState.ZERO;
-
-var collideState = {
-  ZERO: 0,
-  ONE: 1,
-  TWO: 2,
-  THREE: 3,
-  FOUR: 4,
-  FIVE: 5,
-  SIX: 6,
-  SEVEN: 7,
-  EIGHT: 8
-};
-
-function drawCollide(whichCollide) {
-  switch (currentCollider) {
-    case collidetate.ZERO:
-      colliders.push(new Bryan());
-      break;
-    case collideState.ONE:
-      colliders.push(new Yizhou());
-      break;
-    case collideState.TWO:
-      colliders.push(new Ellie());
-      break;
-    case collideState.THREE:
-      colliders.push(new Yanwen());
-      break; 
-    case collideState.FOUR:
-      colliders.push(new MaddyRed());
-      colliders.push(new MaddyGreen());
-      colliders.push(new MaddyBlue());
-        break;
-    case collideState.FIVE:
-      colliders.push(new AlyssaForrest());
-        break;
-    case collideState.SIX:
-      colliders.push(new Sarah());
-        break;
-    case collideSTATE.SEVEN:
-    colliders.push(new Jackie());
-        break;
-    case collideSTATE.EIGHT:
-      colliders,push(new Cat());
-    default:
-      break;
-  }
-}
-
-function checkLevelUP(whichCollide) {
-  switch (whichCollide) {
-    
-      case collidestate.ZERO:
-      if (p1Score>=1 || p2Score >=1){
-        currentState++;
-        setUpCollider(currentCollider);
-      }
-      break;
-    case collideState.ONE:
-      if (p1Score>=2 || p2Score >=2){
-        currentState++;
-        setUpCollider(currentCollider);
-      }
-      break;
-    case collideState.TWO:
-      if (p1Score>=3 || p2Score >=3){
-        currentState++;
-        setUpCollider(currentCollider);
-      }
-      break;
-    case collideState.THREE:
-      if (p1Score>=4 || p2Score >=4){
-        currentState++;
-        setUpCollider(currentCollider);
-      }
-      break; 
-    case collideState.FOUR:
-      if (p1Score>=5 || p2Score >=5){
-        currentState++;
-        setUpCollider(currentCollider);
-      }
-        break;
-    case collideState.FIVE:
-      if (p1Score>=6 || p2Score >=6){
-        currentState++;
-        setUpCollider(currentCollider);
-      }
-        break;
-    case collideState.SIX:
-      if (p1Score>=7 || p2Score >=7){
-        currentState++;
-        setUpCollider(currentCollider);
-      }
-        break;
-    case collideSTATE.SEVEN:
-    if (p1Score>=8 || p2Score >=8){
-        currentState++;
-        setUpCollider(currentCollider);
-      }
-        break;
-    case collideSTATE.EIGHT:
-      if (p1Score>=9 || p2Score >=9){
-        currentState++;
-        setUpCollider(currentCollider);
-      }
-    default:
-      break;
-  }
-}
-
-
-function setUpCollider(whichCollide) {
- switch (currentCollider) {
-    case collidetate.ZERO:
-      
-      break;
-    case collideState.ONE:
-      
-      break;
-    case collideState.TWO:
-      
-      break;
-    case collideState.THREE:
-      
-      break; 
-    case collideState.FOUR:
-     
-        break;
-    case collideState.FIVE:
-      
-        break;
-    case collideState.SIX:
-      
-        break;
-    case collideSTATE.SEVEN:
-    
-        break;
-    case collideSTATE.EIGHT:
-      
-    default:
-      break;
-  }
-}
 
 
 
