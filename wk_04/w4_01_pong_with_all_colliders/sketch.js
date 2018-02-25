@@ -148,7 +148,7 @@ function drawScene(whichScene) {
       textSize(64);
       text("You WIN!\n", width/2 + 5, height/2 - 75);
       textSize(24);
-      text("Press any key to return to title", width/2 + 2, height - 102);
+      text("Press mouse to return to title", width/2 + 2, height - 102);
       break; 
     case sceneState.LOSE:
       background(0);
@@ -157,7 +157,7 @@ function drawScene(whichScene) {
       textAlign(CENTER, CENTER);
       text("You lose...\n" + "result: " + gameTimePressed, width/2, height/2);
       textSize(24);
-      text("Press any key to try again", width/2, height - 100);
+      text("Press mouse to try again", width/2, height - 100);
     default:
       break;
   }
@@ -214,7 +214,36 @@ function checkTransition(whichScene) {
     //if score +1 (aka point lost), some colliders exit
     //idea is that as score increases, as well as paddle hits, colliders increase
     if (colliding = true){
-      colliders.push(new Bryan());
+      switch (floor(random(9))) {
+      case 0:
+        colliders.push(new Bryan());
+        break;
+      case 1:
+        colliders.push(new Yizhou());
+        break;
+      case 2:
+        colliders.push(new Ellie());
+        break;
+      case 3:
+        colliders.push(new Yanwen());
+        break;
+      case 4:
+        colliders.push(new MaddyRed());
+        colliders.push(new MaddyGreen());
+        colliders.push(new MaddyBlue());
+        break;
+      case 5:
+        colliders.push(new AlyssaForrest());
+        break;
+      case 6:
+        colliders.push(new Sarah());
+        break;
+      case 7:
+        colliders.push(new Jackie());
+        break;
+      case 8:
+        colliders,push(new Cat());
+        break;
 
     }
 
