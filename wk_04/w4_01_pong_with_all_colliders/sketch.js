@@ -45,7 +45,7 @@ function setup() {
 }
 
 function draw() {
-  background(100);
+  background(0);
   drawField();
 
   p1.move(p1Up, p1Down);
