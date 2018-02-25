@@ -105,6 +105,7 @@ function drawScene(whichScene) {
       textSize(80);
       textAlign(CENTER, CENTER);
       text("Welcome to Pong", width/2, height/2);
+      textSize(50);
       text("press the mouse to continue", width/2, height/2 + 120);
       break;
     case sceneState.TUTORIAL:
@@ -225,6 +226,8 @@ function checkTransition(whichScene) {
       break;
     case sceneState.WIN:
       if (mouseOn) {
+        p1Score = 0;
+        p2Score =0;
         currentState = sceneState.INTRO;
         setUpScene(currentState);
       }
