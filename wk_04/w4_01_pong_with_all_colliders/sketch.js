@@ -541,25 +541,25 @@ function checkLevelUP(whichCollide) {
   switch (whichCollide) {
     
       case collideState.ZERO:
-      if (p1Score>=1 && ball.pos.x =0 || p2Score >=1 && ball.pos.x =0){
+      if (p1Score>1 && ball.pos.x =0 || p2Score >1 && ball.pos.x =0){
         currentCollider++;
         setUpCollider(currentCollider);
       }
       break;
     case collideState.ONE:
-      if (p1Score>=2 && ball.pos.x =0 || p2Score >=2 && ball.pos.x =0){
+      if (p1Score>2 && ball.pos.x =0 || p2Score >2 && ball.pos.x =0){
         currentCollider++;
         setUpCollider(currentCollider);
       }
       break;
     case collideState.TWO:
-      if (p1Score>=3 && ball.pos.x =0 || p2Score >=3 && ball.pos.x =0){
+      if (p1Score>3 && ball.pos.x =0 || p2Score >3 && ball.pos.x =0){
         currentCollider++;
         setUpCollider(currentCollider);
       }
       break;
     case collideState.THREE:
-      if (p1Score>=4 && ball.pos.x =0 || p2Score >=4 && ball.pos.x =0){
+      if (p1Score>4 && ball.pos.x =0 || p2Score >4 && ball.pos.x =0){
         currentCollider++;
         setUpCollider(currentCollider);
       }
