@@ -488,7 +488,7 @@ function keyReleased() {
 
 //Colliders State Machine
 
-var ticker;
+var ticker =0;
 
 
 var collideState = {
@@ -545,7 +545,7 @@ function checkLevelUP(whichCollide) {
   switch (whichCollide) {
     
       case collideState.ZERO:
-      ticker = 0;
+      
       if (p1Score>=1  && ticker = 0 || p2Score >=1  && ticker = 0 ){
         currentCollider++;
         setUpCollider(currentCollider);
