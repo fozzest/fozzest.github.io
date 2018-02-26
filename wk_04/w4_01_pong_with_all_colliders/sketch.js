@@ -66,10 +66,11 @@ function setup() {
 }
 
 function draw() {
-  drawScene(currentState);
-  checkTransition(currentState);
   drawCollide(currentCollider);
   checkLevelUP (currentCollider);
+  drawScene(currentState);
+  checkTransition(currentState);
+  
   
   mouseOn = false;
   colliding = false;
@@ -690,17 +691,7 @@ function Yang() {
 
         }}
 
-      // var a = b.pos.x;
-      // var b = b.pos.y;
-      // // ellipse(a,b,50,50);
-      
       
      }}
 
-
-  
-
-
-    // do something cool here! do something to yourself,
-    // and also something to the other thing?
   }
