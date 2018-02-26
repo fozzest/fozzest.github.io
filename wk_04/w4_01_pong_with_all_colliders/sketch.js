@@ -488,6 +488,8 @@ function keyReleased() {
 
 //Colliders State Machine
 
+var ticker;
+
 
 var collideState = {
   ZERO: 0,
@@ -543,19 +545,22 @@ function checkLevelUP(whichCollide) {
   switch (whichCollide) {
     
       case collideState.ZERO:
-      if (p1Score>=1   || p2Score >=1 ){
+      ticker = 0;
+      if (p1Score>=1  && ticker = 0 || p2Score >=1  && ticker = 0 ){
         currentCollider++;
         setUpCollider(currentCollider);
+        ticker = 1;
       } 
       break;
     case collideState.ONE:
-      if (p1Score>=2  && ball.pos.x > width/2 -20 && ball.pos.x < width/2 +20 || p2Score >=2 && ball.pos.x > width/2 -20 && ball.pos.x < width/2 +20 ){
+      if (p1Score>=2  && ticker =1 || p2Score >=2 && ticker =1 ){
         currentCollider++;
         setUpCollider(currentCollider);
+        ticker =2;
       }
       break;
     case collideState.TWO:
-      if (p1Score>=3  || p2Score >=3  ){
+      if (p1Score>=3  && ticker =2 || p2Score >=3  && ticker =2 ){
         currentCollider++;
         setUpCollider(currentCollider);
       }
