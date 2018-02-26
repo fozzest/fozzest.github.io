@@ -549,7 +549,7 @@ function checkLevelUP(whichCollide) {
       }
       break;
     case collideState.ONE:
-      if (p1Score>=2   || p2Score >=2 ){
+      if (p1Score>=2  && ball.pos.x > width/2 -20 && ball.pos.x < width/2 +20 || p2Score >=2 && ball.pos.x > width/2 -20 && ball.pos.x < width/2 +20 ){
         currentCollider++;
         setUpCollider(currentCollider);
       }
