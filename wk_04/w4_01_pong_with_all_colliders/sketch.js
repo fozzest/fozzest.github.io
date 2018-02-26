@@ -220,6 +220,9 @@ function checkTransition(whichScene) {
       break;
     case sceneState.GAME:
 
+    //if the ball hits a crtain amount of times, queue another collider
+    //if score +1 (aka point lost), some colliders exit
+    //idea is that as score increases, as well as paddle hits, colliders increase
       if (p1Score >= 5 || p2Score >= 5) {
         textSize(24);
         text("Things are heating up", width/2, height - 100);
@@ -229,6 +232,7 @@ function checkTransition(whichScene) {
         textSize(24);
         text("MATCH POINT!!", width/2, height - 100);
       }
+
 
       if (p1Score >= 10 || p2Score >= 10) {
 
@@ -275,7 +279,16 @@ function mousePressed() {
   mouseOn = true;
 }
 
-//BALL and PADDLE
+
+
+
+
+
+
+
+
+
+
 
 function checkCollisionWithBall(ball, other) {
   if (ball.pos.x + ball.width/2 > other.pos.x && 
@@ -400,7 +413,6 @@ function Paddle(num) {
 }
 
 
-//COLLIDERS - Use to test
 
 function keyPressed() {
   if (key === ' ') {
@@ -535,7 +547,7 @@ function checkLevelUP(whichCollide) {
       }
       break;
     case collideState.ONE:
-      if (p1Score>2 && ball.pos.x ==0 || p2Score >2 && ball.pos.x ==0){
+      if (p1Score>2 && ball.pos.x =0 || p2Score >2 && ball.pos.x =0){
         currentCollider++;
         setUpCollider(currentCollider);
       }
@@ -565,19 +577,19 @@ function checkLevelUP(whichCollide) {
       }
         break;
     case collideState.SIX:
-      if (p1Score>7 && ball.pos.x =0 || p2Score >7 && ball.pos.x =0){
+      if (p1Score>=7 && ball.pos.x =0 || p2Score >=7 && ball.pos.x =0){
         currentCollider++;
         setUpCollider(currentCollider);
       }
         break;
     case collideSTATE.SEVEN:
-    if (p1Score>8 && ball.pos.x =0 || p2Score >8 && ball.pos.x =0){
+    if (p1Score>=8 && ball.pos.x =0 || p2Score >=8 && ball.pos.x =0){
         currentCollider++;
         setUpCollider(currentCollider);
       }
         break;
     case collideSTATE.EIGHT:
-      if (p1Score>9 && ball.pos.x =0 || p2Score >9 && ball.pos.x =0){
+      if (p1Score>=9 && ball.pos.x =0 || p2Score >=9 && ball.pos.x =0){
         currentCollider++;
         setUpCollider(currentCollider);
       }
@@ -624,8 +636,6 @@ function setUpCollider(whichCollide) {
 
 
 
-
-//Anotehr Collider?
 
 
 
