@@ -541,55 +541,55 @@ function checkLevelUP(whichCollide) {
   switch (whichCollide) {
     
       case collideState.ZERO:
-      if (p1Score> 1 && ball.pos.x =0 || p2Score >1 && ball.pos.x =0){
+      if (p1Score>=1 && ball.pos.x =0 || p2Score >=1 && ball.pos.x =0){
         currentCollider++;
         setUpCollider(currentCollider);
       }
       break;
     case collideState.ONE:
-      if (p1Score>2 && ball.pos.x =0 || p2Score >2 && ball.pos.x =0){
+      if (p1Score>=2 && ball.pos.x =0 || p2Score >=2 && ball.pos.x =0){
         currentCollider++;
         setUpCollider(currentCollider);
       }
       break;
     case collideState.TWO:
-      if (p1Score>3 && ball.pos.x =0 || p2Score >3 && ball.pos.x =0){
+      if (p1Score>=3 && ball.pos.x =0 || p2Score >=3 && ball.pos.x =0){
         currentCollider++;
         setUpCollider(currentCollider);
       }
       break;
     case collideState.THREE:
-      if (p1Score>4 && ball.pos.x =0 || p2Score >4 && ball.pos.x =0){
+      if (p1Score>=4 && ball.pos.x =0 || p2Score >=4 && ball.pos.x =0){
         currentCollider++;
         setUpCollider(currentCollider);
       }
       break; 
     case collideState.FOUR:
-      if (p1Score>5 && ball.pos.x =0 || p2Score >5 && ball.pos.x =0){
+      if (p1Score>=5 && ball.pos.x =0 || p2Score >=5 && ball.pos.x =0){
         currentCollider++;
         setUpCollider(currentCollider);
       }
         break;
     case collideState.FIVE:
-      if (p1Score>6 && ball.pos.x =0 || p2Score >6 && ball.pos.x =0){
+      if (p1Score>=6 && ball.pos.x =0 || p2Score >=6 && ball.pos.x =0){
         currentCollider++;
         setUpCollider(currentCollider);
       }
         break;
     case collideState.SIX:
-      if (p1Score>=7 && ball.pos.x =0 || p2Score >=7 && ball.pos.x =0){
+      if (p1Score>=7 || p2Score >=7){
         currentCollider++;
         setUpCollider(currentCollider);
       }
         break;
     case collideSTATE.SEVEN:
-    if (p1Score>=8 && ball.pos.x =0 || p2Score >=8 && ball.pos.x =0){
+    if (p1Score>=8 || p2Score >=8){
         currentCollider++;
         setUpCollider(currentCollider);
       }
         break;
     case collideSTATE.EIGHT:
-      if (p1Score>=9 && ball.pos.x =0 || p2Score >=9 && ball.pos.x =0){
+      if (p1Score>=9 || p2Score >=9){
         currentCollider++;
         setUpCollider(currentCollider);
       }
