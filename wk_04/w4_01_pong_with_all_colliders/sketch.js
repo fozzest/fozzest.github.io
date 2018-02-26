@@ -158,7 +158,7 @@ function drawScene(whichScene) {
       fill(255);
       textSize(64);
       textAlign(CENTER, CENTER);
-      text("You lose...\n" + "result: " + gameTimePressed, width/2, height/2);
+      text("Play another Round", width/2, height/2);
       textSize(24);
       text("Press mouse to try again", width/2, height - 100);
     default:
@@ -417,7 +417,7 @@ function keyPressed() {
   if (key === ' ') {
     switch (floor(random(9))) {
       case 0:
-        colliders.push(new Ellie());
+        colliders.push(new Bryan());
         break;
       case 1:
         colliders.push(new Yizhou());
@@ -509,7 +509,7 @@ function drawCollide(whichCollide) {
       colliders.push(new Yizhou());
       break;
     case collideState.TWO:
-      colliders.push(new Ellie());
+      colliders.push(new Bryan());
       break;
     case collideState.THREE:
       colliders.push(new Yanwen());
@@ -541,55 +541,55 @@ function checkLevelUP(whichCollide) {
     
       case collideState.ZERO:
       if (p1Score>=1 || p2Score >=1){
-        currentState++;
+        currentCollider++;
         setUpCollider(currentCollider);
       }
       break;
     case collideState.ONE:
       if (p1Score>=2 || p2Score >=2){
-        currentState++;
+        currentCollider++;
         setUpCollider(currentCollider);
       }
       break;
     case collideState.TWO:
       if (p1Score>=3 || p2Score >=3){
-        currentState++;
+        currentCollider++;
         setUpCollider(currentCollider);
       }
       break;
     case collideState.THREE:
       if (p1Score>=4 || p2Score >=4){
-        currentState++;
+        currentCollider++;
         setUpCollider(currentCollider);
       }
       break; 
     case collideState.FOUR:
       if (p1Score>=5 || p2Score >=5){
-        currentState++;
+        currentCollider++;
         setUpCollider(currentCollider);
       }
         break;
     case collideState.FIVE:
       if (p1Score>=6 || p2Score >=6){
-        currentState++;
+        currentCollider++;
         setUpCollider(currentCollider);
       }
         break;
     case collideState.SIX:
       if (p1Score>=7 || p2Score >=7){
-        currentState++;
+        currentCollider++;
         setUpCollider(currentCollider);
       }
         break;
     case collideSTATE.SEVEN:
     if (p1Score>=8 || p2Score >=8){
-        currentState++;
+        currentCollider++;
         setUpCollider(currentCollider);
       }
         break;
     case collideSTATE.EIGHT:
       if (p1Score>=9 || p2Score >=9){
-        currentState++;
+        currentCollider++;
         setUpCollider(currentCollider);
       }
       break;
