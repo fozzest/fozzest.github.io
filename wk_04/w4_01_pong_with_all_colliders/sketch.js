@@ -543,10 +543,10 @@ function checkLevelUP(whichCollide) {
   switch (whichCollide) {
     
       case collideState.ZERO:
-      if (p1Score>=1  || p2Score >=1 ){
+      if (p1Score>=1   || p2Score >=1 ){
         currentCollider++;
         setUpCollider(currentCollider);
-      }
+      } 
       break;
     case collideState.ONE:
       if (p1Score>=2  && ball.pos.x > width/2 -20 && ball.pos.x < width/2 +20 || p2Score >=2 && ball.pos.x > width/2 -20 && ball.pos.x < width/2 +20 ){
@@ -666,7 +666,7 @@ function Yang() {
     if(p1Score>10 || p2Score>10){
     fill(255,0,0,50);
   } else {
-    fill(255,20);
+    fill(255,21);
   }
     
   ellipse(width/2,height/2, b.pos.y-b.size/2, b.pos.y-b.size/2);
