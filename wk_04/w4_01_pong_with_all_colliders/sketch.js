@@ -66,11 +66,10 @@ function setup() {
 }
 
 function draw() {
-  drawCollide(currentCollider);
-  checkLevelUP (currentCollider);
   drawScene(currentState);
   checkTransition(currentState);
-  
+  drawCollide(currentCollider);
+  checkLevelUP (currentCollider);
   
   mouseOn = false;
   colliding = false;
@@ -541,13 +540,13 @@ function checkLevelUP(whichCollide) {
   switch (whichCollide) {
     
       case collideState.ZERO:
-      if (p1Score>=1 && ball.pos.x =0 || p2Score >=1 && ball.pos.x =0){
+      if (p1Score>=1 || p2Score >=1){
         currentCollider++;
         setUpCollider(currentCollider);
       }
       break;
     case collideState.ONE:
-      if (p1Score>=2 && ball.pos.x =0 || p2Score >=2 && ball.pos.x =0){
+      if (p1Score>=2 || p2Score >=2){
         currentCollider++;
         setUpCollider(currentCollider);
       }
