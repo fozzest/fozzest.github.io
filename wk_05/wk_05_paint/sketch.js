@@ -56,7 +56,7 @@ function onButtonClickSave(event){
 	savePaintData();
 }
 
-function onButtonClickSave(event){
+function onButtonClickLoad(event){
 	loadPaintData();
 }
 s
