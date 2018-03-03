@@ -22,9 +22,9 @@ function draw() {
 
   fill(0);
   textSize(24);
-  text("drag the mouse across the canvas to draw.", 50, 570);
-  text("press 'S' to save a json file with the current paint data.", 50, 600);
-  text("press 'L' to load a json file from your computer.", 50, 630);
+  //text("drag the mouse across the canvas to draw.", 50, 570);
+  //text("press 'S' to save a json file with the current paint data.", 50, 600);
+  //text("press 'L' to load a json file from your computer.", 50, 630);
 }
 
 function PaintMark(position) {
@@ -42,12 +42,13 @@ function mouseDragged() {
   paintmarks.push(new PaintMark(createVector(mouseX, mouseY)));
 }
 
+function onWindowLoaded (event){
 var myButtonSave = document.getElementById("myButtonSave");
 	myButtonSave.addEventListener("click", onButtonClickSave);
 
 var myButtonLoad = document.getElementById("myButtonLoad");
 	myButtonLoad.addEventListener("click", onButtonClickLoad);
-	
+}
 
 
 
