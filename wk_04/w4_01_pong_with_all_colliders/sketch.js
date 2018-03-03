@@ -490,6 +490,18 @@ function keyReleased() {
 
 
 
+//current score
+//previous score
+
+//draw
+//increase score
+
+// if prev score =/= curent score
+//then do something
+
+//prev score 1 = current score = 1
+
+
 var collideState = {
   ZERO: 0,
   ONE: 1,
