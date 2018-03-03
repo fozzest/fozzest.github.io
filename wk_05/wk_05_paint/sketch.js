@@ -32,7 +32,14 @@ function PaintMark(position) {
 
   this.display = function() {
     noStroke();
-    fill(250,0,250);
+    for (int i = 0; i <= width; i+=20) {
+    for (int j = 0; j <= height; j+=20) {
+      
+      float r = map(i, 0, width, 0, 255);
+      float g = map(j, 0, height, 0, 255);
+      
+      fill(r, g, 125);
+    
     ellipse(this.position.x, this.position.y, 10, 10);
   }
 
@@ -40,6 +47,7 @@ function PaintMark(position) {
 
 function mouseDragged() {
   paintmarks.push(new PaintMark(createVector(mouseX, mouseY)));
+
 }
 
 function onWindowLoaded (event){
