@@ -60,7 +60,7 @@ function onButtonClickSave(event){
 function onButtonClickLoad(event){
 	loadPaintData();
 }
-s
+
 function keyPressed() {
   if (key === 'S') {
     savePaintData();
@@ -94,3 +94,6 @@ function parsePaintData(data) {
     paintmarks.push(new PaintMark(createVector(data[i].x, data[i].y)));
   }
 }
+
+
+window.addEventListener("load", onWindowLoaded);
