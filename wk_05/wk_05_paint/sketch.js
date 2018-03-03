@@ -43,10 +43,11 @@ function mouseDragged() {
 }
 
 function onWindowLoaded (event){
-var myButtonSave = document.getElementById("myButtonSave");
+
+	var myButtonSave = document.getElementById("myButtonSave");
 	myButtonSave.addEventListener("click", onButtonClickSave);
 
-var myButtonLoad = document.getElementById("myButtonLoad");
+	var myButtonLoad = document.getElementById("myButtonLoad");
 	myButtonLoad.addEventListener("click", onButtonClickLoad);
 }
 
