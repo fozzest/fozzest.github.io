@@ -35,8 +35,8 @@ function PaintMark(position) {
     for (var k = 0; k <= width; k+=20) {
     for (var j = 0; j <= height; j+=20) {
       
-      float r = map(k, 0, width, 0, 255);
-      float g = map(j, 0, height, 0, 255);
+      var r = map(k, 0, width, 0, 255);
+      var g = map(j, 0, height, 0, 255);
       
       fill(r, g, 125);
     
