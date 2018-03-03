@@ -42,6 +42,23 @@ function mouseDragged() {
   paintmarks.push(new PaintMark(createVector(mouseX, mouseY)));
 }
 
+var myButtonSave = document.getElementById("myButtonSave");
+	myButtonSave.addEventListener("click", onButtonClickSave);
+
+var myButtonLoad = document.getElementById("myButtonLoad");
+	myButtonLoad.addEventListener("click", onButtonClickLoad);
+	
+
+
+
+function onButtonClickSave(event){
+	savePaintData();
+}
+
+function onButtonClickSave(event){
+	loadPaintData();
+}
+s
 function keyPressed() {
   if (key === 'S') {
     savePaintData();
