@@ -43,6 +43,8 @@ function PaintMark(position) {
     ellipse(this.position.x, this.position.y, 10, 10);
   }
 
+	}
+	}
 }
 
 function mouseDragged() {
@@ -103,5 +105,4 @@ function parsePaintData(data) {
   }
 }
 
-
-//window.addEventListener("load", onWindowLoaded);
+window.addEventListener("load", onWindowLoaded);
