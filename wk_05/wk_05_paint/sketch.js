@@ -38,7 +38,7 @@ function PaintMark(position) {
       var r = map(k, 0, width, 0, 255);
       var g = map(j, 0, height, 0, 255);
       
-      fill(r, g, 125);
+    fill(r, g, 125);
     
     ellipse(this.position.x, this.position.y, 10, 10);
   }
@@ -104,4 +104,4 @@ function parsePaintData(data) {
 }
 
 
-window.addEventListener("load", onWindowLoaded);
+//window.addEventListener("load", onWindowLoaded);
