@@ -54,6 +54,7 @@ function PaintMark(position, time, mouseSize) {
 	}
 
 	fill(r, g, 125);
+	stroke(time, time, 0);
     strokeSize(time);
     ellipse(this.position.x, this.position.y, this.mouseSize, this.mouseSize);
 }
