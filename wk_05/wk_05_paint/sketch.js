@@ -25,7 +25,7 @@ function setup() {
 function draw() {
   background(255);
   time = millis();
-  time = (time * .005) ; 
+  time = (time * .001) ; 
   for (var i = 0; i < paintmarks.length; i++) {
     paintmarks[i].display();
   }
