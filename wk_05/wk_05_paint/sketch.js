@@ -9,12 +9,12 @@
 
 var paintmarks = [];
 var paintDataFile = 'paintData.json';
-var time;
 var co;
+var time;
 
 function setup() {
   createCanvas(800, 800);
-    img = loadImage("assets/palm.jpg"); 
+   img = loadImage("assets/palm.jpg"); 
 
   image(img, 0, 0);
   image(img, 0, height, img.width, img.height);
@@ -25,15 +25,14 @@ function setup() {
 function draw() {
   background(255);
   time = millis();
-  time = (time * .001) ; 
+  time = (time * .005) ; 
   for (var i = 0; i < paintmarks.length; i++) {
     paintmarks[i].display();
-
   }
 
 }
 
-//paintmark function
+
 function PaintMark(position, time, co) {
   this.position = position;
   this.time = time;
@@ -51,6 +50,8 @@ function PaintMark(position, time, co) {
 function mouseDragged() {
   paintmarks.push(new PaintMark(createVector(mouseX, mouseY), time, co));
 }
+
+//html to load
 
 function onWindowLoaded (event){
 
@@ -71,10 +72,7 @@ function onButtonClickLoad(event){
 	loadPaintData();
 }
 
-
-
-
-
+//old way of save and loaad
 function keyPressed() {
   if (key === 'S') {
     savePaintData();
@@ -93,8 +91,7 @@ function savePaintData() {
         x: paintmarks[i].position.x, 
         y: paintmarks[i].position.y,
         m: paintmarks[i].co, 
-        n: paintmarks[i].time
-        
+        n: paintmarks[i].time        
       }
     );
   }
