@@ -1,116 +1,94 @@
 //code 02
-//wk_05_01
+//wk_05_02
 
 //forrest_whitcomb
 
-//paint w/ data
+//levels
 
 
 
-var paintmarks = [];
-var paintDataFile = 'paintData.json';
-var co;
-var time;
+// scene data model: 
+
+// {
+//   sceneText: '', //the scene text
+//   options: [], // the text options to choose
+//   nextScenes: []  // the target scene based on the previous options
+// }
+
+var sceneData;
+
+var currentScene = 0;
+var scenes = [];
+
+function preload() {
+  sceneData = loadJSON('scenes.json');
+}
 
 function setup() {
   createCanvas(800, 800);
-   img = loadImage("assets/palm.jpg"); 
-
-  image(img, 0, 0);
-  image(img, 0, height, img.width, img.height);
-  fill(255);
-  rect(0,0,width,height);
+  CreateScenesFromData(sceneData.scenes);
 }
 
 function draw() {
-  background(255);
-  time = millis();
-  time = (time * .001) ; 
-  for (var i = 0; i < paintmarks.length; i++) {
-    paintmarks[i].display();
-  }
+  background(85, 198, 204);
+  scenes[currentScene].display();
+  noStroke();
 
+  // fill (201, 118, 197);
+  // ellipse(mouseX+5,mouseY+5,30,30);
+
+
+  // fill (237, 137, 232);
+  // ellipse(mouseX,mouseY,30,30);
+
+  fill(0);
+  textSize(24);
+  text("press the option number to advance to the indicated scene", 50, 700);
 }
 
-
-function PaintMark(position, time, co) {
-  this.position = position;
-  this.time = time;
-  this.co = co;
-  this.display = function() {
-    noStroke();
-
-    
-    var co = img.get(mouseX,mouseY);
-    fill(co);
-    ellipse(this.position.x, this.position.y, this.time, this.time);
-  }
-
-}
-
-
-function mouseDragged() {
-  paintmarks.push(new PaintMark(createVector(mouseX, mouseY), time, co));
-}
-
-//html to load
-
-function onWindowLoaded (event){
-
-	var myButtonSave = document.getElementById("myButtonSave");
-	myButtonSave.addEventListener("click", onButtonClickSave);
-
-	var myButtonLoad = document.getElementById("myButtonLoad");
-	myButtonLoad.addEventListener("click", onButtonClickLoad);
-}
-
-
-
-function onButtonClickSave(event){
-	savePaintData();
-}
-
-function onButtonClickLoad(event){
-	loadPaintData();
-}
-
-//old way of save and loaad
-function keyPressed() {
-  if (key === 'S') {
-    savePaintData();
-  }
-  if (key === 'L') {
-    loadPaintData();
-  }
-}
-
-
-function savePaintData() {
-  positionsToSave = [];
-  for (var i = 0; i < paintmarks.length; i++) {
-    positionsToSave.push(
-      { 
-        x: paintmarks[i].position.x, 
-        y: paintmarks[i].position.y,
-        m: paintmarks[i].co, 
-        n: paintmarks[i].time        
-      }
-    );
-  }
-  saveJSON(positionsToSave, 'paintData.json');
-}
-
-function loadPaintData() {
-  loadJSON(paintDataFile, parsePaintData);
-}
-
-
-
-function parsePaintData(data) {
-  paintmarks = [];
+function CreateScenesFromData(data) {
   for (var i = 0; i < data.length; i++) {
-    paintmarks.push(new PaintMark(createVector(data[i].x, data[i].y),data[i].co, data[i].time));
+    scenes.push(new Scene(data[i].sceneText, data[i].options, data[i].nextScenes))
   }
 }
 
-window.addEventListener("load", onWindowLoaded);
+function Scene(sceneText, options, nextScenes) {
+  this.sceneText = sceneText;
+  this.options = options;
+  this.nextScenes = nextScenes;
+
+  this.display = function() {
+    fill(0);
+    textSize(32);
+    text(this.sceneText, 100, 100);
+
+    for (var i = 0; i < options.length; i++) {
+      text('OPTION ' + (i + 1) + ': ' + this.options[i], 85, 198 + i * 50);
+
+      fill (201, 118, 197);
+      this.shapes[i] (mouseX+5,mouseY+5,30,30);
+
+
+      fill (237, 137, 232);
+      this.shapes[i](mouseX,mouseY,30,30);
+    }
+  }
+}
+
+function keyPressed() {
+  var numberPressed = parseInt(key);
+  var newScene = scenes[currentScene].nextScenes[numberPressed - 1];
+  if (newScene !== undefined) {
+    currentScene = newScene;
+  }
+}
+
+// function switchScene(){
+// var xpos = mouseX;
+// var ypos = mouseY
+// var newScene = scenes[currentScene].nextScenes[xpos, ypos];
+
+// if (xpos > 100 && ypos >100)
+//   newScene = [2];
+
+// }
