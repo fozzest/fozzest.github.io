@@ -10,57 +10,46 @@
 var paintmarks = [];
 var paintDataFile = 'paintData.json';
 var time;
-var mouseSize;
+var co;
 
 function setup() {
   createCanvas(800, 800);
+    img = loadImage("assets/palm.jpg"); 
+
+  image(img, 0, 0);
+  image(img, 0, height, img.width, img.height);
+  fill(255);
+  rect(0,0,width,height);
 }
 
 function draw() {
-
-  time = millis();
-  time = (time * .05) % 200; 
-  mouseSizeize = random(5, 30);
   background(255);
+  time = millis();
+  time = (time * .001) ; 
   for (var i = 0; i < paintmarks.length; i++) {
     paintmarks[i].display();
+
   }
 
-  //fill(0);
-  //textSize(24);
-  //text("drag the mouse across the canvas to draw.", 50, 570);
-  //text("press 'S' to save a json file with the current paint data.", 50, 600);
-  //text("press 'L' to load a json file from your computer.", 50, 630);
 }
 
-function PaintMark(position, time, mouseSize) {
+//paintmark function
+function PaintMark(position, time, co) {
   this.position = position;
   this.time = time;
-  this.mouseSize = mouseSize;
-
+  this.co = co;
   this.display = function() {
     noStroke();
-    for (var k = 0; k <= width; k+=20) {
-    for (var j = 0; j <= height; j+=20) {
-      
-      var r = map(k, 0, width, 0, 255);
-      var g = map(j, 0, height, 0, 255);
-      
-    
-    
+    var co = img.get(mouseX,mouseY);
+    fill(co);
+    ellipse(this.position.x, this.position.y, this.time, this.time);
   }
 
-	}
-	}
-
-	fill(r, g, 125);
-	stroke(time, time, 0);
-    strokeSize(time);
-    ellipse(this.position.x, this.position.y, this.mouseSize, this.mouseSize);
 }
 
+
 function mouseDragged() {
-  paintmarks.push(new PaintMark(createVector(mouseX, mouseY), time, mouseSize));
+  paintmarks.push(new PaintMark(createVector(mouseX, mouseY), time, co));
 }
 
 function onWindowLoaded (event){
@@ -82,6 +71,10 @@ function onButtonClickLoad(event){
 	loadPaintData();
 }
 
+
+
+
+
 function keyPressed() {
   if (key === 'S') {
     savePaintData();
@@ -91,15 +84,17 @@ function keyPressed() {
   }
 }
 
+
 function savePaintData() {
   positionsToSave = [];
   for (var i = 0; i < paintmarks.length; i++) {
     positionsToSave.push(
       { 
         x: paintmarks[i].position.x, 
-        y: paintmarks[i].position.y, 
-        t: paintmarks[i].time,
-        s: paintmarks[i].mouseSize
+        y: paintmarks[i].position.y,
+        m: paintmarks[i].co, 
+        n: paintmarks[i].time
+        
       }
     );
   }
@@ -111,14 +106,12 @@ function loadPaintData() {
 }
 
 
-// creates the new form of the drawing
 
 function parsePaintData(data) {
   paintmarks = [];
   for (var i = 0; i < data.length; i++) {
-    paintmarks.push(new PaintMark(createVector(data[i].x, data[i].y),data[i].time, data[i].mouseSize));
+    paintmarks.push(new PaintMark(createVector(data[i].x, data[i].y),data[i].co, data[i].time));
   }
 }
-
 
 window.addEventListener("load", onWindowLoaded);
