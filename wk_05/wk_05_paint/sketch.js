@@ -52,7 +52,7 @@ function PaintMark(position, time, mouseSize) {
 
 	}
 	}
-	
+
 	fill(r, g, 125);
     strokeSize(time);
     ellipse(this.position.x, this.position.y, this.mouseSize, this.mouseSize);
@@ -115,7 +115,7 @@ function loadPaintData() {
 function parsePaintData(data) {
   paintmarks = [];
   for (var i = 0; i < data.length; i++) {
-    paintmarks.push(new PaintMark(createVector(data[i].x, data[i].y),data[i].time, data[i].mouseSize));
+    paintmarks.push(new PaintMark(createVector(data[i].x, data[i].y,data[i].time, data[i].mouseSize));
   }
 }
 
