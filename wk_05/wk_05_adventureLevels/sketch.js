@@ -63,30 +63,26 @@ function Scene(sceneText, bg, options, rectPos1, rectPos2, rectPos3, rectPos4, n
       rect(0,0,width,height);
       fill(255);
       text(this.options[i]), 100, 100;
-      text('OPTION ' + (i + 1) + ': ' + this.options[i], 150, 200 + i * 50);
+      text('OPTION ' + (i) + ': ' + this.options[i], 150, 200 + i * 50);
 
       fill (201, 118, 197);
       rect(this.rectPos1, this.rectPos2, 40,40);
 
       fill (244, 119, 66);
       rect(this.rectPos3, this.rectPos4, 40,40);
+
+        if (mouseIsPressed && mouseX > this.rectPos1 && mouseX < this.rectPos1 +40 && mouseY > this.rectPos2 && mouseY < this.rectPos1 +40){
+    console.log("click");
+    var scenes = scenes[i+1];
+  }
       
-
-
-
-      // fill (201, 118, 197);
-      // this.shapes[i](mouseX+5,mouseY+5,30,30);
-
-
-      // fill (237, 137, 232);
-      // this.shapes[i](mouseX,mouseY,30,30);
     }
   }
 }
 
  function keyPressed() {
    var numberPressed = parseInt(key);
-  var newScene = scenes[currentScene].nextScenes[numberPressed - 1];
+  var newScene = scenes[currentScene].nextScenes[numberPressed];
    if (newScene !== undefined) {
      currentScene = newScene;
    }
@@ -98,15 +94,16 @@ function Scene(sceneText, bg, options, rectPos1, rectPos2, rectPos3, rectPos4, n
 // var newScene = scenes[i].nextScene[1];
  //nextScenes means clicking a number and it 
 
-function mouseClicked() {
+//function mouseClicked() {
   //var x = mouseX;
   //var y = mouseY;
 
-  if (mouseX > Scene.rectPos1 && mouseX < Scene.rectPos1 +40 && mouseY > Scene.rectPos2 && mouseY < Scene.rectPos1 +40){
-  var newScene = scenes[currentScene].nextScene[i];
-  console.log(scenes[i]);
-  if (newScene !== undefined) {
-    currentScene = newScene;
-  }
-}
-}
+  //if (mouseIsPressed && mouseX > rectPos1 && mouseX < rectPos1 +40 && mouseY > rectPos2 && mouseY < rectPos1 +40){
+    //console.log("click");
+  // var newScene = scenes[currentScene].nextScene[i];
+  // console.log(scenes[i]);
+  // if (newScene !== undefined) {
+  //   currentScene = newScene;
+  // }
+//}
+//}
