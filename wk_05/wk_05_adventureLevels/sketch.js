@@ -97,7 +97,7 @@ function switchScene() {
   //var y = mouseY;
 
   if (mouseX > 300 && mouseY > 500){
-  var newScene = scenes[currentScene].nextScenes[i+1];
+  var newScene = scenes[currentScene].nextScenes[currentScene +1];
   if (newScene !== undefined) {
     currentScene = newScene;
   }
