@@ -3,7 +3,7 @@
     {
       "sceneText": "This is scene 0",
       "bg": [122,20,20],
-      "options": ["go to scene 1"],
+      "options": ["Pink to the Next"],
       "rectPos1": [200],
       "rectPos2": [200],
       "nextScenes": [1]
@@ -11,7 +11,7 @@
     {
       "sceneText": "This is scene 1",
       "bg": [152,20,20],
-      "options": ["go to scene 2", "go to scene 3"],
+      "options": ["Pink to the Next, Orange for the Back"],
       "rectPos1": [400],
       "rectPos2": [400],
       "nextScenes": [2, 3]
@@ -19,7 +19,7 @@
     {
       "sceneText": "This is scene 2",
       "bg": [44,20,20],
-      "options": ["go to scene 3", "go to scene 4"],
+      "options": ["Pink to the Next, Orange for the Back"],
       "rectPos1": [250],
       "rectPos2": [500],
       "nextScenes": [3, 4] 
@@ -27,7 +27,7 @@
     {
       "sceneText": "This is scene 3",
       "bg": [0,20,20],
-      "options": ["go to scene 4", "go to scene 0"],
+      "options": ["Pink to the Next, Orange for the Back"],
       "rectPos1": [100],
       "rectPos2": [400],
       "nextScenes": [4, 0]
@@ -35,7 +35,7 @@
     {
       "sceneText": "This is scene 4",
       "bg": [102,20,20],
-      "options": ["go to scene 0", "go to scene 1", "go to scene 2", "go to scene 3"],
+      "options": ["Pink to the Start, Orange for the Back"],
       "rectPos1": [200],
       "rectPos2": [200],
       "nextScenes": [0, 1, 2, 3]

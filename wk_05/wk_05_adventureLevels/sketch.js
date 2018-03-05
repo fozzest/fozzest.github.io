@@ -41,9 +41,7 @@ function draw() {
   // fill (237, 137, 232);
   // ellipse(mouseX,mouseY,30,30);
 
-  fill(0);
-  textSize(24);
-  text("press the option number to advance to the indicated scene", 50, 700);
+  
 }
 
 function CreateScenesFromData(data) {
