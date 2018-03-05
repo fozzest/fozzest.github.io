@@ -98,7 +98,7 @@ function Scene(sceneText, bg, options, rectPos1, rectPos2, nextScenes) {
 function switchScene() {
   var x = mouseX;
   var y = mouseY;
-  var newScene = scenes[currentScene].nextScenes[i-1];
+  var newScene = scenes[currentScene].nextScenes[i];
   if (newScene !== undefined) {
     currentScene = newScene;
   }
