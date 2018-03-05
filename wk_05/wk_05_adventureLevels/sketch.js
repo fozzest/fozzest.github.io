@@ -62,7 +62,8 @@ function Scene(sceneText, bg, options, rectPos1, rectPos2, rectPos3, rectPos4, n
       fill(this.bg[i]);
       rect(0,0,width,height);
       fill(255);
-      text('OPTION ' + (i + 1) + ': ' + this.options[i], 150, 200 + i * 50);
+      text(this.options[i]);
+      //text('OPTION ' + (i + 1) + ': ' + this.options[i], 150, 200 + i * 50);
 
       fill (201, 118, 197);
       rect(this.rectPos1, this.rectPos2, 40,40);
@@ -83,13 +84,13 @@ function Scene(sceneText, bg, options, rectPos1, rectPos2, rectPos3, rectPos4, n
   }
 }
 
-// function keyPressed() {
-//   var numberPressed = parseInt(key);
-//   var newScene = scenes[currentScene].nextScenes[numberPressed - 1];
-//   if (newScene !== undefined) {
-//     currentScene = newScene;
-//   }
-// }
+ function keyPressed() {
+   var numberPressed = parseInt(key);
+  var newScene = scenes[currentScene].nextScenes[numberPressed - 1];
+   if (newScene !== undefined) {
+     currentScene = newScene;
+   }
+ }
 
 function switchScene() {
   var x = mouseX;
