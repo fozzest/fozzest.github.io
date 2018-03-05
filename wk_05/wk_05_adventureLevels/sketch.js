@@ -63,7 +63,7 @@ function Scene(sceneText, bg, options, rectPos1, rectPos2, rectPos3, rectPos4, n
       rect(0,0,width,height);
       fill(255);
       text(this.options[i]), 100, 100;
-      text('OPTION ' + (i) + ': ' + this.options[i], 150, 200 + i * 50);
+      text('Number or' + ': ' + this.options[i], 150, 200 + i * 50);
 
       fill (201, 118, 197);
       rect(this.rectPos1, this.rectPos2, 40,40);
@@ -73,7 +73,7 @@ function Scene(sceneText, bg, options, rectPos1, rectPos2, rectPos3, rectPos4, n
 
         if (mouseIsPressed && mouseX > this.rectPos1 && mouseX < this.rectPos1 +40 && mouseY > this.rectPos2 && mouseY < this.rectPos1 +40){
     console.log("click");
-    var scenes = scenes[i+1];
+    this.nextScenes;
   }
       
     }
