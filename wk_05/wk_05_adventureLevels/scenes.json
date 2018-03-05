@@ -14,17 +14,6 @@
       "sceneText": "This is scene 1",
       "bg": [152,20,20],
       "options": ["Pink to the Next, Orange for the Back"],
-      // "buttons": [
-      //     {
-      //       "x" : 100,
-      //       "y" : 100
-      //     },
-      //     {
-      //       "x" : 200, 
-      //       "y" : 200
-      //     }
-      //   ],
-      //   }
       "rectPos1": [400],
       "rectPos2": [400],
       "rectPos3":[100],
