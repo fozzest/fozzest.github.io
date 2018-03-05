@@ -34,13 +34,6 @@ function draw() {
   scenes[currentScene].display();
   noStroke();
 
-  // fill (201, 118, 197);
-  // ellipse(mouseX+5,mouseY+5,30,30);
-
-
-  // fill (237, 137, 232);
-  // ellipse(mouseX,mouseY,30,30);
-
   
 }
 
@@ -97,12 +90,12 @@ function switchScene() {
   var x = mouseX;
   var y = mouseY;
 
-  if (mouseX > display.this.rectPos1 && mouseX < display.this.rectPos1){
+  
   var newScene = scenes[currentScene].nextScenes[currentScene+1];
   if (newScene !== undefined) {
     currentScene = newScene;
   }
-}
+
 }
 
 // function switchScene(){
