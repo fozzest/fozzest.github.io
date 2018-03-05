@@ -48,13 +48,16 @@ function draw() {
 
 function CreateScenesFromData(data) {
   for (var i = 0; i < data.length; i++) {
-    scenes.push(new Scene(data[i].sceneText, data[i].options, data[i].nextScenes))
+    scenes.push(new Scene(data[i].sceneText, data[i].bg, data[i].options, data[i].rectPos1, data[i].rectPos2, data[i].nextScenes))
   }
 }
 
-function Scene(sceneText, options, nextScenes) {
+function Scene(sceneText, bg, options, rectPos1, rectPos2, nextScenes) {
   this.sceneText = sceneText;
+  this.bg = bg;
   this.options = options;
+  this.rectPos1 = rectPos1;
+  this.rectPos2 = rectPos2;
   this.nextScenes = nextScenes;
 
   this.display = function() {
@@ -63,21 +66,39 @@ function Scene(sceneText, options, nextScenes) {
     text(this.sceneText, 100, 100);
 
     for (var i = 0; i < options.length; i++) {
-      text('OPTION ' + (i + 1) + ': ' + this.options[i], 85, 198 + i * 50);
+      fill(this.bg[i]);
+      rect(0,0,width,height);
+      fill(255);
+      text('OPTION ' + (i + 1) + ': ' + this.options[i], 150, 200 + i * 50);
 
       fill (201, 118, 197);
-      this.shapes[i] (mouseX+5,mouseY+5,30,30);
+      rect(this.rectPos1, this.rectPos2, 40,40);
+      
 
 
-      fill (237, 137, 232);
-      this.shapes[i](mouseX,mouseY,30,30);
+
+      // fill (201, 118, 197);
+      // this.shapes[i](mouseX+5,mouseY+5,30,30);
+
+
+      // fill (237, 137, 232);
+      // this.shapes[i](mouseX,mouseY,30,30);
     }
   }
 }
 
-function keyPressed() {
-  var numberPressed = parseInt(key);
-  var newScene = scenes[currentScene].nextScenes[numberPressed - 1];
+// function keyPressed() {
+//   var numberPressed = parseInt(key);
+//   var newScene = scenes[currentScene].nextScenes[numberPressed - 1];
+//   if (newScene !== undefined) {
+//     currentScene = newScene;
+//   }
+// }
+
+function switchScene() {
+  var x = mouseX;
+  var y = mouseY;
+  var newScene = scenes[currentScene].nextScenes[i-1];
   if (newScene !== undefined) {
     currentScene = newScene;
   }
