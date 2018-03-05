@@ -62,7 +62,7 @@ function Scene(sceneText, bg, options, rectPos1, rectPos2, rectPos3, rectPos4, n
       fill(this.bg[i]);
       rect(0,0,width,height);
       fill(255);
-      text(this.options[i]);
+      text(this.options[i]), 100, 100;
       //text('OPTION ' + (i + 1) + ': ' + this.options[i], 150, 200 + i * 50);
 
       fill (201, 118, 197);
