@@ -71,21 +71,44 @@ function Scene(sceneText, bg, options, rectPos1, rectPos2, rectPos3, rectPos4, n
       fill (244, 119, 66);
       rect(this.rectPos3, this.rectPos4, 40,40);
 
-        if (mouseIsPressed && mouseX > this.rectPos1 && mouseX < this.rectPos1 +40 && mouseY > this.rectPos2 && mouseY < this.rectPos1 +40){
-    console.log("click");
-    this.nextScenes;
-  }
+  //       if (mouseIsPressed && mouseX > this.rectPos1 && mouseX < this.rectPos1 +40 && mouseY > this.rectPos2 && mouseY < this.rectPos1 +40){
+  //   console.log("click");
+  //   this.nextScenes;
+  // }
       
     }
   }
 }
 
  function keyPressed() {
-   var numberPressed = parseInt(key);
+  var numberPressed = parseInt(key);
   var newScene = scenes[currentScene].nextScenes[numberPressed];
+   // if (newScene !== undefined) {
+   //   currentScene = newScene;
+   // }
+ }
+
+ function mousePressed() {
+  if ( mouseX > scenes[currentScene].rectPos1[0] &&
+       mouseX < (scenes[currentScene].rectPos1[0] + 40) && 
+       mouseY > scenes[currentScene].rectPos2[0] && 
+       mouseY < (scenes[currentScene].rectPos2[0] + 40)) {
+    var newScene = scenes[currentScene].nextScenes[0];
    if (newScene !== undefined) {
      currentScene = newScene;
    }
+ }
+
+ if ( mouseX > scenes[currentScene].rectPos3[0] &&
+       mouseX < (scenes[currentScene].rectPos3[0] + 40) && 
+       mouseY > scenes[currentScene].rectPos4[0] && 
+       mouseY < (scenes[currentScene].rectPos4[0] + 40)) {
+    var newScene = scenes[currentScene].nextScenes[1];
+   if (newScene !== undefined) {
+     currentScene = newScene;
+   }
+ }
+
  }
 
 
