@@ -92,12 +92,19 @@ function Scene(sceneText, bg, options, rectPos1, rectPos2, rectPos3, rectPos4, n
    }
  }
 
-function switchScene() {
+
+//new scene is equal to the current i's next scene which is a number
+//if mouse over pink
+// var newScene = scenes[i].nextScene[1];
+ //nextScenes means clicking a number and it 
+
+function mouseClicked() {
   //var x = mouseX;
   //var y = mouseY;
 
-  if (mouseX > 300 && mouseY > 500){
-  var newScene = scenes[currentScene].nextScenes[currentScene +1];
+  if (mouseX > Scene.rectPos1 && mouseX < Scene.rectPos1 +40 && mouseY > Scene.rectPos2 && mouseY < Scene.rectPos1 +40){
+  var newScene = scenes[currentScene].nextScene[i];
+  console.log(scenes[i]);
   if (newScene !== undefined) {
     currentScene = newScene;
   }

@@ -8,7 +8,7 @@
       "rectPos2": [200],
       "rectPos3":[1000],
       "rectPos4": [1000],
-      "nextScenes": [1]
+      "nextScenes": [2]
     },
     {
       "sceneText": "This is scene 1",
@@ -18,7 +18,7 @@
       "rectPos2": [400],
       "rectPos3":[100],
       "rectPos4": [100],
-      "nextScenes": [2, 0]
+      "nextScenes": [3, 1]
     },
     {
       "sceneText": "This is scene 2",
@@ -28,7 +28,7 @@
       "rectPos2": [500],
       "rectPos3":[300],
       "rectPos4": [400],
-      "nextScenes": [3, 1] 
+      "nextScenes": [4, 2] 
     },
     {
       "sceneText": "This is scene 3",
@@ -38,7 +38,7 @@
       "rectPos2": [400],
       "rectPos3":[500],
       "rectPos4": [500],
-      "nextScenes": [4, 3]
+      "nextScenes": [5, 4]
     },
     {
       "sceneText": "This is scene 4",
@@ -48,7 +48,7 @@
       "rectPos2": [200],
       "rectPos3":[100],
       "rectPos4": [300],
-      "nextScenes": [3,0]
+      "nextScenes": [4,1]
     }
   ]
 }
