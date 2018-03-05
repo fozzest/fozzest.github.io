@@ -39,16 +39,18 @@ function draw() {
 
 function CreateScenesFromData(data) {
   for (var i = 0; i < data.length; i++) {
-    scenes.push(new Scene(data[i].sceneText, data[i].bg, data[i].options, data[i].rectPos1, data[i].rectPos2, data[i].nextScenes))
+    scenes.push(new Scene(data[i].sceneText, data[i].bg, data[i].options, data[i].rectPos1, data[i].rectPos2, data[i].rectPos3, data[i].rectPos4, data[i].nextScenes))
   }
 }
 
-function Scene(sceneText, bg, options, rectPos1, rectPos2, nextScenes) {
+function Scene(sceneText, bg, options, rectPos1, rectPos2, rectPos3, rectPos4, nextScenes) {
   this.sceneText = sceneText;
   this.bg = bg;
   this.options = options;
   this.rectPos1 = rectPos1;
   this.rectPos2 = rectPos2;
+  this.rectPos3 = rectPos3;
+  this.rectPos4 = rectPos4;
   this.nextScenes = nextScenes;
 
   this.display = function() {
@@ -64,6 +66,9 @@ function Scene(sceneText, bg, options, rectPos1, rectPos2, nextScenes) {
 
       fill (201, 118, 197);
       rect(this.rectPos1, this.rectPos2, 40,40);
+
+      fill (244, 119, 66);
+      rect(this.rectPos3, this.rectPos4, 40,40);
       
 
 

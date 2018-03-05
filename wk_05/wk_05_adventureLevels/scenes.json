@@ -6,6 +6,8 @@
       "options": ["Pink to the Next"],
       "rectPos1": [200],
       "rectPos2": [200],
+      "rectPos3":[1000],
+      "rectPos4": [1000],
       "nextScenes": [1]
     },
     {
@@ -14,6 +16,8 @@
       "options": ["Pink to the Next, Orange for the Back"],
       "rectPos1": [400],
       "rectPos2": [400],
+      "rectPos3":[100],
+      "rectPos4": [100],
       "nextScenes": [2, 3]
     },
     {
@@ -22,6 +26,8 @@
       "options": ["Pink to the Next, Orange for the Back"],
       "rectPos1": [250],
       "rectPos2": [500],
+      "rectPos3":[300],
+      "rectPos4": [400],
       "nextScenes": [3, 4] 
     },
     {
@@ -30,6 +36,8 @@
       "options": ["Pink to the Next, Orange for the Back"],
       "rectPos1": [100],
       "rectPos2": [400],
+      "rectPos3":[500],
+      "rectPos4": [500],
       "nextScenes": [4, 0]
     },
     {
@@ -38,6 +46,8 @@
       "options": ["Pink to the Start, Orange for the Back"],
       "rectPos1": [200],
       "rectPos2": [200],
+      "rectPos3":[100],
+      "rectPos4": [300],
       "nextScenes": [0, 1, 2, 3]
     }
   ]
