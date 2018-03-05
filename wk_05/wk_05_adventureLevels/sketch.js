@@ -97,7 +97,7 @@ function switchScene() {
   var x = mouseX;
   var y = mouseY;
 
-  if (var x > display.this.rectPos1 && var x < display.this.rectPos1){
+  if (mouseX > display.this.rectPos1 && mouseX < display.this.rectPos1){
   var newScene = scenes[currentScene].nextScenes[currentScene+1];
   if (newScene !== undefined) {
     currentScene = newScene;
