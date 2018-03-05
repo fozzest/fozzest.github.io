@@ -93,8 +93,8 @@ function Scene(sceneText, bg, options, rectPos1, rectPos2, rectPos3, rectPos4, n
  }
 
 function switchScene() {
-  var x = mouseX;
-  var y = mouseY;
+  //var x = mouseX;
+  //var y = mouseY;
 
   
   var newScene = scenes[currentScene].nextScenes[currentScene+1];
@@ -103,13 +103,3 @@ function switchScene() {
   }
 
 }
-
-// function switchScene(){
-// var xpos = mouseX;
-// var ypos = mouseY
-// var newScene = scenes[currentScene].nextScenes[xpos, ypos];
-
-// if (xpos > 100 && ypos >100)
-//   newScene = [2];
-
-// }
