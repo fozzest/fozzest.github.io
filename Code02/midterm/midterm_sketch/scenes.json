@@ -1,0 +1,47 @@
+{
+  "scenes": [
+    {
+
+      //intro
+      "sharksLength": 10, //the length of Sharks(enemies) in a level
+      "airCounter": 0.2,  //the speed at which the player loses air
+      "bubbleLength": 7, //the amount of bubbles in a level for the character to absorb
+      "nextScenes": [1]
+    },
+    {
+      //controls
+     "sharksLength": 10, //the length of Sharks(enemies) in a level
+      "airCounter": 0.2,  //the speed at which the player loses air
+      "bubbleLength": 7, //the amount of bubbles in a level for the character to absorb
+      "nextScenes": [2]
+    },
+    {
+      //level 01
+       "sharksLength": 10, //the length of Sharks(enemies) in a level
+      "airCounter": 0.2,  //the speed at which the player loses air
+      "bubbleLength": 7, //the amount of bubbles in a level for the character to absorb
+      "nextScenes": [3,2] 
+    },
+    {
+      //hypothetical level 02
+       "sharksLength": 10, //the length of Sharks(enemies) in a level
+      "airCounter": 0.2,  //the speed at which the player loses air
+      "bubbleLength": 7, //the amount of bubbles in a level for the character to absorb
+      "nextScenes": [4,3]
+    },
+    {
+      //hypothetical level 03
+      "sharksLength": 10, //the length of Sharks(enemies) in a level
+      "airCounter": 0.2,  //the speed at which the player loses air
+      "bubbleLength": 7, //the amount of bubbles in a level for the character to absorb
+      "nextScenes": [5,4]
+    },
+    {
+      //hypothetical level 00
+      "sharksLength": 10, //the length of Sharks(enemies) in a level
+      "airCounter": 0.2,  //the speed at which the player loses air
+      "bubbleLength": 7, //the amount of bubbles in a level for the character to absorb
+      "nextScenes": [5,0]
+    }
+  ]
+}

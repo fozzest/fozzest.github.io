@@ -37,8 +37,22 @@ var diverMoveRIGHT = false;
 var airCounter = 0;
 
 
+
+
+var sceneData;
+
+var currentScene = 0;
+var scenes = [];
+
+
+// function preload() {
+//   sceneData = loadJSON('scenes.json');
+// }
+
+
 function setup() {
   createCanvas(400,600);
+  //CreateScenesFromData(sceneData.scenes);
 
   diverImg = loadImage("assets/diver.png");
   sharkImg = loadImage("assets/shark.png");
@@ -59,6 +73,11 @@ function draw() {
   keyOn = false;
 }
 
+
+
+//SCENES
+
+
   function drawScene(whichScene) {
   switch (currentState) {
     case sceneState.INTRO:
@@ -69,21 +88,12 @@ function draw() {
       text("welcome to the\nDiving Game\n\"press SPACE to continue\"", width/2, height/2);
       break;
     case sceneState.DIRECTIONS:
-        var millisecond = millis();
+       
         background(150, 200, 200);
-        fill(0);
-        textSize(48);
-        textAlign(CENTER, CENTER);
-        text("HOW TO PLAY...", width/2, height/2 - 100);
-        textSize(32);
-        text("try to hit a key exactly when\nthe counter hits zero", width/2, height/2)
+        fill(255);
+        
     case sceneState.GAME:
-
-
-
-
-
-    image(bgImg, 0,0, width, height);
+        image(bgImg, 0,0, width, height);
 
         //image(sharkImg, 100,height-100, 70,70);
         //image(diverImg, width/2 + diverMove, height/2+200, 50, 50);
@@ -113,11 +123,6 @@ function draw() {
           shark[i].display();
            }
 
-
-
-
-
-
       break;
       default:
       break;
@@ -126,16 +131,8 @@ function draw() {
 
   }
 
-  function newShark() {
-  var millisecond = millis();
-  if (millisecond % 1000){
-        shark.push(new Shark(random(0,width), height/2));
-        console.log("new");
-      }
-    }
 
-
-  
+//TRANSITIONS
 
 
   function checkTransition(whichScene) {
@@ -182,11 +179,40 @@ function setUpScene(whichScene) {
   }
 }
 
+
+//ACCESS DATA FOR SCENES - UNDER CONSTRUCTION
+
+
+// function CreateScenesFromData(data) {
+//   for (var i = 0; i < data.length; i++) {
+//     scenes.push(new Scene(data[i].sceneText, data[i].bg, data[i].options, data[i].rectPos1, data[i].rectPos2, data[i].rectPos3, data[i].rectPos4, data[i].nextScenes))
+//   }
+// }
+
+// function Scene(sceneText, bg, options, rectPos1, rectPos2, rectPos3, rectPos4, nextScenes) {
+//   this.sceneText = sceneText;
+//   this.bg = bg;
+//   this.options = options;
+//   this.rectPos1 = rectPos1;
+//   this.rectPos2 = rectPos2;
+//   this.rectPos3 = rectPos3;
+//   this.rectPos4 = rectPos4;
+//   this.nextScenes = nextScenes;
+
+//}
+
+
+
+
+
+
 function keyPressed() {
   keyOn = true;
 }
 
 
+
+//COMPONENTS
 
 function Diver() {
   
@@ -248,6 +274,15 @@ function Diver() {
      fimage(sharkImg, this.sharkX, this.sharkY, this.width, this.height);
    }
  }
+
+
+  function newShark() {
+  var millisecond = millis();
+  if (millisecond % 1000){
+        shark.push(new Shark(random(0,width), height/2));
+        console.log("new");
+      }
+    }
 
 
 
