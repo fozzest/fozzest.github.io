@@ -182,21 +182,28 @@ function setUpScene(whichScene) {
 
 //ACCESS DATA FOR SCENES - UNDER CONSTRUCTION
 
+      //"sharksLength": 10, //the length of Sharks(enemies) in a level
+      //"sharkVel" : 2,   //speed of sharks along Y
+      //"sharkEase" : 0.1,  //strengh of easing towardss character in sharks
+      //"airCounter": 0.2,  //the speed at which the player loses air
+      //"bubbleLength": 7, //the amount of bubbles in a level for the character to absorb
+      //"harpoon":[0,1],   
+      //"nextScenes": [1]
+
 
 // function CreateScenesFromData(data) {
 //   for (var i = 0; i < data.length; i++) {
-//     scenes.push(new Scene(data[i].sceneText, data[i].bg, data[i].options, data[i].rectPos1, data[i].rectPos2, data[i].rectPos3, data[i].rectPos4, data[i].nextScenes))
+//     scenes.push(new Scene(data[i].sharksLength, data[i].sharkVel, data[i].sharkEase, data[i].airCounter, data[i].bubbleLength, data[i].harpoon, data[i].nextScenes))
 //   }
 // }
 
-// function Scene(sceneText, bg, options, rectPos1, rectPos2, rectPos3, rectPos4, nextScenes) {
-//   this.sceneText = sceneText;
-//   this.bg = bg;
-//   this.options = options;
-//   this.rectPos1 = rectPos1;
-//   this.rectPos2 = rectPos2;
-//   this.rectPos3 = rectPos3;
-//   this.rectPos4 = rectPos4;
+// function Scene(sharkslength, sharkVel, sharkEase, airCounter, bubbleLength, harpoon, nextScenes) {
+//   this.sharksLength = sharksLength;
+//   this.sharkVel = sharkVel;
+//   this.sharkEase = sharkEase;
+//   this.airCounter = airCounter;
+//   this.bubbleLength = bubbleLength;
+//   this.harpoon = harpoon;
 //   this.nextScenes = nextScenes;
 
 //}

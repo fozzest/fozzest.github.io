@@ -8,7 +8,7 @@
       "sharkEase" : 0.1,  //strengh of easing towardss character in sharks
       "airCounter": 0.2,  //the speed at which the player loses air
       "bubbleLength": 7, //the amount of bubbles in a level for the character to absorb
-      "harpoon":[0,1],
+      "harpoon":[0,1],   
       "nextScenes": [1]
     },
     {
