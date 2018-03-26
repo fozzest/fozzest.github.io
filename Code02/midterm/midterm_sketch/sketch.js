@@ -270,6 +270,8 @@ function checkTransition(whichScene) {
       break;
     case sceneState.END:
       if (keyOn) {
+      gold.removeSprites();
+      sharks.removeSprites();
        currentState = 0;
           setUpScene(currentState);      
         }
