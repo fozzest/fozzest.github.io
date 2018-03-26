@@ -68,7 +68,7 @@ function drawScene(scene) {
         textSize(40);
         textAlign(CENTER, CENTER);
         text("Welcome", width/2, height/2-150);
-        text("to my hardly working midtern", width/2, height/2-100);
+        text("to my hardly working midterm", width/2, height/2-100);
         text("Press Enter to begin", width/2, height/2-50);
         text("Collect the Gold to advance", width/2, height/2);
    
