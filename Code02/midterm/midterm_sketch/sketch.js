@@ -171,7 +171,7 @@ function drawScene(scene) {
       if (diver.bounce(gold)) {
           success ==1;      
         }
-
+        success ==1;
     
     break;
 
