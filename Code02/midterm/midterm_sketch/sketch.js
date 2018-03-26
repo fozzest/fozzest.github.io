@@ -8,7 +8,7 @@
 // midterm
 
 var sceneState = {
-  INTRO: 0,
+  START: 0,
   LEVEL1: 1,
   LEVEL2: 2,
   LEVEL3: 3,
@@ -16,7 +16,7 @@ var sceneState = {
   END: 5
 }
 
-var currentState = sceneState.INTRO;
+var currentState = sceneState.START;
 var sceneData;
 var scenesData = [];
 var switching = 0;
@@ -62,7 +62,7 @@ function draw() {
 
 function drawScene(scene) {
   switch (currentState){
-    case sceneState.INTRO:
+    case sceneState.START:
         background(0);
         fill(255, 0, 0);
         textSize(40);
@@ -199,7 +199,7 @@ function drawScene(scene) {
 
 function checkTransition(whichScene) {
   switch (whichScene) {
-    case sceneState.INTRO:
+    case sceneState.START:
       if (keyOn) {
         currentState++;
         setUpScene(currentState);
@@ -283,7 +283,7 @@ function checkTransition(whichScene) {
 
 function setUpScene(scene){
   switch (scene) {
-    case sceneState.INTRO:
+    case sceneState.START:
       break;
     case sceneState.LEVEL1:
       break;
