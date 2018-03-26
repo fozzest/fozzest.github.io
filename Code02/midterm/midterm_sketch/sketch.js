@@ -84,9 +84,8 @@ function drawScene(scene) {
       //flappy bird example helped to show how to spawn objects via for loop 
       if (switching == 0){
         for ( var i = 0; i < sceneData.scenesData[0].sharkNum[0]; i ++){          
-          var pos1 = createVector(sceneData.scenesData[0].sharkPos[i].x, 
-          sceneData.scenesData[0].sharkPos[i].y);
-          createShark(pos1.x , pos1.y, sceneData.scenesData[0].sharkEase[0], sceneData.scenesData[0].sharkSize[0]);
+          var prepShark = createVector(sceneData.scenesData[0].sharkPos[i].x, sceneData.scenesData[0].sharkPos[i].y);
+          createShark(prepShark.x , prepShark.y, sceneData.scenesData[0].sharkEase[0], sceneData.scenesData[0].sharkSize[0]);
           switching = 1;
         }
       }
@@ -109,9 +108,8 @@ function drawScene(scene) {
       
       if (switching == 1){ 
         for ( var i = 0; i < sceneData.scenesData[1].sharkNum[0]; i ++){
-          var pos1 = createVector(sceneData.scenesData[1].sharkPos[i].x, 
-          sceneData.scenesData[1].sharkPos[i].y);
-          createShark(pos1.x , pos1.y , sceneData.scenesData[1].sharkEase[0], sceneData.scenesData[1].sharkSize[0]);
+          var prepShark = createVector(sceneData.scenesData[1].sharkPos[i].x,sceneData.scenesData[1].sharkPos[i].y);
+          createShark(prepShark.x , prepShark.y , sceneData.scenesData[1].sharkEase[0], sceneData.scenesData[1].sharkSize[0]);
           switching = 0;
         }
       }
@@ -135,9 +133,8 @@ function drawScene(scene) {
       
       if (switching == 0){
         for ( var i = 0; i < sceneData.scenesData[2].sharkNum[0]; i ++){
-          var pos1 = createVector(sceneData.scenesData[2].sharkPos[i].x, 
-          sceneData.scenesData[2].sharkPos[i].y);
-          createShark(pos1.x , pos1.y , sceneData.scenesData[2].sharkEase[0], sceneData.scenesData[2].sharkSize[0]);
+          var prepShark = createVector(sceneData.scenesData[2].sharkPos[i].x, sceneData.scenesData[2].sharkPos[i].y);
+          createShark(prepShark.x , prepShark.y , sceneData.scenesData[2].sharkEase[0], sceneData.scenesData[2].sharkSize[0]);
           switching = 1;
         }
       }
@@ -158,9 +155,8 @@ function drawScene(scene) {
 
       if (switching == 1){
         for ( var i = 0; i < sceneData.scenesData[3].sharkNum[0]; i ++){
-          var pos1 = createVector(sceneData.scenesData[3].sharkPos[i].x, 
-          sceneData.scenesData[3].sharkPos[i].y);
-          createShark(pos1.x , pos1.y , sceneData.scenesData[3].sharkEase[0], sceneData.scenesData[3].sharkSize[0]);
+          var prepShark = createVector(sceneData.scenesData[3].sharkPos[i].x, sceneData.scenesData[3].sharkPos[i].y);
+          createShark(prepShark.x , prepShark.y , sceneData.scenesData[3].sharkEase[0], sceneData.scenesData[3].sharkSize[0]);
           switching = 0;
         }
       }
