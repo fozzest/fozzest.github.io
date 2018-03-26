@@ -1,65 +1,144 @@
 {
-  "scenes": [
+  "scenesData": [
     {
-
-      //intro
-      "sharksLength": 10, //the length of Sharks(enemies) in a level
-      "sharkVel" : 2,   //speed of sharks along Y
-      "sharkEase" : 0.1,  //strengh of easing towardss character in sharks
-      "airCounter": 0.2,  //the speed at which the player loses air
-      "bubbleLength": 7, //the amount of bubbles in a level for the character to absorb
-      "harpoon":[0,1],   
-      "nextScenes": [1]
+      "scene": "Level 1",
+      "sharkEase": [0.2],
+      "goldX": [400],
+      "goldY": [400],
+      "sharkNum": [3],
+      "sharkPos": [
+        {
+          "x": 200,
+          "y": 400
+        },
+        {
+          "x": 500,
+          "y": 300
+        },
+        {
+          "x": 700,
+          "y": 100
+        }
+      ]
     },
     {
-      //controls
-     "sharksLength": 10, //the length of Sharks(enemies) in a level
-     "sharkVel" : 2,   //speed of sharks along Y
-     "sharkEase" : 0.1,  //strengh of easing towardss character in sharks
-      "airCounter": 0.2,  //the speed at which the player loses air
-      "bubbleLength": 7, //the amount of bubbles in a level for the character to absorb
-      "harpoon":[0,1],
-      "nextScenes": [2]
+      "scene": "Level 2",
+      "sharkEase": [0.4],
+      "goldX": [100],
+      "goldY": [500],
+      "sharkNum": [5],
+      "sharkPos": [
+        {
+          "x": 100,
+          "y": 200
+        },
+        {
+          "x": 200,
+          "y": 100
+        },
+        {
+          "x": 200,
+          "y": 300
+        },
+        {
+          "x": 300,
+          "y": 200
+        },
+        {
+          "x": 500,
+          "y": 200
+        }
+      ]
     },
     {
-      //level 01
-       "sharksLength": 10, //the length of Sharks(enemies) in a level
-       "sharkVel" : 2,   //speed of sharks along Y
-       "sharkEase" : 0.1,  //strengh of easing towardss character in sharks
-      "airCounter": 0.2,  //the speed at which the player loses air
-      "bubbleLength": 7, //the amount of bubbles in a level for the character to absorb
-      "harpoon":[0,1],
-      "nextScenes": [3,2] 
+      "scene": "Level 3",
+      "sharkEase": [0.8],
+      "goldX": [500],
+      "goldY": [500],
+      "sharkNum": [8],
+      "sharkPos": [
+        {
+          "x": 100,
+          "y": 300
+        },
+        {
+          "x": 200,
+          "y": 200
+        },
+        {
+          "x": 300,
+          "y": 100
+        },
+        {
+          "x": 300,
+          "y": 300
+        },
+        {
+          "x": 400,
+          "y": 200
+        },
+        {
+          "x": 400,
+          "y": 400
+        },
+        {
+          "x": 500,
+          "y": 200
+        },
+        {
+          "x": 500,
+          "y": 400
+        }
+      ]
     },
     {
-      //hypothetical level 02
-       "sharksLength": 15, //the length of Sharks(enemies) in a level
-       "sharkVel" : 3,   //speed of sharks along Y
-       "sharkEase" : 0.1,  //strengh of easing towardss character in sharks
-      "airCounter": 0.5,  //the speed at which the player loses air
-      "bubbleLength": 5, //the amount of bubbles in a level for the character to absorb
-      "harpoon":[0,1],
-      "nextScenes": [4,3]
-    },
-    {
-      //hypothetical level 03
-      "sharksLength": 20, //the length of Sharks(enemies) in a level
-      "sharkVel" : 4,   //speed of sharks along Y
-      "sharkEase" : 0.1,  //strengh of easing towardss character in sharks
-      "airCounter": 0.7,  //the speed at which the player loses air
-      "bubbleLength": 3, //the amount of bubbles in a level for the character to absorb
-      "harpoon":[0,1],
-      "nextScenes": [5,4]
-    },
-    {
-      //hypothetical level 00
-      "sharksLength": 30, //the length of Sharks(enemies) in a level
-      "sharkVel" : 5,   //speed of sharks along Y
-      "sharkEase" : 0.1,  //strengh of easing towardss character in sharks
-      "airCounter": 1,  //the speed at which the player loses air
-      "bubbleLength": 1, //the amount of bubbles in a level for the character to absorb
-      "harpoon":[0,1],
-      "nextScenes": [5,0]
+      "scene": "Level 4",
+      "sharkEase": [1],
+      "goldX": [200],
+      "goldY": [300],
+      "sharkNum": [10],
+      "sharkPos": [
+        {
+          "x": 200,
+          "y": 200
+        },
+        {
+          "x": 100,
+          "y": 300
+        },
+        {
+          "x": 200,
+          "y": 200
+        },
+        {
+          "x": 300,
+          "y": 100
+        },
+        {
+          "x": 400,
+          "y": 200
+        },
+        {
+          "x": 600,
+          "y": 200
+        },
+        {
+          "x": 600,
+          "y": 200
+        },
+        {
+          "x": 700,
+          "y": 300
+        },
+        {
+          "x": 200,
+          "y": 400
+        },
+        {
+          "x": 500,
+          "y": 300
+        }
+      ]
     }
   ]
 }
