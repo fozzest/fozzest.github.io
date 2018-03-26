@@ -31,6 +31,8 @@ var diverImg;
 var gold; 
 var goldImg;
 
+var titleImg;
+
 var success;
 //var millisecond = millis();
 
@@ -40,6 +42,7 @@ function preload(){
   diverImg = loadImage("assets/diver.png");
   goldImg = loadImage("assets/gold.png");
   bgImg = loadImage("assets/bg.png");
+  titleImg = loadImage("assets/david.png");
 }
 
 function setup() {
@@ -64,13 +67,15 @@ function drawScene(scene) {
   switch (currentState){
     case sceneState.START:
         background(0);
-        fill(255, 0, 0);
-        textSize(40);
-        textAlign(CENTER, CENTER);
-        text("Welcome", width/2, height/2-150);
-        text("to my hardly working midterm", width/2, height/2-100);
-        text("Press Enter to begin", width/2, height/2-50);
-        text("Collect the Gold to advance", width/2, height/2);
+        image(titleImg, 0,0, width, height);
+
+        // fill(255, 0, 0);
+        // textSize(40);
+        // textAlign(CENTER, CENTER);
+        // text("Welcome", width/2, height/2-150);
+        // text("to my hardly working midterm", width/2, height/2-100);
+        // text("Press Enter to begin", width/2, height/2-50);
+        // text("Collect the Gold to advance", width/2, height/2);
    
     break;
 
