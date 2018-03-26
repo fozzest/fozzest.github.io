@@ -3,7 +3,8 @@
     {
       "scene": "Level 1",
       "sharkEase": [0.2],
-      "goldX": [400],
+      "sharkSize": [0.2],
+      "goldX": [50],
       "goldY": [400],
       "sharkNum": [3],
       "sharkPos": [
@@ -24,6 +25,7 @@
     {
       "scene": "Level 2",
       "sharkEase": [0.4],
+      "sharkSize": [0.4],
       "goldX": [100],
       "goldY": [500],
       "sharkNum": [5],
@@ -53,6 +55,7 @@
     {
       "scene": "Level 3",
       "sharkEase": [0.8],
+      "sharkSize": [0.6],
       "goldX": [500],
       "goldY": [500],
       "sharkNum": [8],
@@ -94,6 +97,7 @@
     {
       "scene": "Level 4",
       "sharkEase": [1],
+      "sharkSize": [0.8],
       "goldX": [200],
       "goldY": [300],
       "sharkNum": [10],

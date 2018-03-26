@@ -31,6 +31,9 @@ var diverImg;
 var gold; 
 var goldImg;
 
+var success;
+//var millisecond = millis();
+
 
 function preload(){
   sceneData = loadJSON('scenes.json');
@@ -45,7 +48,7 @@ createCanvas(800,800);
   //http://p5play.molleindustria.org/examples/index.html?fileName=flappyBird.js
   //continuing to gain understanding post-pong project
   diver = new Diver();
-  gold = new Gold();
+  gold = new Group();
   sharks = new Group();
 
 }
@@ -83,17 +86,18 @@ function drawScene(scene) {
         for ( var i = 0; i < sceneData.scenesData[0].sharkNum[0]; i ++){          
           var pos1 = createVector(sceneData.scenesData[0].sharkPos[i].x, 
           sceneData.scenesData[0].sharkPos[i].y);
-          createShark(pos1.x , pos1.y, sceneData.scenesData[0].sharkEase[0]);
+          createShark(pos1.x , pos1.y, sceneData.scenesData[0].sharkEase[0], sceneData.scenesData[0].sharkSize[0]);
           switching = 1;
         }
       }
       //http://p5play.molleindustria.org/examples/index.html?fileName=sprite4.js
       //struggled to get asset to travel to mouse, currently using an attractionPoint temporarily
-      gold.display(sceneData.scenesData[0].goldX[0], sceneData.scenesData[0].goldY[0]);
+      //gold.display(sceneData.scenesData[1].goldX[0], sceneData.scenesData[1].goldY[0]);
+      createGold(sceneData.scenesData[0].goldX[0], sceneData.scenesData[0].goldY[0]);
       diver.display();
       diver.attractionPoint(1, mouseX, mouseY); 
       drawSprites(); 
-   
+
     break;
 
     case sceneState.LEVEL2:
@@ -107,14 +111,18 @@ function drawScene(scene) {
         for ( var i = 0; i < sceneData.scenesData[1].sharkNum[0]; i ++){
           var pos1 = createVector(sceneData.scenesData[1].sharkPos[i].x, 
           sceneData.scenesData[1].sharkPos[i].y);
-          createShark(pos1.x , pos1.y , sceneData.scenesData[1].sharkEase[0]);
+          createShark(pos1.x , pos1.y , sceneData.scenesData[1].sharkEase[0], sceneData.scenesData[1].sharkSize[0]);
           switching = 0;
         }
       }
-      gold.display(sceneData.scenesData[1].goldX[0], sceneData.scenesData[1].goldY[0]);
+      createGold(sceneData.scenesData[1].goldX[0], sceneData.scenesData[1].goldY[0]);
       diver.display();
       diver.attractionPoint(1, mouseX, mouseY);
       drawSprites(); 
+
+      // if (diver.bounce(gold)) {
+      //   success = 2;
+      //   }
     
     break;
 
@@ -129,14 +137,15 @@ function drawScene(scene) {
         for ( var i = 0; i < sceneData.scenesData[2].sharkNum[0]; i ++){
           var pos1 = createVector(sceneData.scenesData[2].sharkPos[i].x, 
           sceneData.scenesData[2].sharkPos[i].y);
-          createShark(pos1.x , pos1.y , sceneData.scenesData[2].sharkEase[0]);
+          createShark(pos1.x , pos1.y , sceneData.scenesData[2].sharkEase[0], sceneData.scenesData[2].sharkSize[0]);
           switching = 1;
         }
       }
-      gold.display(sceneData.scenesData[2].goldX[0], sceneData.scenesData[2].goldY[0]);
+      createGold(sceneData.scenesData[2].goldX[0], sceneData.scenesData[2].goldY[0]);
       diver.display();
       diver.attractionPoint(1, mouseX, mouseY);
       drawSprites(); 
+
     
     break;
 
@@ -151,14 +160,18 @@ function drawScene(scene) {
         for ( var i = 0; i < sceneData.scenesData[3].sharkNum[0]; i ++){
           var pos1 = createVector(sceneData.scenesData[3].sharkPos[i].x, 
           sceneData.scenesData[3].sharkPos[i].y);
-          createShark(pos1.x , pos1.y , sceneData.scenesData[3].sharkEase[0]);
+          createShark(pos1.x , pos1.y , sceneData.scenesData[3].sharkEase[0], sceneData.scenesData[3].sharkSize[0]);
           switching = 0;
         }
       }
-      gold.display(sceneData.scenesData[3].goldX[0], sceneData.scenesData[3].goldY[0]);
+      createGold(sceneData.scenesData[3].goldX[0], sceneData.scenesData[3].goldY[0]);
       diver.display();
       diver.attractionPoint(1, mouseX, mouseY);
       drawSprites(); 
+      if (diver.bounce(gold)) {
+          success ==1;      
+        }
+
     
     break;
 
@@ -167,9 +180,13 @@ function drawScene(scene) {
       fill(255, 0,0);
       textSize(50);
       textAlign(CENTER, CENTER);
+      if (success == 1){
+      text("You did it, lets play again", width/2, height/2-100);  
+      } else{
       text("Let's Go Again", width/2, height/2-100);
       textSize(40);
       text("Press Enter to go again", width/2, height/2+100);
+    }
 
     break;
 
@@ -195,6 +212,9 @@ function checkTransition(whichScene) {
         }
         if (diver.bounce(gold)) {
           currentState++;
+          //found discussion regarding the removal of sprites once state has changed
+          //https://github.com/molleindustria/p5.play/issues/7
+          gold.removeSprites();
           setUpScene(currentState);      
         }
         //http://p5play.molleindustria.org/docs/classes/Sprite.html#method-bounce
@@ -210,6 +230,7 @@ function checkTransition(whichScene) {
         }
          if (diver.bounce(gold)) {
           currentState++;
+          gold.removeSprites();
           setUpScene(currentState);      
         }
         if (diver.bounce(sharks)) {
@@ -224,6 +245,7 @@ function checkTransition(whichScene) {
         }
          if (diver.bounce(gold)) {
           currentState++;
+          gold.removeSprites();
           setUpScene(currentState);      
         }
         if (diver.bounce(sharks)) {
@@ -238,6 +260,7 @@ function checkTransition(whichScene) {
         }
          if (diver.bounce(gold)) {
           currentState++;
+          gold.removeSprites();
           setUpScene(currentState);      
         }
         if (diver.bounce(sharks)) {
@@ -282,8 +305,7 @@ function keyPressed(){
 }
   
 
-
-function createShark( sharkX, sharkY, sEase) {
+function createShark( sharkX, sharkY, sEase, sSize) {
 
   var newShark = createSprite(sharkX, sharkY);
   var sharkImg  = loadImage("assets/shark.png");
@@ -291,7 +313,7 @@ function createShark( sharkX, sharkY, sEase) {
   newShark.addImage(sharkImg);
   //currently broken, need to create update and display functions os this could update iself
   newShark.attractionPoint(sEase, mouseX, mouseY);
-  newShark.scale = 0.5;
+  newShark.scale = 0.3 + sSize;
   newShark.setCollider('circle', 0, 0, 50);
   sharks.add(newShark);
   return newShark;
@@ -310,16 +332,29 @@ function Diver(){
     }
   }
 
-  function Gold(){
-    this.display = function(goldX, goldY){
-      gold.posX = goldX;
-      gold.posY = goldY;
-      gold = createSprite(gold.posY, gold.posX);
-      gold.setCollider("circle", 0, 0, 60);
-      gold.addImage(goldImg);
-      gold.scale = 0.5; 
-    }
-  }
+  function createGold( goldX, goldY) {
+
+  var newGold = createSprite(goldX, goldY);
+  var goldImg  = loadImage("assets/gold.png");
+
+  newGold.addImage(goldImg);
+  //currently broken, need to create update and display functions os this could update iself
+  newGold.scale = 0.5;
+  newGold.setCollider('circle', 0, 0, 50);
+  gold.add(newGold);
+  return newGold;
+}
+
+  //   function Gold(){
+  //   this.display = function(goldX, goldY){
+  //     gold.posX = goldX;
+  //     gold.posY = goldY;
+  //     gold = createSprite(gold.posY, gold.posX);
+  //     gold.setCollider("circle", 0, 0, 60);
+  //     gold.addImage(goldImg);
+  //     gold.scale = 0.5; 
+  //   }
+  // }
 
 
 
