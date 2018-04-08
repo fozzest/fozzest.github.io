@@ -10,7 +10,7 @@
 var weather;
 //referencing Daniel Shiffman 10.6 API Query Vid on breaking down API's 
 //https://www.youtube.com/watch?v=4UoUqnjUC2c&list=PLRqwX-V7Uu6a-SQiI4RtIwuOrLJGnel0r&index=6
-var api = 'http://api.openweathermap.org/data/2.5/weather?q=';
+var api = 'https://api.openweathermap.org/data/2.5/weather?q=';
 var apiKey = '&APPID=d3e8c610b6cb578b006a0fbd36a54820&units=metric';
 var input;
 
