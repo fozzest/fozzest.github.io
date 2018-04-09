@@ -59,8 +59,8 @@ function draw() {
     var humidity = weather.main.humidity;
     background(255+cloud, 242+cloud, 188+cloud);
      for (var i = 0; i < precip.length; i++) {
-    precip[i].update(temp,humidity,visibility);
-    precip[i].display(temp,humidity,visibility);
+    precip[i].update(temp);
+    precip[i].display();
   }
     noStroke();
     fill(255);
@@ -82,14 +82,14 @@ function Precip(wTemp,wHumidity,wVisibility) {
   this.speed = map(10, 0, 20, 1, 20);
   //var opacity = map(wVisibility, 0, 10000, 0, 255);
 
-  this.update = function() {
+  this.update = function(wTemp) {
     this.y = this.y + this.speed;
-    var grav = map(random(0,20), 0, 20, 0, 0.2);
+    var grav = map(random(wTemp), 0, 20, 0, 0.2);
     this.speed = this.speed + grav;
 
     if (this.y > height) {
       this.y = random(-200, -100);
-      this.speed = map(10, 0, 20, 4, 10);
+      this.speed = map(10, 0, 20, 3, 10);
     }
   }
 
