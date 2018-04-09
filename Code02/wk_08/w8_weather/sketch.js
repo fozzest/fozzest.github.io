@@ -16,6 +16,10 @@ var input;
 
 var precip = [];
 
+var wTemp;
+var wHumidity;
+var wVisibility;
+
 
 function setup() {
   createCanvas(800,800);
@@ -27,7 +31,7 @@ function setup() {
 
 
   for (var i = 0; i < 1000; i++) {
-    precip[i] = new Precip();
+    precip[i] = new Precip(wTemp,wHumidity,wVisibility);
   }
 }
 
@@ -42,7 +46,7 @@ function gotData(data){
 }
 
 function draw() {
-  background(0);
+  //background(255, 242, 188);
 
 
 
@@ -53,9 +57,10 @@ function draw() {
     var visibility = weather.visibility;
     var cloud = weather.clouds.all;
     var humidity = weather.main.humidity;
+    background(255+cloud, 242+cloud, 188+cloud);
      for (var i = 0; i < precip.length; i++) {
-    precip[i].update(temp,visibility);
-    precip[i].display(temp,visibility);
+    precip[i].update(temp,humidity,visibility);
+    precip[i].display(temp,humidity,visibility);
   }
     noStroke();
     fill(255);
@@ -69,9 +74,9 @@ function draw() {
   }
 }
 
-function Precip(wTemp,wVisibility) {
+function Precip(wTemp,wHumidity,wVisibility) {
   
-  this.x = random(1000);
+  this.x = random(10*100);
   this.y = random(-500, -50);
   this.pLength = map(10, 0, 20, 10, 20);
   this.speed = map(10, 0, 20, 1, 20);
@@ -84,7 +89,7 @@ function Precip(wTemp,wVisibility) {
 
     if (this.y > height) {
       this.y = random(-200, -100);
-      this.speed = map(random(0,10), 0, 20, 4, 10);
+      this.speed = map(10, 0, 20, 4, 10);
     }
   }
 
