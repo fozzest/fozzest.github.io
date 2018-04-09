@@ -68,9 +68,9 @@ function draw() {
     text('lon ' + weather.coord.lon, 10, 30);
     text('lat ' + weather.coord.lat, 10, 70);
     //testing based off of shiffman vid
-    ellipse(50,100,temp,temp);
-    ellipse(150,100,humidity,humidity);
-    ellipse(250,100,wind,wind);
+    //ellipse(50,100,temp,temp);
+    //ellipse(150,100,humidity,humidity);
+    //ellipse(250,100,wind,wind);
   }
 }
 
