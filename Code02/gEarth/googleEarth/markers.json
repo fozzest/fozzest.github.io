@@ -6,6 +6,7 @@
       "properties": {},
       "geometry": {
         "type": "Point",
+        "icon": "assets/house.png",
         "coordinates": [
           -122.03724861145018,
           37.901339178882395
