@@ -116,7 +116,13 @@ function newLocation(newLat,newLng){
 
 function on(){
 	var r = random(0,7);
-	map.setCenter(sceneData.features[r].geometry.coordinates[0], sceneData.features[r].geometry.coordinates[1]);
+	map.setCenter({lat: -34, lng: 151});
+
+	//attempting to call random location from my JSON
+
+	//map.setCenter(sceneData.features[r].geometry.coordinates[0], sceneData.features[r].geometry.coordinates[1]);
+
+
 	//newLocation(sceneData.features[random].geometry.coordinates[0], sceneData.features[random].geometry.coordinates[1]);
 }
 
