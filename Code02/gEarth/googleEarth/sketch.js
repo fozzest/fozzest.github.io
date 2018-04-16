@@ -9,18 +9,20 @@ var journal = '<input id="textarea" type="text" name="fname">Write about this pl
 var myLatlng = {lat: -34.397, lng: 150.644};
 var newLat = 55.749792;
 var newLng = 37.632495;
+var sceneData;
 
 var canvas;
 
 function setup() {
+sceneData = loadJSON('markers.json');
   initMap();
   head = createElement('h1', 'Google Maps Exploration: See where I have lived, and click to add your own homes');
   tStyles();
   button = createButton('visit a home');
   button1 = createButton('visit a home');
   bStyles();
-  button.mousePressed(onClick);
-  button1.mousePressed(onCLick01);
+  button.mousePressed(on);
+  button1.mousePressed(on);
   canvas = createCanvas(2000, 2000); 
 }
 
@@ -38,6 +40,7 @@ function tStyles(){
 function bStyles(){
 	button.style('font-family', 'Arial Black','Heavy', 'sans-serif');
   	button.style('padding', '10px');
+  	button.style('background-color', '#ffffff');
   	button.style('text-align', 'center');
   	button.style('font-size', '10px');
   	button.style('color', '#2f3b4f');
@@ -46,6 +49,7 @@ function bStyles(){
   	button1.style('text-align', 'center');
   	button1.style('font-size', '10px');
   	button1.style('color', '#2f3b4f');
+  	button1.style('background-color', '#ffffff');
 }
 
 
@@ -110,13 +114,27 @@ function newLocation(newLat,newLng){
 }
 
 
-function onClick(){
+function on(){
+	var r = random(0,7);
+	map.setCenter(sceneData.features[r].geometry.coordinates[0], sceneData.features[r].geometry.coordinates[1]);
+	//newLocation(sceneData.features[random].geometry.coordinates[0], sceneData.features[random].geometry.coordinates[1]);
+}
+
+//sceneData.features.geometry.coordinates[0], features.geometry.coordinates[1]
+
+function onGOOD(){
 	newLocation(-55.749792,-37.632495);
 }
 
-function onClick01(){
-	newLocation(55.749792,37.632495);
-}
+// function onClick01(){
+// 	newLocation(55.749792,37.632495);
+// }
+
+
+//go to new location
+//random length in the JSON (1,5)
+//select the specific coordinate part of the geoJSON
+// new location are these coordinates, called randomly every time button pressed
 
 
 
