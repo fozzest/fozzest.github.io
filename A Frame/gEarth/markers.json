@@ -6,10 +6,9 @@
       "properties": {},
       "geometry": {
         "type": "Point",
-        "icon": "assets/house.png",
         "coordinates": [
-          -35,
-          37
+          -122.03724861145018,
+          37.901339178882395
         ]
       }
     },
@@ -65,17 +64,6 @@
         "coordinates": [
           -287.1715611219406,
           19.011422748454475
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {},
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -214.94409799575803,
-          -37.82656516030752
         ]
       }
     }
