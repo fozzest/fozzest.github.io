@@ -21,7 +21,7 @@ function setup() {
 
 function initMap() {
     var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 8,
+      zoom: 8
       mapTypeId: 'terrain'
     });
 
@@ -44,6 +44,9 @@ function initMap() {
         //   position: {lat: 20.741895, lng: -20.989308} //NYC
         // });
 
+  var bounds = new google.maps.LatLngBounds(
+    marker1.getPosition(), marker2.getPosition());
+    map.fitBounds(bounds);
 
     google.maps.event.addListener(marker1, 'position_changed', update);
     google.maps.event.addListener(marker2, 'position_changed', update);
