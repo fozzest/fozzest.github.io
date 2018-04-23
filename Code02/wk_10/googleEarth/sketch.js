@@ -22,9 +22,12 @@ function setup() {
 function initMap() {
     var map = new google.maps.Map(document.getElementById('map'), {
       zoom: 8
-      mapTypeId: 'terrain'
+      
     });
 
+
+  map.controls[google.maps.ControlPosition.TOP_CENTER].push(
+      document.getElementById('info'));
 
     marker1 = new google.maps.Marker({
       map: map,
