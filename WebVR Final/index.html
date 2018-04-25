@@ -1,0 +1,221 @@
+<html>
+ <head>
+    <title>Nest In The Sky</title>
+
+     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+
+      <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+      <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+      <link href="https://fonts.googleapis.com/css?family=SF Pro" rel="stylesheet">
+
+  <style>
+    h1 {font-family: "Times New Roman", Times, serif;}
+    a {font-family: "Times New Roman", Times, serif;}
+    h5 {font-family: "Times New Roman", Times, serif;}
+</style>
+
+ </head>
+
+<body>
+
+  <div id="modal1" class="modal z-depth-0 transparent" style="overflow-y: hidden;overflow-x: hidden;max-height: 100%;">
+    <div class="modal-content center" style="padding:0px;">
+
+       <div class="hide-on-small-only">
+            <h1 style="margin-top: 350px  font-size:490%;color:#efefef"> The Nest </h1>
+            <h5 style="margin-top: 100px  ;color:#efefef"> Click below to being building your nest </h5>
+       </div>
+
+
+
+    </div>
+
+  </div>
+          
+     <a-scene raycaster-autorefresh>
+       <a-assets>
+
+         <!--   <audio loop id="track01" src="https://ucarecdn.com/2b63a99d-b13f-4de3-97e3-5f5be134a184/" type="audio/mp3" autoplay="true"></audio> -->
+
+           <audio id="trackBox" src="assets/a_03.mp4" type="audio/mp4" ></audio>
+
+           <audio id="trackSphere" src="assets/a_02.mp4" type="audio/mp4" ></audio>
+
+           <audio id="trackPoly" src="assets/a_01.mp4" type="audio/mp4"  ></audio>
+           
+        </a-assets>
+
+             <a-camera id="cam" position="0 1.6 5" >
+               
+                <a-entity id="cursor_obj" cursor="fuse: true;  fuseTimeout: 500;"
+                 scale=".02 .02 .02"
+                 position="0 0 -2"
+                 geometry="primitive: ring"
+                 material="color: white; ">
+
+                </a-entity>
+             </a-camera>
+
+         <a-sound id="str_obj" src="https://ucarecdn.com/2b63a99d-b13f-4de3-97e3-5f5be134a184/" volume="2.75"  position="0 2.5 0"  autoplay="true" loop="true"></a-sound>
+
+
+              <a-sphere  geometry="segmentsHeight:4;segmentsWidth:10" radius="0.5" material="shader:flat"  id="ang_obj" position="1 2.924 1" rotation="0 45 0" color="coral" sound="trackPoly;volume:3;on: click">
+                <a-animation attribute="rotation" dur="5000" begin="click" fill="forwards" repeat="0" direction="alternate" to="360 360 0" direction="alternate"></a-animation>
+                <a-animation attribute="position" dur="5000" fill="forwards"  to="1 2.7 1" direction="alternate"></a-animation>
+                <a-animation attribute="position" dur="10000" begin="click" to="6.3 44 0"></a-animation> 
+            </a-sphere>
+
+            <a-octahedron  geometry="segmentsHeight:4;segmentsWidth:10" radius="0.5" material="shader:flat"  id="ang_obj" position="6.3 2.924 10" rotation="0 45 0" color="red" sound="trackSphere;volume:3;">
+                <a-animation attribute="rotation" dur="5000" begin="click" fill="forwards" repeat="0" direction="alternate" to="360 360 0" direction="alternate"></a-animation>
+                <a-animation attribute="position" dur="5000" fill="forwards"  to="6.3 2.7 10" direction="alternate"></a-animation>
+                <a-animation attribute="position" dur="10000" begin="click" to="6.3 44 0"></a-animation> 
+            </a-octahedron>
+
+             <a-box  geometry="segmentsHeight:4;segmentsWidth:10" radius="0.5" material="shader:flat"  id="ang_obj" position="10 2.924 5" rotation="0 45 0" color="blue" sound="trackBox;autoplay:true">
+                <a-animation attribute="rotation" dur="5000" begin="click" fill="forwards" repeat="0" direction="alternate" to="360 360 0" direction="alternate"></a-animation>
+                <a-animation attribute="position" dur="5000" fill="forwards"  to="10 2.7 5" direction="alternate"></a-animation>
+                <a-animation attribute="position" dur="10000" begin="click" to="6.3 44 0"></a-animation> 
+            </a-box>
+
+
+
+                          <a-sphere  geometry="segmentsHeight:4;segmentsWidth:10" radius="0.5" material="shader:flat"  id="ang_obj" position="30 2.924 30" rotation="0 45 0" color="coral" sound="trackPoly;volume:3;on: click">
+                <a-animation attribute="rotation" dur="5000" begin="click" fill="forwards" repeat="0" direction="alternate" to="360 360 0" direction="alternate"></a-animation>
+                <a-animation attribute="position" dur="5000" fill="forwards"  to="30 2.7 30" direction="alternate"></a-animation>
+                <a-animation attribute="position" dur="10000" begin="click" to="6.3 44 0"></a-animation> 
+            </a-sphere>
+
+            <a-octahedron  geometry="segmentsHeight:4;segmentsWidth:10" radius="0.5" material="shader:flat"  id="ang_obj" position="20 2.924 10" rotation="0 45 0" color="red" sound="trackSphere;volume:3;">
+                <a-animation attribute="rotation" dur="5000" begin="click" fill="forwards" repeat="0" direction="alternate" to="360 360 0" direction="alternate"></a-animation>
+                <a-animation attribute="position" dur="5000" fill="forwards"  to="20 2.7 10" direction="alternate"></a-animation>
+                <a-animation attribute="position" dur="10000" begin="click" to="6.3 44 0"></a-animation> 
+            </a-octahedron>
+
+             <a-box  geometry="segmentsHeight:4;segmentsWidth:10" radius="0.5" material="shader:flat"  id="ang_obj" position="-10 2.924 -17" rotation="0 45 0" color="blue" sound="trackBox;autoplay:true">
+                <a-animation attribute="rotation" dur="5000" begin="click" fill="forwards" repeat="0" direction="alternate" to="360 360 0" direction="alternate"></a-animation>
+                <a-animation attribute="position" dur="5000" fill="forwards"  to="-10 2.7 -17" direction="alternate"></a-animation>
+                <a-animation attribute="position" dur="10000" begin="click" to="6.3 44 0"></a-animation> 
+            </a-box>
+
+
+
+
+                          <a-sphere  geometry="segmentsHeight:4;segmentsWidth:10" radius="0.5" material="shader:flat"  id="ang_obj" position="-3 2.924 -4" rotation="0 45 0" color="coral" sound="trackPoly;volume:3;on: click">
+                <a-animation attribute="rotation" dur="5000" begin="click" fill="forwards" repeat="0" direction="alternate" to="360 360 0" direction="alternate"></a-animation>
+                <a-animation attribute="position" dur="5000" fill="forwards"  to="-3 2.7 -4" direction="alternate"></a-animation>
+                <a-animation attribute="position" dur="10000" begin="click" to="6.3 44 0"></a-animation> 
+            </a-sphere>
+
+            <a-octahedron  geometry="segmentsHeight:4;segmentsWidth:10" radius="0.5" material="shader:flat"  id="ang_obj" position="-15 2.924 2" rotation="0 45 0" color="red" sound="trackSphere;volume:3;">
+                <a-animation attribute="rotation" dur="5000" begin="click" fill="forwards" repeat="0" direction="alternate" to="360 360 0" direction="alternate"></a-animation>
+                <a-animation attribute="position" dur="5000" fill="forwards"  to="-15 2.7 2" direction="alternate"></a-animation>
+                <a-animation attribute="position" dur="10000" begin="click" to="6.3 44 0"></a-animation> 
+            </a-octahedron>
+
+             <a-box  geometry="segmentsHeight:4;segmentsWidth:10" radius="0.5" material="shader:flat"  id="ang_obj" position="-6 2.924 -21" rotation="0 45 0" color="blue" sound="trackBox;autoplay:true">
+                <a-animation attribute="rotation" dur="5000" begin="click" fill="forwards" repeat="0" direction="alternate" to="360 360 0" direction="alternate"></a-animation>
+                <a-animation attribute="position" dur="5000" fill="forwards"  to="-6 2.7 -21" direction="alternate"></a-animation>
+                <a-animation attribute="position" dur="10000" begin="click" to="6.3 44 0"></a-animation> 
+            </a-box>
+
+
+
+                          <a-sphere  geometry="segmentsHeight:4;segmentsWidth:10" radius="0.5" material="shader:flat"  id="ang_obj" position="1 2.924 1" rotation="0 45 0" color="coral" sound="trackPoly;volume:3;on: click">
+                <a-animation attribute="rotation" dur="5000" begin="click" fill="forwards" repeat="0" direction="alternate" to="360 360 0" direction="alternate"></a-animation>
+                <a-animation attribute="position" dur="5000" fill="forwards"  to="1 2.7 1" direction="alternate"></a-animation>
+                <a-animation attribute="position" dur="10000" begin="click" to="6.3 44 0"></a-animation> 
+            </a-sphere>
+
+            <a-octahedron  geometry="segmentsHeight:4;segmentsWidth:10" radius="0.5" material="shader:flat"  id="ang_obj" position="6.3 2.924 10" rotation="0 45 0" color="red" sound="trackSphere;volume:3;">
+                <a-animation attribute="rotation" dur="5000" begin="click" fill="forwards" repeat="0" direction="alternate" to="360 360 0" direction="alternate"></a-animation>
+                <a-animation attribute="position" dur="5000" fill="forwards"  to="6.3 2.7 10" direction="alternate"></a-animation>
+                <a-animation attribute="position" dur="10000" begin="click" to="6.3 44 0"></a-animation> 
+            </a-octahedron>
+
+             <a-box  geometry="segmentsHeight:4;segmentsWidth:10" radius="0.5" material="shader:flat"  id="ang_obj" position="10 2.924 5" rotation="0 45 0" color="blue" sound="trackBox;autoplay:true">
+                <a-animation attribute="rotation" dur="5000" begin="click" fill="forwards" repeat="0" direction="alternate" to="360 360 0" direction="alternate"></a-animation>
+                <a-animation attribute="position" dur="5000" fill="forwards"  to="10 2.7 5" direction="alternate"></a-animation>
+                <a-animation attribute="position" dur="10000" begin="click" to="6.3 44 0"></a-animation> 
+            </a-box>
+
+
+
+                          <a-sphere  geometry="segmentsHeight:4;segmentsWidth:10" radius="0.5" material="shader:flat"  id="ang_obj" position="-1 2.924 1" rotation="0 45 0" color="coral" sound="trackPoly;volume:3;on: click">
+                <a-animation attribute="rotation" dur="5000" begin="click" fill="forwards" repeat="0" direction="alternate" to="360 360 0" direction="alternate"></a-animation>
+                <a-animation attribute="position" dur="5000" fill="forwards"  to="-1 2.7 1" direction="alternate"></a-animation>
+                <a-animation attribute="position" dur="10000" begin="click" to="6.3 44 0"></a-animation> 
+            </a-sphere>
+
+            <a-octahedron  geometry="segmentsHeight:4;segmentsWidth:10" radius="0.5" material="shader:flat"  id="ang_obj" position="3 2.924 -25" rotation="0 45 0" color="red" sound="trackSphere;volume:3;">
+                <a-animation attribute="rotation" dur="5000" begin="click" fill="forwards" repeat="0" direction="alternate" to="360 360 0" direction="alternate"></a-animation>
+                <a-animation attribute="position" dur="5000" fill="forwards"  to="3 2.7 -25" direction="alternate"></a-animation>
+                <a-animation attribute="position" dur="10000" begin="click" to="6.3 44 0"></a-animation> 
+            </a-octahedron>
+
+             <a-box  geometry="segmentsHeight:4;segmentsWidth:10" radius="0.5" material="shader:flat"  id="ang_obj" position="44 2.924 5" rotation="0 45 0" color="blue" sound="trackBox;autoplay:true">
+                <a-animation attribute="rotation" dur="5000" begin="click" fill="forwards" repeat="0" direction="alternate" to="360 360 0" direction="alternate"></a-animation>
+                <a-animation attribute="position" dur="5000" fill="forwards"  to="44 2.7 5" direction="alternate"></a-animation>
+                <a-animation attribute="position" dur="10000" begin="click" to="6.3 44 0"></a-animation> 
+            </a-box>
+
+
+
+                          <a-sphere  geometry="segmentsHeight:4;segmentsWidth:10" radius="0.5" material="shader:flat"  id="ang_obj" position="-25 2.924 1" rotation="0 45 0" color="coral" sound="trackPoly;volume:3;on: click">
+                <a-animation attribute="rotation" dur="5000" begin="click" fill="forwards" repeat="0" direction="alternate" to="360 360 0" direction="alternate"></a-animation>
+                <a-animation attribute="position" dur="5000" fill="forwards"  to="-25 2.7 1" direction="alternate"></a-animation>
+                <a-animation attribute="position" dur="10000" begin="click" to="6.3 44 0"></a-animation> 
+            </a-sphere>
+
+            <a-octahedron  geometry="segmentsHeight:4;segmentsWidth:10" radius="0.5" material="shader:flat"  id="ang_obj" position="3 2.924 18" rotation="0 45 0" color="red" sound="trackSphere;volume:3;">
+                <a-animation attribute="rotation" dur="5000" begin="click" fill="forwards" repeat="0" direction="alternate" to="360 360 0" direction="alternate"></a-animation>
+                <a-animation attribute="position" dur="5000" fill="forwards"  to="3 2.7 18" direction="alternate"></a-animation>
+                <a-animation attribute="position" dur="10000" begin="click" to="6.3 44 0"></a-animation> 
+            </a-octahedron>
+
+             <a-box  geometry="segmentsHeight:4;segmentsWidth:10" radius="0.5" material="shader:flat"  id="ang_obj" position="-21 2.924 -5" rotation="0 45 0" color="blue" sound="trackBox;autoplay:true">
+                <a-animation attribute="rotation" dur="5000" begin="click" fill="forwards" repeat="0" direction="alternate" to="360 360 0" direction="alternate"></a-animation>
+                <a-animation attribute="position" dur="5000" fill="forwards"  to="-21 2.7 -5" direction="alternate"></a-animation>
+                <a-animation attribute="position" dur="10000" begin="click" to="6.3 44 0"></a-animation> 
+            </a-box>
+
+
+
+        <a-entity id="enviro"  position="0 -1 0" environment="
+          playArea:1;
+          groundYScale: 20;
+          fog: 0.7;
+          dressingAmount: 0;
+          groundColor2: #102b0d;
+          groundColor: #0f270c;
+          groundTexture: walkernoise;
+          grid:none;
+          lightPosition: 1 .03 -1;
+          active: true;">
+       
+          <a-animation attribute="lightPostion" repeat="indefinite"  dur="7000" to="3 0.3 -1"></a-animation>
+        </a-entity>
+
+    </a-scene>
+
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>  
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.modal').modal({
+    }
+  );
+       $('#modal1').modal('open');
+  });
+  
+</script>
+
+
+
+  </script></body>
+
+</html>
+
