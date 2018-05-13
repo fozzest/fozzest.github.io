@@ -12,6 +12,8 @@ var mtEv = document.getElementById('mtEv');
 var mtKi = document.getElementById('mtKi');
 var mtAc = document.getElementById('mtAc');
 var mtAc = document.getElementById('mtAc');
+var wM = document.getElementById('wM');
+var so = document.getElementById('so');
 var newLat;
 var newLng;
 var poly;
@@ -21,6 +23,8 @@ var latLng;
 var myElevations = [];
 var counter = 0;
 var map;
+
+var wire = true;
 
 var currentState = "start";
 
@@ -317,21 +321,28 @@ function runThreeJS(){
 
       console.log(geometry.vertices[3].z);
 
-  var light = new THREE.PointLight(0xffffff);
-  light.position.set(100,200,100);
-  scene.add(light);
-  light  = new THREE.DirectionalLight(0xffffff, 1.0);
-  light.position.set(0, 0, 0);
-  scene.add(light);
-  light  = new THREE.AmbientLight(0x404040);
-  scene.add(light);
+    var light = new THREE.PointLight(0xffffff);
+    light.position.set(100,200,100);
+    scene.add(light);
+    light  = new THREE.DirectionalLight(0xffffff, 1.0);
+    light.position.set(0, 0, 0);
+    scene.add(light);
+    light  = new THREE.AmbientLight(0x404040);
+    scene.add(light);
+
+
 
     var material = new THREE.MeshPhongMaterial({
             color: 0xd60000,
             wireframeLinewidth: 10,
-            wireframe: true
+            wireframe: wire
 
         });
+
+
+
+
+
 
     var plane = new THREE.Mesh(geometry, material);
     scene.add(plane);
@@ -343,15 +354,28 @@ function runThreeJS(){
 
     render();
 
-    function render() {
-        controls.update();    
-        requestAnimationFrame(render);
-        plane.rotation.z += 0.005;
-        renderer.render(scene, camera);
+  function render() {
+      controls.update();    
+      requestAnimationFrame(render);
+      plane.rotation.z += 0.005;
+      renderer.render(scene, camera);
 
-    }
+  }
 
 }
+
+//TOGGLE MATERIAL
+
+
+    wM.addEventListener("click", function(){
+      if (wire == true){
+        wire = false;
+      } else if (wire ==false){
+        wire = true;
+      }
+      console.log(wire);
+      
+    });
 
 
 
