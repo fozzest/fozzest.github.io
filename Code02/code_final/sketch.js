@@ -102,7 +102,7 @@ switch (currentState) {
     case "ever":
        var myCoords =  buildCoords(jsonData[0].features[0].geometry.coordinates);
        document.getElementById("subTitle").innerHTML = "Mt Everest";
-       document.getElementById("p1").innerHTML = "The Tallest Mountain In The World";
+       document.getElementById("p1").innerHTML = "The Tallest Mountain In The World. Everest grows by nearly a centimetre every year.";
        console.log(myCoords);
        var elevator = new google.maps.ElevationService;
        loadElevation(myCoords, elevator, map);
@@ -111,7 +111,7 @@ switch (currentState) {
     case "kili":
  var myCoords =  buildCoords(jsonData[0].features[1].geometry.coordinates);
       document.getElementById("subTitle").innerHTML = "Mt Kilimanjaro";
-      document.getElementById("p1").innerHTML = "The Tallest Mountain In Africa";
+      document.getElementById("p1").innerHTML = "The Tallest Mountain In Africa. It is the highest freestanding mountain in the world.";
       console.log(myCoords);
       var elevator = new google.maps.ElevationService;
       loadElevation(myCoords, elevator, map);
@@ -120,7 +120,7 @@ switch (currentState) {
     case "aco":
       var myCoords =  buildCoords(jsonData[0].features[2].geometry.coordinates);
       document.getElementById("subTitle").innerHTML = "Aconcagua";
-      document.getElementById("p1").innerHTML = "The Tallest Mountain In South America";
+      document.getElementById("p1").innerHTML = "The Tallest Mountain In South America. It is also the highest point outside of Asia, as well as the entire Southern and Western Hemispheres.";
       console.log(myCoords);
       var elevator = new google.maps.ElevationService;
       loadElevation(myCoords, elevator, map);
@@ -129,7 +129,7 @@ switch (currentState) {
     case "blanc":
       var myCoords =  buildCoords(jsonData[0].features[3].geometry.coordinates);
       document.getElementById("subTitle").innerHTML = "Mont Blanc";
-      document.getElementById("p1").innerHTML = "The Tallest Mountain In Europe";
+      document.getElementById("p1").innerHTML = "The Tallest Mountain In Europe. Over 20,000 climbers summit every year.";
       console.log(myCoords);
       var elevator = new google.maps.ElevationService;
       loadElevation(myCoords, elevator, map);
