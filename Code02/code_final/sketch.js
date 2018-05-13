@@ -48,7 +48,7 @@ var jsonData = [];
       });
   });
 
-//old style of single json load and parse
+//OLD style of single json load and parse
 
 // var request;
 // request = new XMLHttpRequest();
@@ -91,7 +91,7 @@ drawScene();
 
 function drawScene(){
 
-switch (currentState) {
+  switch (currentState) {
     case "start":
       var myCoords =  buildCoords(jsonData[0].features[0].geometry.coordinates);
       console.log(myCoords);
@@ -109,7 +109,7 @@ switch (currentState) {
       break;
 
     case "kili":
- var myCoords =  buildCoords(jsonData[0].features[1].geometry.coordinates);
+      var myCoords =  buildCoords(jsonData[0].features[1].geometry.coordinates);
       document.getElementById("subTitle").innerHTML = "Mt Kilimanjaro";
       document.getElementById("p1").innerHTML = "The Tallest Mountain In Africa. It is the highest freestanding mountain in the world.";
       console.log(myCoords);
@@ -304,6 +304,12 @@ function runThreeJS(){
 
     var geometry = new THREE.PlaneGeometry(60, 60, 9, 9);
 
+    //https://stackoverflow.com/questions/30105141/three-js-custom-geometry-lighting-does-not-work
+    //reference for allowing light to apply to a PlaneGeometry
+
+    geometry.computeFaceNormals();
+    geometry.computeVertexNormals();
+
 //pump in elevation data
   for (var i = 0; i < geometry.vertices.length; i++) {
             geometry.vertices[i].z = myElevations[i] / 50 - 80;
@@ -311,20 +317,25 @@ function runThreeJS(){
 
       console.log(geometry.vertices[3].z);
 
-  // var directionalLight = new THREE.DirectionalLight( 0xb0c5e8, 10);
-  //       directionalLight.position.set( 400, 400, -500);
-  //       scene.add(directionalLight);
-
-    var ambientLight = new THREE.AmbientLight(0xb0c5e8, 10 );
-      scene.add(ambientLight);
+  var light = new THREE.PointLight(0xffffff);
+  light.position.set(100,200,100);
+  scene.add(light);
+  light  = new THREE.DirectionalLight(0xffffff, 1.0);
+  light.position.set(0, 0, 0);
+  scene.add(light);
+  light  = new THREE.AmbientLight(0x404040);
+  scene.add(light);
 
     var material = new THREE.MeshPhongMaterial({
-            color: 0x76c138, 
+            color: 0xd60000,
+            wireframeLinewidth: 10,
             wireframe: true
+
         });
 
     var plane = new THREE.Mesh(geometry, material);
     scene.add(plane);
+
 
     var controls = new THREE.TrackballControls(camera); 
 
