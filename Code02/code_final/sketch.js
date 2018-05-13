@@ -339,14 +339,8 @@ function runThreeJS(){
 
         });
 
-
-
-
-
-
     var plane = new THREE.Mesh(geometry, material);
     scene.add(plane);
-
 
     var controls = new THREE.TrackballControls(camera); 
 
