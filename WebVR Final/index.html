@@ -38,6 +38,8 @@
      <a-scene raycaster-autorefresh>
        <a-assets>
 
+          <img id="apple1" src="https://ucarecdn.com/f349a1fd-9354-4926-8c17-b9155c584ebe/">
+
          <!--   <audio loop id="track01" src="https://ucarecdn.com/2b63a99d-b13f-4de3-97e3-5f5be134a184/" type="audio/mp3" autoplay="true"></audio> -->
 
            <audio id="trackBox" src="assets/a_03.mp4" type="audio/mp4" ></audio>
@@ -61,6 +63,13 @@
 
          <a-sound id="str_obj" src="https://ucarecdn.com/2b63a99d-b13f-4de3-97e3-5f5be134a184/" volume="2.75"  position="0 2.5 0"  autoplay="true" loop="true"></a-sound>
 
+
+          <a-entity link="href: https://thimbleprojects.org/fozzest/471423; title: Visit Apple Farm A; image: #apple1" position="-0.8 1 -2.5" scale="1 1 1">
+        <a-animation attribute= "scale" begin= "mouseenter" dur = "300" to= "1 1 1"></a-animation>
+        <a-animation attribute= "scale" begin= "mouseleave" dur = "300" to= "0.7 0.7 0.7"></a-animation>
+
+      
+      </a-entity>
 
               <a-sphere  geometry="segmentsHeight:4;segmentsWidth:10" radius="0.5" material="shader:flat"  id="ang_obj" position="1 2.924 1" rotation="0 45 0" color="coral" sound="trackPoly;volume:3;on: click">
                 <a-animation attribute="rotation" dur="5000" begin="click" fill="forwards" repeat="0" direction="alternate" to="360 360 0" direction="alternate"></a-animation>
@@ -198,6 +207,9 @@
           <a-animation attribute="lightPostion" repeat="indefinite"  dur="7000" to="3 0.3 -1"></a-animation>
         </a-entity>
 
+
+
+
     </a-scene>
 
  
@@ -215,7 +227,6 @@
 
 
 
-  </script></body>
+</body>
 
 </html>
-

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>ANY MOUNTAIN </title>
+    <style>
+      
+      #map {
+        height: 800px;
+        width: 100%;
+        
+        justify-content: center;
+        align-items: center;
+      }
+ 
+      h1{
+        margin-left: 25%;
+        justify-content: center;
+        align-items: center;
+
+      }
+
+      html, body {
+
+        font-family: "SF Pro Text", bold, sans-serif;
+        height: 100%;
+        background: #c40720;
+      } 
+
+      canvas{
+        top: 450px;
+        left:0px;
+        position:absolute;
+      }
+
+
+    </style>
+    <script src="https://www.google.com/jsapi"></script>
+    <script src="p5.min.js"></script>
+    <script src="three.js"></script>
+
+  </head>
+  <body>
+    <h1> ANY MOUNTAIN </h1>
+      
+      <div id="map" style="height:250px;"></div>
+<div id= "buttonFam">
+      <button id= "mtEv">Mt Everest</button>
+      <button id= "mtKi">Mt Kilimanjaro</button>
+      <button id= "mtAc">Aconcagua</button>
+      <button id= "mtBl">Mont Blanc</button>
+</div>
+      <h2 id= "subTitle">Pick a Mountain</h2>
+      <p id="p1">.</p>
+
+      <div id="three"></div>
+
+      <script src="three.min.js"></script>
+      <script src="TrackballControls.js"></script> 
+      <script src="sketch.js"></script>
+
+      <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkBYD0Did7g70Ziz4qHfl4ZHdnxqb0ai8&callback=initMap">
+      </script>
+   
+  </body>
+</html>
+   
