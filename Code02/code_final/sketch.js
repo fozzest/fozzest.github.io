@@ -17,34 +17,47 @@ var newLng;
 var poly;
 var map;
 var path;
-var allTheData;
 var latLng;
 var myElevations = [];
 var counter = 0;
 var map;
 
-
 var currentState = "start";
-
-//BG colour ? #c40720
-
 
 //LOAD JSON 
 
-//JSON built with http://geojson.io/#map=4/2.90/-49.39
+//GEOJSON for coordinates and JSON that houses map syle data
 //polyLine coordinates set in arrays
 
-var request;
-request = new XMLHttpRequest();
-request.open('GET', 'markers.json', true);
-request.onload = function(event) {
-allTheData = JSON.parse(event.target.responseText);
+//load multiple local JSON files in a single array
+//reference
+//https://stackoverflow.com/questions/28690096/load-multiple-json-files-in-pure-javascript
+var loadFile = function (filePath, done) {
+    var xhr = new XMLHttpRequest();
+    xhr.onload = function () { return done(this.responseText) }
+    xhr.open("GET", filePath, true);
+    xhr.send();
 }
-request.send();
+var myFiles = [ "markers.json", "mapStyles.json" ];
+// stores data
+var jsonData = [];
 
+  myFiles.forEach(function (file, i) {
+      loadFile(file, function (responseText) {
+          jsonData[i] = JSON.parse(responseText);
+      });
+  });
 
-      
-//google.load('visualization', '1', {packages: ['columnchart']});
+//old style of single json load and parse
+
+// var request;
+// request = new XMLHttpRequest();
+// request.open('GET', 'markers.json', true);
+// request.onload = function(event) {
+// jsonData[0] = JSON.parse(event.target.responseText);
+// }
+// request.send();
+
 
 window.onload = function(){
 
@@ -61,7 +74,7 @@ window.onload = function(){
   // create new object with lat and lng properties for each array 
     return wholeObject;
     }
-    var myCoords =  buildCoords(allTheData.features[1].geometry.coordinates);
+    var myCoords =  buildCoords(jsonData[0].features[1].geometry.coordinates);
     console.log("init");
     console.log(myCoords);
     var elevator = new google.maps.ElevationService;
@@ -80,15 +93,14 @@ function drawScene(){
 
 switch (currentState) {
     case "start":
-      var myCoords =  buildCoords(allTheData.features[0].geometry.coordinates);
+      var myCoords =  buildCoords(jsonData[0].features[0].geometry.coordinates);
       console.log(myCoords);
       var elevator = new google.maps.ElevationService;
       loadElevation(myCoords, elevator, map);
-
-
       break;
+
     case "ever":
-       var myCoords =  buildCoords(allTheData.features[0].geometry.coordinates);
+       var myCoords =  buildCoords(jsonData[0].features[0].geometry.coordinates);
        document.getElementById("subTitle").innerHTML = "Mt Everest";
        document.getElementById("p1").innerHTML = "The Tallest Mountain In The World";
        console.log(myCoords);
@@ -97,32 +109,32 @@ switch (currentState) {
       break;
 
     case "kili":
-
- var myCoords =  buildCoords(allTheData.features[1].geometry.coordinates);
+ var myCoords =  buildCoords(jsonData[0].features[1].geometry.coordinates);
       document.getElementById("subTitle").innerHTML = "Mt Kilimanjaro";
       document.getElementById("p1").innerHTML = "The Tallest Mountain In Africa";
       console.log(myCoords);
       var elevator = new google.maps.ElevationService;
       loadElevation(myCoords, elevator, map);
-
       break;
-    case "aco":
 
-      var myCoords =  buildCoords(allTheData.features[2].geometry.coordinates);
+    case "aco":
+      var myCoords =  buildCoords(jsonData[0].features[2].geometry.coordinates);
       document.getElementById("subTitle").innerHTML = "Aconcagua";
       document.getElementById("p1").innerHTML = "The Tallest Mountain In South America";
       console.log(myCoords);
       var elevator = new google.maps.ElevationService;
       loadElevation(myCoords, elevator, map);
       break;
+
     case "blanc":
-      var myCoords =  buildCoords(allTheData.features[3].geometry.coordinates);
+      var myCoords =  buildCoords(jsonData[0].features[3].geometry.coordinates);
       document.getElementById("subTitle").innerHTML = "Mont Blanc";
       document.getElementById("p1").innerHTML = "The Tallest Mountain In Europe";
       console.log(myCoords);
       var elevator = new google.maps.ElevationService;
       loadElevation(myCoords, elevator, map);
       break;
+
     default:
     break;
   }
@@ -169,212 +181,23 @@ function buildCoords(arr) {
   
 }
 
-
 //  CREATE A MAP THAT DISPLAYS ALL PATHS/MOUNTAIN ASCENTS
 
-
-
 function initMap()  {
-  var path01 =  buildCoords(allTheData.features[0].geometry.coordinates);
-  var path02 =  buildCoords(allTheData.features[1].geometry.coordinates);
-  var path03 =  buildCoords(allTheData.features[2].geometry.coordinates);
-  var path04 =  buildCoords(allTheData.features[3].geometry.coordinates);
+  var path01 =  buildCoords(jsonData[0].features[0].geometry.coordinates); // Mt. Everest
+  var path02 =  buildCoords(jsonData[0].features[1].geometry.coordinates); // Mt. Kilimanjaro
+  var path03 =  buildCoords(jsonData[0].features[2].geometry.coordinates); // Aconcagua
+  var path04 =  buildCoords(jsonData[0].features[3].geometry.coordinates); // Mt. Whitney
 
   //using custom styler built with
   //https://mapstyle.withgoogle.com/
-
   //style setting reference : https://developers.google.com/maps/documentation/javascript/styling
 
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 10,
     center: {lat: 27.97617114981274, lng: 86.90394060919834},
     mapTypeId: 'terrain',
-    styles: [
-  {
-    "elementType": "geometry",
-    "stylers": [
-      {
-        "color": "#212121"
-      }
-    ]
-  },
-  {
-    "elementType": "labels.icon",
-    "stylers": [
-      {
-        "visibility": "off"
-      }
-    ]
-  },
-  {
-    "elementType": "labels.text.fill",
-    "stylers": [
-      {
-        "color": "#757575"
-      }
-    ]
-  },
-  {
-    "elementType": "labels.text.stroke",
-    "stylers": [
-      {
-        "color": "#212121"
-      }
-    ]
-  },
-  {
-    "featureType": "administrative",
-    "elementType": "geometry",
-    "stylers": [
-      {
-        "color": "#757575"
-      }
-    ]
-  },
-  {
-    "featureType": "administrative.country",
-    "elementType": "labels.text.fill",
-    "stylers": [
-      {
-        "color": "#9e9e9e"
-      }
-    ]
-  },
-  {
-    "featureType": "administrative.land_parcel",
-    "stylers": [
-      {
-        "visibility": "off"
-      }
-    ]
-  },
-  {
-    "featureType": "administrative.locality",
-    "elementType": "labels.text.fill",
-    "stylers": [
-      {
-        "color": "#bdbdbd"
-      }
-    ]
-  },
-  {
-    "featureType": "poi",
-    "elementType": "labels.text.fill",
-    "stylers": [
-      {
-        "color": "#757575"
-      }
-    ]
-  },
-  {
-    "featureType": "poi.park",
-    "elementType": "geometry",
-    "stylers": [
-      {
-        "color": "#181818"
-      }
-    ]
-  },
-  {
-    "featureType": "poi.park",
-    "elementType": "labels.text.fill",
-    "stylers": [
-      {
-        "color": "#616161"
-      }
-    ]
-  },
-  {
-    "featureType": "poi.park",
-    "elementType": "labels.text.stroke",
-    "stylers": [
-      {
-        "color": "#1b1b1b"
-      }
-    ]
-  },
-  {
-    "featureType": "road",
-    "elementType": "geometry.fill",
-    "stylers": [
-      {
-        "color": "#2c2c2c"
-      }
-    ]
-  },
-  {
-    "featureType": "road",
-    "elementType": "labels.text.fill",
-    "stylers": [
-      {
-        "color": "#8a8a8a"
-      }
-    ]
-  },
-  {
-    "featureType": "road.arterial",
-    "elementType": "geometry",
-    "stylers": [
-      {
-        "color": "#373737"
-      }
-    ]
-  },
-  {
-    "featureType": "road.highway",
-    "elementType": "geometry",
-    "stylers": [
-      {
-        "color": "#3c3c3c"
-      }
-    ]
-  },
-  {
-    "featureType": "road.highway.controlled_access",
-    "elementType": "geometry",
-    "stylers": [
-      {
-        "color": "#4e4e4e"
-      }
-    ]
-  },
-  {
-    "featureType": "road.local",
-    "elementType": "labels.text.fill",
-    "stylers": [
-      {
-        "color": "#616161"
-      }
-    ]
-  },
-  {
-    "featureType": "transit",
-    "elementType": "labels.text.fill",
-    "stylers": [
-      {
-        "color": "#757575"
-      }
-    ]
-  },
-  {
-    "featureType": "water",
-    "elementType": "geometry",
-    "stylers": [
-      {
-        "color": "#000000"
-      }
-    ]
-  },
-  {
-    "featureType": "water",
-    "elementType": "labels.text.fill",
-    "stylers": [
-      {
-        "color": "#3d3d3d"
-      }
-    ]
-  }
-]
+    styles: jsonData[1]
   });
 
   // Create an ElevationService.
@@ -543,7 +366,7 @@ function runThreeJS(){
 
 // mtEv.addEventListener("click", function(){
 
-//       var myCoords =  buildCoords(allTheData.features[0].geometry.coordinates);
+//       var myCoords =  buildCoords(jsonData[0].features[0].geometry.coordinates);
 //       document.getElementById("subTitle").innerHTML = "Mt Everest";
 //       document.getElementById("p1").innerHTML = "The Tallest Mountain In The World";
 //       console.log(myCoords);
@@ -554,7 +377,7 @@ function runThreeJS(){
      
 // mtKi.addEventListener("click", function(){
 
-//       var myCoords =  buildCoords(allTheData.features[1].geometry.coordinates);
+//       var myCoords =  buildCoords(jsonData[0].features[1].geometry.coordinates);
 //       document.getElementById("subTitle").innerHTML = "Mt Kilimanjaro";
 //       document.getElementById("p1").innerHTML = "The Tallest Mountain In Africa";
 //       console.log(myCoords);
@@ -570,7 +393,7 @@ function runThreeJS(){
 
 // mtAc.addEventListener("click", function(){
       
-//       var myCoords =  buildCoords(allTheData.features[2].geometry.coordinates);
+//       var myCoords =  buildCoords(jsonData[0].features[2].geometry.coordinates);
 //       document.getElementById("subTitle").innerHTML = "Aconcagua";
 //       document.getElementById("p1").innerHTML = "The Tallest Mountain In South America";
 //       console.log(myCoords);
@@ -581,7 +404,7 @@ function runThreeJS(){
 
 // mtBl.addEventListener("click", function(){
 
-//       var myCoords =  buildCoords(allTheData.features[3].geometry.coordinates);
+//       var myCoords =  buildCoords(jsonData[0].features[3].geometry.coordinates);
 //       document.getElementById("subTitle").innerHTML = "Mont Blanc";
 //       document.getElementById("p1").innerHTML = "The Tallest Mountain In Europe";
 //       console.log(myCoords);
