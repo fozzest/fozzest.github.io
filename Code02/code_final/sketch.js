@@ -26,6 +26,8 @@ var map;
 
 var currentState = "start";
 
+//BG colour ? #c40720
+
 
 //LOAD JSON 
 
@@ -36,9 +38,11 @@ var request;
 request = new XMLHttpRequest();
 request.open('GET', 'markers.json', true);
 request.onload = function(event) {
-  allTheData = JSON.parse(event.target.responseText);
+allTheData = JSON.parse(event.target.responseText);
 }
 request.send();
+
+
       
 //google.load('visualization', '1', {packages: ['columnchart']});
 
@@ -176,10 +180,201 @@ function initMap()  {
   var path03 =  buildCoords(allTheData.features[2].geometry.coordinates);
   var path04 =  buildCoords(allTheData.features[3].geometry.coordinates);
 
+  //using custom styler built with
+  //https://mapstyle.withgoogle.com/
+
+  //style setting reference : https://developers.google.com/maps/documentation/javascript/styling
+
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 10,
     center: {lat: 27.97617114981274, lng: 86.90394060919834},
-    mapTypeId: 'terrain'
+    mapTypeId: 'terrain',
+    styles: [
+  {
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#212121"
+      }
+    ]
+  },
+  {
+    "elementType": "labels.icon",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#757575"
+      }
+    ]
+  },
+  {
+    "elementType": "labels.text.stroke",
+    "stylers": [
+      {
+        "color": "#212121"
+      }
+    ]
+  },
+  {
+    "featureType": "administrative",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#757575"
+      }
+    ]
+  },
+  {
+    "featureType": "administrative.country",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#9e9e9e"
+      }
+    ]
+  },
+  {
+    "featureType": "administrative.land_parcel",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "administrative.locality",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#bdbdbd"
+      }
+    ]
+  },
+  {
+    "featureType": "poi",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#757575"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.park",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#181818"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.park",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#616161"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.park",
+    "elementType": "labels.text.stroke",
+    "stylers": [
+      {
+        "color": "#1b1b1b"
+      }
+    ]
+  },
+  {
+    "featureType": "road",
+    "elementType": "geometry.fill",
+    "stylers": [
+      {
+        "color": "#2c2c2c"
+      }
+    ]
+  },
+  {
+    "featureType": "road",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#8a8a8a"
+      }
+    ]
+  },
+  {
+    "featureType": "road.arterial",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#373737"
+      }
+    ]
+  },
+  {
+    "featureType": "road.highway",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#3c3c3c"
+      }
+    ]
+  },
+  {
+    "featureType": "road.highway.controlled_access",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#4e4e4e"
+      }
+    ]
+  },
+  {
+    "featureType": "road.local",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#616161"
+      }
+    ]
+  },
+  {
+    "featureType": "transit",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#757575"
+      }
+    ]
+  },
+  {
+    "featureType": "water",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "featureType": "water",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#3d3d3d"
+      }
+    ]
+  }
+]
   });
 
   // Create an ElevationService.
@@ -212,7 +407,7 @@ function displayPathElevation(path, elevator, map) {
   // Display a polyline of the elevation path.
   new google.maps.Polyline({
     path: path,
-    strokeColor: '#0000CC',
+    strokeColor: '#d60000',
     strokeOpacity: 1,
     map: map
   });
@@ -270,7 +465,7 @@ function runThreeJS(){
 
     var geometry = new THREE.PlaneGeometry(60, 60, 9, 9);
 
-
+//pump in elevation data
   for (var i = 0; i < geometry.vertices.length; i++) {
             geometry.vertices[i].z = myElevations[i] / 50 - 80;
       }
@@ -301,6 +496,7 @@ function runThreeJS(){
     function render() {
         controls.update();    
         requestAnimationFrame(render);
+        plane.rotation.z += 0.005;
         renderer.render(scene, camera);
 
     }
