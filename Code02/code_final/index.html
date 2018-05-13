@@ -29,6 +29,36 @@
         background: #000000;
       } 
 
+  .button {
+    margin-top: 15px;
+    font-family: "SF Pro Text", bold, sans-serif;
+    background-color: #d60000; /* Green */
+    border: none;
+    color: #d60000;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.button1 {
+  font-family: "SF Pro Text", bold, sans-serif;
+    background-color: black; 
+    color: #d60000; 
+    border: 2px solid #d60000;
+}
+
+.button1:hover {
+  font-family: "SF Pro Text", bold, sans-serif;
+    background-color: #d60000;
+    color: white;
+}
+
       canvas{
         top: 650px;
         left:0px;
@@ -48,10 +78,10 @@
       
       <div id="map" style="height:250px;"></div>
 <div id= "buttonFam">
-      <button id= "mtEv">Mt Everest</button>
-      <button id= "mtKi">Mt Kilimanjaro</button>
-      <button id= "mtAc">Aconcagua</button>
-      <button id= "mtBl">Mont Blanc</button>
+      <button class="button button1" id= "mtEv">Mt Everest</button>
+      <button class="button button1" id= "mtKi">Mt Kilimanjaro</button>
+      <button class="button button1" id= "mtAc">Aconcagua</button>
+      <button class="button button1" id= "mtBl">Mont Blanc</button>
 </div>
       <h2 id= "subTitle">Pick a Mountain</h2>
       <p id="p1">.</p>
