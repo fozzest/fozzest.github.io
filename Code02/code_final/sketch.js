@@ -147,8 +147,7 @@ function checkTransition() {
 });
 
   mtKi.addEventListener("click", function(){
-  currentState= "kili";
-  
+  currentState= "kili";  
 });
 
   mtAc.addEventListener("click", function(){
@@ -210,19 +209,36 @@ function initMap()  {
   displayPathElevation(path03, elevator, map);
   displayPathElevation(path04, elevator, map);
 
-  
-  //newCenter(map.latLng, laat, lnng, map);
+
+//SET NEW CENTER
+
+  function newLocation(newLat,newLng)
+  {
+    map.setCenter({
+      lat : newLat,
+      lng : newLng
+    });
+  }
+
+  mtEv.addEventListener("click", function(){
+    newLocation(27.97617114981274,86.90394060919834);
+  });
+
+  mtKi.addEventListener("click", function(){
+    newLocation(-3.0658595973827465,37.355638965477624); 
+  });
+
+
+  mtAc.addEventListener("click", function(){
+    newLocation(-32.65217291861357,-70.0094836463461);
+  });
+
+  mtBl.addEventListener("click", function(){
+    newLocation(45.832749717059826,6.864912473727145);
+  });
+
 
 }
-
-
-// function newCenter(latLng,laat, lnng, map) {
-   
-//   map.setCenter({
-//     lat: laat, 
-//     lng: lnng
-//   });
-// }
 
 // DISPLAY POLYLINES OF PATHS
 
