@@ -1,10 +1,9 @@
 
-/* trying to learn more about animated backgrounds, currently adjusting code from 
-https://www.gradient-animator.com/ */
+
 
 body {
 
-	background: #f9f9f9;
+	background: #fafafa;
 
 
 }
@@ -22,25 +21,23 @@ h3 {
     margin: 400 auto;
     }
 
-    .button {
-    background-color: #4CAF50; /* Green */
+.button {
+    background-color: #83aef7; 
     border: none;
     color: white;
-    padding: 15px 32px;
+    padding: 20px;
     text-align: center;
-    text-decoration: none;
     display: inline-block;
     font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 12px;
+    box-shadow: 0px 2px 10px grey;
 }
 
+/* https://www.w3schools.com/css/css3_shadows.asp -- reference for box shadow to create height
 
-.button1 {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-}
 
-.button2:hover {
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-}
+
 
 
 
