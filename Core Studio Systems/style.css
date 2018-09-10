@@ -1,6 +1,6 @@
 body {
 
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "SF Pro Text", bold, sans-serif;
 
     margin: 0;
 
@@ -13,16 +13,39 @@ body {
 
     text-align: center;
 
+    background:black;
+
     background-image: "halfdome.png";
 
     color: white;
 
 }
 
+.imgLay {
+
+    background-color: #aaa;
+
+    width: 100%;
+
+    padding: 20px; 
+
+    margin-bottom: 20px;
+
+    /*https://www.w3schools.com/css/css3_shadows.asp*/
+
+    box-shadow: 2px 2px 14px rgba(0, 0, 0, .2);
+
+}
+
+
+
 
 .header h1 {
 
     font-size: 40px;
+    top: 50%;
+    left: 50%;
+
 
 }
 
@@ -37,10 +60,20 @@ body {
 
 
 
-/* Create two  columns that */
+/* Create two  columns */
 
 
-/* Sidebar/left column */
+/* References taken from https://www.w3schools.com/css/css_rwd_grid.asp */
+
+.main {   
+
+    flex: 70%;
+
+    background-color: #fafafa;
+
+    padding: 20px;
+
+}
 
 .side {
 
@@ -54,36 +87,6 @@ body {
 
 
 
-/* Main column */
-
-.main {   
-
-    flex: 70%;
-
-    background-color: white;
-
-    padding: 20px;
-
-}
-
-
-
-/* Fake image, just for this example */
-
-.fakeimg {
-
-    background-color: #aaa;
-
-    width: 100%;
-
-    padding: 20px;
-
-}
-
-
-
-/* Footer */
-
 .footer {
 
     padding: 20px;
@@ -96,7 +99,9 @@ body {
 
 
 
-/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+/* Responsive layout */
+
+/* Refeence for learning how to make columns responsive AND stack - https://www.w3schools.com/html/tryit.asp?filename=tryhtml_responsive_media_query */
 
 @media screen and (max-width: 700px) {
 
@@ -107,3 +112,4 @@ body {
     }
 
 }
+
