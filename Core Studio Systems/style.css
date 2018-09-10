@@ -7,24 +7,18 @@ body {
 }
 
 
-
-/* Style the header */
-
 .header {
 
     padding: 80px;
 
     text-align: center;
 
-    background: #1abc9c;
+    background-image: src="halfdome.png";
 
     color: white;
 
 }
 
-
-
-/* Increase the font size of the h1 element */
 
 .header h1 {
 
@@ -32,17 +26,6 @@ body {
 
 }
 
-
-
-
-
-
-
-
-
-
-
-/* Column container */
 
 .row {  
 
@@ -54,7 +37,8 @@ body {
 
 
 
-/* Create two unequal columns that sits next to each other */
+/* Create two  columns that */
+
 
 /* Sidebar/left column */
 
@@ -123,7 +107,3 @@ body {
     }
 
 }
-
-
-
-
