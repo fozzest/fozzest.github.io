@@ -54,7 +54,7 @@ body {
 /* References taken from https://www.w3schools.com/css/css_rwd_grid.asp */
 
 .main {   
-    flex: 70%;
+    flex: 75%;
     background-color: #fafafa;
     padding: 40px;
 
@@ -62,7 +62,7 @@ body {
 
 .side {
 
-    flex: 30%;
+    flex: 25%;
     background-color: #f1f1f1;
     padding: 40px;
 
