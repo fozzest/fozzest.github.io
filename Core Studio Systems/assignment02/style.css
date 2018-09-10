@@ -1,0 +1,94 @@
+
+
+
+
+
+body {
+
+    font-family: "SF Pro Text", bold, sans-serif;
+    margin: 0;
+
+}
+
+
+.headerText {
+
+   font-size:40px;
+    text-align: center;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    color: white;
+    
+}
+
+
+}
+
+.imgLay {
+
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 20px;
+    /*https://www.w3schools.com/css/css3_shadows.asp*/
+    box-shadow: 2px 2px 14px rgba(0, 0, 0, .2);
+
+}
+
+
+.row {  
+
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+
+
+/* Create two  columns */
+
+
+/* References taken from https://www.w3schools.com/css/css_rwd_grid.asp */
+
+.main {   
+    flex: 70%;
+    background-color: #fafafa;
+    padding: 20px;
+
+}
+
+.side {
+
+    flex: 30%;
+    background-color: #f1f1f1;
+    padding: 20px;
+
+}
+
+
+
+.footer {
+
+    padding: 20px;
+    color: white;
+    text-align: center;
+    background: black;
+
+}
+
+
+
+/* Responsive layout */
+
+/* Refeence for learning how to make columns responsive AND stack - https://www.w3schools.com/html/tryit.asp?filename=tryhtml_responsive_media_query */
+
+@media screen and (max-width: 700px) {
+
+    .row {   
+
+        flex-direction: column;
+
+    }
+
+}
