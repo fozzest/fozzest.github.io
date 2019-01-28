@@ -1,0 +1,43 @@
+
+
+
+body {
+
+	background: #fafafa;
+
+
+}
+
+h1 {
+    color: #000000;
+}
+
+h3 {
+	color: #000000;
+
+}
+
+.center {
+    margin: 400 auto;
+    }
+
+.button {
+    background-color: #83aef7; 
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 16px 2px;
+    border-radius: 12px;
+    box-shadow: 0px 3px 10px grey;
+}
+
+/* https://www.w3schools.com/css/css3_shadows.asp -- reference for box shadow to create height
+
+
+
+
+
+
