@@ -279,6 +279,10 @@ a svg {
   font-size: 0.875rem;
   color: #9b9b9b; }
 
+  .red{
+    color: #F97868;
+  }
+
 .text-italic {
   font-style: italic; }
 
