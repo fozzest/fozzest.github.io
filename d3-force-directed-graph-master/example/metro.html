@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+ 
+ 
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href='http://fonts.googleapis.com/css?family=Karla:400,700|Vollkorn:400,400i' rel='stylesheet' type='text/css'>
+
+  <style>
+  </style>
+</head>
+<meta charset="utf-8">
+<style>
+body {
+  overflow:hidden;
+   margin:0;
+}
+
+text {
+  font-family: helvetica;
+  pointer-events: none;
+}
+
+</style>
+<body class="site category-work">
+
+  <div class="site-intro">
+  <div class="site-intro-text">
+   Metro Decentralised
+  </div>
+	  <div class="site-intro-subtext">
+   Forrest Whitcomb
+  </div>
+</div>
+
+
+<nav class="site-nav" role="navigation">
+  
+</nav>
+
+
+  <main class="site-content">
+    <div class="page">
+      <div class="wrap">
+        <div class="container">
+<article class="post">
+
+<header>
+  
+  <h1>Decentralising the Metro </h1>
+  <span class="thumb-nugget">Constellations and Networks.</span>
+<br /><br /><br />
+</header>
+
+ 
+  <!-- Overview -->
+
+<section class="row">
+
+  <div class="two-thirds column">
+    <span class="nugget">Overview</span>
+    <p>
+Passing through a station like Grand Central, Châtelet, or Chhatrapati Terminus can give one the sense of hierarchy and importance; THIS is the centre of it all. But what happens when subjective feeling is taken away, when place isn't given merit based off of its geographic or social significance, but rather on how it interlocks and connects with the other areas around it? <br>
+<br>
+Metro Decentralised is an ongoing mapping and system exercise that looks to deconstruct traditional hierarchies in the Paris Metro, instead relying on equal weighting and respect as a method for reimagining how the Metro exists as a series of constellations in a complext network below us.
+  </p>
+  </div>
+
+<!-- Skills -->
+
+  <div class="one-third column">
+    </div>
+
+</section>
+
+
+
+<hr />
+
+
+
+<!-- Intro -->
+<span class="nugget">Background Research</span>
+<span class="subhead">Paris Metro as Constellations</span>
+
+
+
+
+
+
+<section class="row">
+  <div class="two-thirds column">
+
+  
+    <p>
+      
+    </p>
+  </div>
+</section>
+
+<div class="image">
+  <img src="paris01.png" >
+  <figcaption class="text-caption">Paris Metro Stations. Low Opacity cirle maintains radius of 150m.</figcaption>
+  
+</div>
+
+
+
+
+
+<!-- Image -->
+
+
+<section class="row">
+  <div class="one-third column">
+    <p class="subhead"><i>Lines vs Networks</i></p>
+  </div>
+  <div class="two-thirds column">
+    <p>The Paris metro is a tapestry of lines, being built over time, on top of one another over the past hundred years. Becasue of this, the system is similar across lines, but not consistent and in concert with one another. The space between metro stations also varries greatly; with some stations being over 500m away from one another despite being on the same line. 
+<br><br>
+			One of the most fascinating results from this evolving network of lines is that sometimes travelling on one line is not technically the closest or fastest way to travel between points. Lines like the 2 or 6 circumvent the city, crossing over the same line multiple times. One of the explorations in this project is to see the lines and sections that create more efficient networks than a single line.
+
+<br><br>
+I wanted to create a system that used proximity - in this case the amount of stations between points - as opposed to physical distance or the name of the line a station was on.
+<div class="image">
+  <img src="wip.png" >
+  <figcaption class="text-caption">Progress sketches of levels, rings, alignments.</figcaption>
+  
+</div>
+	</div>
+</section>
+
+<section class="row">
+  <div class="one-third column">
+    <p class="subhead"><i>Grid Systems</i></p>
+  </div>
+  <div class="two-thirds column">
+    <p>
+		
+Because of the notion that lines might not be as efficient as networks, I wanted to remove the hierarchy that lines take over network proximity. To do this, I drafted a grid system in Sketch that used equilateral triangles to distribute stations objectivley, equally spaced, without the influence of chained lines.
+	<br><br>
+	By doing this, stations are chained together by the number of stops between them, as opposed to physical geography, or line name.
+		</p>
+
+
+
+  </div>
+</section>
+
+<div class="image">
+  <img src="paris02.png" >
+  <figcaption class="text-caption">Paris Metro Stations. Reimagined.</figcaption>
+  
+</div>
+
+<hr />
+
+
+<span class="nugget">D3JS Exploration</span>
+<span class="subhead">Interactive Data</span>
+
+<section class="row">
+  <div class="ten columns">
+
+  
+    <p>
+		The best way to truly visualise what I wanted to in an interactive and manipulative manner was to load the data into javascript and stat messing around. For this project, I'm using a framework called <a href="https://d3js.org/">D3.js.</a>
+		</p>
+  </div>
+</section>
+
+<div class="image">
+  <img src="move02.gif" >
+  <figcaption class="text-caption">First D3JS graphs displaying nearest neighbor breakdown and gravity distributions.</figcaption>
+  
+</div>
+
+<section class="row">
+  <div class="one-third column">
+    <p class="subhead"><i>Data for Play</i></p>
+  </div>
+  <div class="two-thirds column">
+    <p>
+		The exploratory portion of this project has been an exercise in exploring data through code. By trialing different functions and layouts, I have tried to not only emulate the diagrams drawn above, but have been informed by how the data behves to make new decisions and initiatives.
+     </p>
+  </div>
+</section>
+
+<div class="image">
+  <img src="move.gif" >
+  <figcaption class="text-caption">Second iterations. Note the more even distribution of unattached nodes in the background.</figcaption>
+  
+</div>
+
+<section class="row">
+  <div class="one-third column">
+    <p class="subhead"><i>D3js</i></p>
+  </div>
+  <div class="two-thirds column">
+    <p>
+		D3js is a Javascript library that makes it easier to visually graph data and relationships. The techniques used in my graphs are known as force-directed layouts, where sources and levels create networks between data points. </p>
+  </div>
+</section>
+
+
+
+<hr />
+
+
+
+
+<span class="nugget">Interactive Study</span>
+<span class="subhead">Metro Decentralised</span>
+
+<section class="row">
+  <div class="ten columns">
+
+  
+    <p>
+		Below is a work in progress interactive map. Press 3 to see the 3 line, and drag different stations around. Reload page to exit. Lines dispalyed are 1, 3, 4, 9, 11.
+		 </p>
+  </div>
+
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="metro.js">
+
+
+</script>
+
+
+</section>
+
+</body>
+</html>

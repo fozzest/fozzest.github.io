@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+
+<script src="https://d3js.org/d3.v4.min.js"></script>
+</head>
+
+<body style="font-family:helvetica;">
+
+<h1> v01_local </h1>
+<h1> /// WIPWIPWIPWIP /// </h1>
+<h1> Paris Metro </h1>
+<svg width="960" height="600"></svg>
+<script>
+var baseNodes = [
+  { id: "chatalet", group: 0, label: "Châtelet", tags: "  " , level: 1 },
+  { id: "hoteldeville", group: 1, label: "Hotel De Ville"   , tags: "  " , level: 2 },
+  { id: "saintpaul", group: 1, label: "SaintPaul", tags: "  " , level: 2 },
+  { id: "bastille", group: 1, label: "Bastille", tags: "  " , level: 2 },
+  { id: "garedelyon", group: 1, label: "Gare De Lyon" , tags: "  " , level: 2 },
+  { id: "reuilly", group: 1, label: "Reuilly - Diderot", tags: "  " , level: 2 },
+  { id: "nation", group: 1, label: "Nation", tags: "  " , level: 2 },
+  { id: "portedeVinc", group: 1, label: "Porte De Vincennes", tags: "  " , level: 2 },
+  { id: "saintmandetourelle", group: 1, label: "Sainte-Mande - Tourelle", tags: "  " , level: 2 },
+  { id: "berault"  , group: 1, label: "Berault", tags: "  " , level: 2 },
+  { id: "chatdevinc"  , group: 1, label: "Chateau De Vincennes"  , tags: "  " , level: 2 },
+  { id: "louvrerivoli", group: 1, label: "Louvre - Rivoli", tags: "  " , level: 2 },
+  { id: "palaisroyal", group: 1, label: "Palais Royal - Musee De Louvre", tags: "  " , level: 2 },
+  { id: "tuileries", group: 1, label: "Tuileries" , tags: "  " , level: 2 },
+  { id: "concorde", group: 1, label: "Concorde", tags: "  " , level: 2 },
+  { id: "champselysees", group: 1, label: "Champs-Elysees Clemenceau", tags: "  " , level: 2 },
+  { id: "fdr", group: 1, label: "Franklin D. Roosevelt", tags: "  " , level: 2 },
+  { id: "georgev", group: 1, label: "George V", tags: "  " , level: 2 },
+  { id: "cdg", group: 1, label: "Charles De Gualle - Etoile", tags: "  " , level: 2 },
+  { id: "argentine", group: 1, label: "Argentine", tags: "  " , level: 2 },
+  { id: "portemailot"  , group: 1, label: "Port Mailot", tags: "  " , level: 2 },
+  { id: "lessablons"  , group: 1, label: "Les Sablons"  , tags: "  " , level: 2 },
+  { id: "pontdeneuilly", group: 1, label: "Pont de Neuilly", tags: "  " , level: 2 },
+  { id: "espanadedenfense", group: 1, label: "Espanande De La Defense", tags: "  " , level: 2 },
+  { id: "denfense", group: 1, label: "La Defense", tags: "  " , level: 2 },
+  { id: "leshalles"  , group: 1, label: "Les Halles", tags: "  " , level: 2 },
+  { id: "etiennemarcel"  , group: 1, label: "Etienne Marcel"  , tags: "  " , level: 2 },
+  { id: "reamursebastopol", group: 1, label: "Reamur Sebastopol", tags: "  " , level: 2 },
+  { id: "cite", group: 1, label: "Cite", tags: "  " , level: 2 },
+  { id: "saintmichel", group: 1, label: "Saint Michel", tags: "  " , level: 2 },
+    
+    { id: "strasbourg"  , group: 1, label: "Strasbourg - Saint-Denis", tags: "  " , level: 2 },
+  { id: "chateaudeau"  , group: 1, label: "Chateau d'Eau"  , tags: "  " , level: 2 },
+  { id: "garedelest", group: 1, label: "Gare De l'Est", tags: "  " , level: 2 },
+  { id: "garedunord", group: 1, label: "Gare du Nord", tags: "  " , level: 2 },
+  { id: "barbes", group: 1, label: "Barbes - Rochenchouart", tags: "  " , level: 2 },
+  { id: "chateaurouge"  , group: 1, label: "Chateau Rouge", tags: "  " , level: 2 },
+  { id: "marcadet"  , group: 1, label: "Marcadet Poissonierres"  , tags: "  " , level: 2 },
+  { id: "simplon", group: 1, label: "Simplon", tags: "  " , level: 2 },
+  { id: "portedecling", group: 1, label: "Porte De Clignancourt", tags: "  " , level: 2 },
+    { id: "odeon", group: 1, label: "Odeon", tags: "  " , level: 2 },
+  { id: "saintgermaindespres"  , group: 1, label: "Saint-Germain-des-Pres"  , tags: "  " , level: 2 },
+  { id: "saintsulpice", group: 1, label: "Saint-Sulpice", tags: "  " , level: 2 },
+  { id: "saintplacide", group: 1, label: "Saint-Placide", tags: "  " , level: 2 },
+  { id: "montparnasse", group: 1, label: "Montparnasse - Bienvenue", tags: "  " , level: 2 },
+  { id: "vavin", group: 1, label: "Vavin", tags: "  " , level: 2 },
+  { id: "raspail", group: 1, label: "raspail"  , tags: "  " , level: 2 },
+  { id: "denfertrochareau", group: 1, label: "Denfert-Rochareau", tags: "  " , level: 2 },
+  { id: "moutonduvernet", group: 1, label: "Mouton-Duvernet", tags: "  " , level: 2 },
+  { id: "alesia", group: 1, label: "Alesia", tags: "  " , level: 2 },
+  { id: "portdorleans", group: 1, label: "Port d'Orleans", tags: "  " , level: 2 },
+  { id: "mariedmontrouge", group: 1, label: "marie d'Montrouge", tags: "  " , level: 2 },
+
+    { id: "rambuteau"  , group: 1, label: "Rambuteau"  , tags: "  " , level: 2 },
+  { id: "artsetmetiers", group: 1, label: "Arts et Metiers", tags: "  " , level: 2 },
+  { id: "republique", group: 1, label: "Republique", tags: "  " , level: 2 },
+  { id: "goncourt", group: 1, label: "Goncourt", tags: "  " , level: 2 },
+  { id: "belleville"  , group: 1, label: "Belleville", tags: "  " , level: 2 },
+  { id: "pyrenees"  , group: 1, label: "Pyrenees"  , tags: "  " , level: 2 },
+  { id: "jourdain", group: 1, label: "Jourdain", tags: "  " , level: 2 },
+  { id: "placedesfetes", group: 1, label: "Place des Fetes", tags: "  " , level: 2 },
+  { id: "telegraphe", group: 1, label: "Telegraphe", tags: "  " , level: 2 },
+  { id: "portdeslilas", group: 1, label: "Port des Lilas", tags: "  " , level: 2 },
+  { id: "mariedeslilas", group: 1, label: "Marie des Lilas", tags: "  " , level: 2 },
+
+    { id: "temple"  , group: 1, label: "Temple"  , tags: "three" , level: 2 },
+  { id: "parmentier", group: 1, label: "Parmentier", tags: "three" , level: 2 },
+  { id: "ruestmaur", group: 1, label: "Rue Saint-Maur", tags: "three" , level: 2 },
+  { id: "perelechaise", group: 1, label: "Pere Lechaise", tags: "three" , level: 2 },
+  { id: "gambetta"  , group: 1, label: "Gambetta", tags: "three" , level: 2 },
+  { id: "portedebagnolet"  , group: 1, label: "Porte de Bagnolets"  , tags: "three" , level: 2 },
+  { id: "gallieni", group: 1, label: "Gallieni", tags: "three" , level: 2 },
+    { id: "sentier", group: 1, label: "Sentier", tags: "  " , level: 2 },
+  { id: "bourse", group: 1, label: "Bourse", tags: "  " , level: 2 },
+  { id: "quatreseptembre", group: 1, label: "Quatre-Septembre", tags: "  " , level: 2 },
+  { id: "opera", group: 1, label: "Opera", tags: "  " , level: 2 },
+  { id: "havrecaum", group: 1, label: "Havre – Caumartin", tags: "  " , level: 2 },
+  { id: "saintlazare", group: 1, label: "Saint Lazare", tags: "  " , level: 2 },
+  { id: "europe", group: 1, label: "Europe", tags: "  " , level: 2 },
+  { id: "villiers", group: 1, label: "Villiers", tags: "  " , level: 2 },
+  { id: "malesherbes", group: 1, label: "Malesherbes", tags: "  " , level: 2 },
+    { id: "wagram", group: 1, label: "Wagram", tags: "  " , level: 2 },
+  { id: "pereire", group: 1, label: "Pereire", tags: "  " , level: 2 },
+  { id: "portdechamp", group: 1, label: "Port de Champerret", tags: "  " , level: 2 },
+  { id: "louisemichel", group: 1, label: "Louise Michel", tags: "  " , level: 2 },
+  { id: "anatolefrance", group: 1, label: "Anatole France", tags: "  " , level: 2 },
+  { id: "pontdelevallois", group: 1, label: "Pont de Levallois", tags: "  " , level: 2 },
+ 
+  { id: "pontdesevres"  , group: 1, label: "Pont de Sevres"  , tags: "  " , level: 2 },
+  { id: "billacount", group: 1, label: "Billacount", tags: "  " , level: 2 },
+  { id: "marcelsembat", group: 1, label: "Marcel Sembat", tags: "  " , level: 2 },
+  { id: "portedesaintcloud", group: 1, label: "Port de Saint-Cloud", tags: "  " , level: 2 },
+  { id: "exelmans"  , group: 1, label: "Exelmans", tags: "  " , level: 2 },
+  { id: "portedebagnolet"  , group: 1, label: "Porte de Bagnolets"  , tags: "  " , level: 2 },
+  { id: "gallieni", group: 1, label: "Gallieni", tags: "  " , level: 2 },
+  { id: "michelanges", group: 1, label: "Michel-Anges – Molitor", tags: "  " , level: 2 },
+  { id: "jasmin", group: 1, label: "Jasmin", tags: "  " , level: 2 },
+  { id: "ranelagh", group: 1, label: "Ranelagh", tags: "  " , level: 2 },
+  { id: "lamuette", group: 1, label: "La Muette", tags: "  " , level: 2 },
+  { id: "ruedelapompe", group: 1, label: "Rue de la Pompe", tags: "  " , level: 2 },
+  { id: "trocadero", group: 1, label: "Trocadero", tags: "  " , level: 2 },
+  { id: "iena", group: 1, label: "Iena", tags: "  " , level: 2 },
+  { id: "almamarceau", group: 1, label: "Alma Marceau", tags: "  " , level: 2 },
+  { id: "saintphilippeduroule", group: 1, label: "Saint-Philippe du Roule", tags: "  " , level: 2 },
+  { id: "miromensil", group: 1, label: "Miromensil", tags: "  " , level: 2 },
+  { id: "saintaugustin", group: 1, label: "Saint-Augustin", tags: "  " , level: 2 },
+  { id: "chauseedantin", group: 1, label: "Chausee d'Antin– La Fayette", tags: "  " , level: 2 },
+  { id: "richeliudrout", group: 1, label: "Richeli – Drouout", tags: "  " , level: 2 },
+  { id: "grandsboulevards", group: 1, label: "Grands Boulevards", tags: "  " , level: 2 },
+  { id: "bonnenouvelle", group: 1, label: "Bonne Nouvelle", tags: "  " , level: 2 },
+    { id: "saintambroise", group: 1, label: "Saint Ambroise", tags: "  " , level: 2 },
+  { id: "voltaire", group: 1, label: "Voltaire", tags: "  " , level: 2 },
+  { id: "charonne", group: 1, label: "Charonne", tags: "  " , level: 2 },
+  { id: "ruedesboulets", group: 1, label: "Ruse des Boulets", tags: "  " , level: 2 },
+  { id: "buzenval", group: 1, label: "Buzenval", tags: "  " , level: 2 },
+  { id: "maraichers", group: 1, label: "Maraichers", tags: "  " , level: 2 },
+  { id: "portedemontereuil", group: 1, label: "Porte de Montereuil", tags: "  " , level: 2 },
+  { id: "robespierre", group: 1, label: "Robespierre", tags: "  " , level: 2 },
+  { id: "croixdechavaux", group: 1, label: "Croix de Chavaux", tags: "  " , level: 2 },
+  { id: "oberkampf", group: 1, label: "Oberkampf", tags: "  " , level: 2 },
+  { id: "mariedemontreuil", group: 1, label: "Marie de Monteruil", tags: "  " , level: 2 }
+ 
+
+ 
+ 
+
+ 
+
+
+
+]
+
+var baseLinks = [
+	{ target: "chatalet", source: "hoteldeville" , strength: 0.9 },
+	{ target: "chatalet", source: "louvrerivoli" , strength: 0.9 },
+  { target: "louvrerivoli", source: "palaisroyal" , strength: 0.9 },
+  { target: "palaisroyal", source: "tuileries" , strength: 0.9 },
+  { target: "hoteldeville", source: "saintpaul" , strength: 0.9 },
+  { target: "saintpaul", source: "bastille" , strength: 0.9 },
+  { target: "chatalet"  , source: "cite", strength: 0.9 },
+  { target: "cite"  , source: "saintmichel", strength: 0.9 },
+  { target: "chatalet"   , source: "leshalles" , strength: 0.9 },
+  { target: "leshalles"  , source: "etiennemarcel" , strength: 0.9 },
+  
+  { target: "bastille"   , source: "garedelyon" , strength: 0.9 },
+  { target: "garedelyon"  , source: "reuilly" , strength: 0.9 },
+  { target: "reuilly"   , source: "nation" , strength: 0.9 },
+  { target: "nation"  , source: "portedeVinc" , strength: 0.9 },
+  { target: "portedeVinc"   , source: "saintmandetourelle" , strength: 0.9 },
+  { target: "saintmandetourelle"   , source: "berault" , strength: 0.9 },
+  { target: "berault"  , source: "chatdevinc" , strength: 0.9 },
+  { target: "tuileries"   , source: "concorde" , strength: 0.9 },
+  { target: "concorde"   , source: "champselysees" , strength: 0.9 },
+  { target: "champselysees"  , source: "fdr" , strength: 0.9 },
+  { target: "fdr"   , source: "georgev" , strength: 0.9 },
+  { target: "georgev"  , source: "cdg" , strength: 0.9 },
+  { target: "cdg"   , source: "argentine" , strength: 0.9 },
+  { target: "argentine"   , source: "pontdeneuilly" , strength: 0.9 },
+  { target: "pontdeneuilly"  , source: "espanadedenfense" , strength: 0.9 },
+  { target: "espanadedenfense"  , source: "denfense" , strength: 0.9 },
+  { target: "saintmichel"  , source: "odeon", strength: 0.9 },
+  { target: "odeon"  , source: "saintgermaindespres", strength: 0.9 },
+  { target: "saintgermaindespres"   , source: "saintsulpice" , strength: 0.9 },
+  { target: "saintsulpice"  , source: "saintplacide" , strength: 0.9 },
+  { target: "saintplacide"   , source: "montparnasse" , strength: 0.9 },
+  { target: "montparnasse"   , source: "vavin" , strength: 0.9 },
+  { target: "vavin"  , source: "raspail" , strength: 0.9 },
+  { target: "raspail"   , source: "denfertrochareau" , strength: 0.9 },
+  { target: "denfertrochareau"  , source: "moutonduvernet" , strength: 0.9 },
+  { target: "moutonduvernet"   , source: "alesia" , strength: 0.9 },
+  { target: "alesia"   , source: "portdorleans" , strength: 0.9 },
+  { target: "etiennemarcel"  , source: "reamursebastopol" , strength: 0.9 },
+  { target: "reamursebastopol"   , source: "strasbourg" , strength: 0.9 },
+  { target: "strasbourg"   , source: "chateaudeau" , strength: 0.9 },
+  { target: "chateaudeau"  , source: "garedelest" , strength: 0.9 },
+  { target: "garedelest"   , source: "garedunord" , strength: 0.9 },
+  { target: "garedunord"  , source: "barbes" , strength: 0.9 },
+  { target: "barbes"   , source: "chateaurouge" , strength: 0.9 },
+  { target: "chateaurouge"   , source: "marcadet" , strength: 0.9 },
+  { target: "marcadet"  , source: "simplon" , strength: 0.9 },
+  { target: "simplon"  , source: "portedecling" , strength: 0.9 },
+
+  { target: "hoteldeville"   , source: "rambuteau" , strength: 0.9 },
+  { target: "rambuteau"  , source: "artsetmetiers" , strength: 0.9 },
+  { target: "artsetmetiers"   , source: "republique" , strength: 0.9 },
+  { target: "republique"   , source: "goncourt" , strength: 0.9 },
+  { target: "goncourt"  , source: "belleville" , strength: 0.9 },
+  { target: "belleville"   , source: "pyrenees" , strength: 0.9 },
+  { target: "pyrenees"  , source: "jourdain" , strength: 0.9 },
+  { target: "jourdain"   , source: "placedesfetes" , strength: 0.9 },
+  { target: "placedesfetes"   , source: "telegraphe" , strength: 0.9 },
+  { target: "telegraphe"  , source: "portdeslilas" , strength: 0.9 },
+  { target: "portdeslilas"  , source: "mariedeslilas" , strength: 0.9 },
+
+
+  { target: "pontdelevallois"  , source: "anatolefrance" , strength: 0.9 },
+  { target: "anatolefrance"  , source: "louisemichel" , strength: 0.9 },
+  { target: "louisemichel"   , source: "portdechamp" , strength: 0.9 },
+  { target: "portdechamp"   , source: "pereire" , strength: 0.9 },
+  { target: "pereire"   , source: "wagram" , strength: 0.9 },
+  { target: "wagram"   , source: "malesherbes" , strength: 0.9 },
+  { target: "malesherbes"   , source: "villiers" , strength: 0.9 },
+  { target: "villiers"   , source: "europe" , strength: 0.9 },
+  { target: "europe"   , source: "saintlazare" , strength: 0.9 },
+  { target: "saintlazare"   , source: "havrecaum" , strength: 0.9 },
+
+  { target: "havrecaum"  , source: "opera" , strength: 0.9 },
+  { target: "opera"  , source: "quatreseptembre" , strength: 0.9 },
+  { target: "quatreseptembre"   , source: "bourse" , strength: 0.9 },
+  { target: "bourse"   , source: "sentier" , strength: 0.9 },
+  { target: "sentier"  , source: "reamursebastopol" , strength: 0.9 },
+  { target: "reamursebastopol"   , source: "artsetmetiers" , strength: 0.9 },
+  { target: "artsetmetiers"  , source: "temple" , strength: 0.9 },
+  { target: "temple"   , source: "republique" , strength: 0.9 },
+  { target: "republique"   , source: "parmentier" , strength: 0.9 },
+  { target: "parmentier"  , source: "ruestmaur" , strength: 0.9 },
+  { target: "ruestmaur"  , source: "perelechaise" , strength: 0.9 },
+  { target: "perelechaise"   , source: "gambetta" , strength: 0.9 },
+  { target: "gambetta"   , source: "portedebagnolet" , strength: 0.9 },
+  { target: "portedebagnolet"  , source: "gallieni" , strength: 0.9 },
+  
+
+
+  { target: "pontdesevres"  , source: "billacount" , strength: 0.9 },
+  { target: "billacount"  , source: "marcelsembat" , strength: 0.9 },
+  { target: "marcelsembat"   , source: "portedesaintcloud" , strength: 0.9 },
+  { target: "portedesaintcloud"   , source: "exelmans" , strength: 0.9 },
+  { target: "exelmans"  , source: "michelanges" , strength: 0.9 },
+  { target: "michelanges"   , source: "jasmin" , strength: 0.9 },
+  { target: "jasmin"  , source: "ranelagh" , strength: 0.9 },
+  { target: "ranelagh"   , source: "lamuette" , strength: 0.9 },
+  { target: "lamuette"   , source: "ruedelapompe" , strength: 0.9 },
+  { target: "ruedelapompe"  , source: "trocadero" , strength: 0.9 },
+  { target: "trocadero"  , source: "iena" , strength: 0.9 },
+  { target: "iena"   , source: "almamarceau" , strength: 0.9 },
+  { target: "almamarceau"   , source: "fdr" , strength: 0.9 },
+  { target: "fdr"  , source: "saintphilippeduroule" , strength: 0.9 },
+  { target: "saintphilippeduroule"  , source: "miromensil" , strength: 0.9 },
+  { target: "miromensil"  , source: "saintaugustin" , strength: 0.9 },
+  { target: "saintaugustin"   , source: "havrecaum" , strength: 0.9 },
+  { target: "havrecaum"   , source: "chauseedantin" , strength: 0.9 },
+  { target: "chauseedantin"  , source: "richeliudrout" , strength: 0.9 },
+  { target: "richeliudrout"   , source: "grandsboulevards" , strength: 0.9 },
+  { target: "grandsboulevards"  , source: "bonnenouvelle" , strength: 0.9 },
+  { target: "bonnenouvelle"   , source: "strasbourg" , strength: 0.9 },
+  { target: "strasbourg"   , source: "republique" , strength: 0.9 },
+  { target: "republique"  , source: "oberkampf" , strength: 0.9 },
+  { target: "oberkampf"  , source: "saintambroise" , strength: 0.9 },
+  { target: "saintambroise"   , source: "voltaire" , strength: 0.9 },
+  { target: "voltaire"   , source: "charonne" , strength: 0.9 },
+  { target: "charonne"  , source: "ruedesboulets" , strength: 0.9 },
+    { target: "ruedesboulets"  , source: "nation" , strength: 0.9 },
+  { target: "nation"  , source: "buzenval" , strength: 0.9 },
+  { target: "buzenval"  , source: "maraichers" , strength: 0.9 },
+  { target: "maraichers"   , source: "portedemontereuil" , strength: 0.9 },
+  { target: "portedemontereuil"   , source: "robespierre" , strength: 0.9 },
+  { target: "robespierre"  , source: "croixdechavaux" , strength: 0.9 },
+  { target: "croixdechavaux"   , source: "mariedemontreuil" , strength: 0.9 }
+
+  
+
+  
+
+
+
+
+
+
+
+]
+
+var nodes = [...baseNodes]
+var links = [...baseLinks]
+
+function getNeighbors(node) {
+  return baseLinks.reduce(function (neighbors, link) {
+      if (link.target.id === node.id) {
+        neighbors.push(link.source.id)
+      } else if (link.source.id === node.id) {
+        neighbors.push(link.target.id)
+      }
+      return neighbors
+    },
+    [node.id]
+  )
+}
+
+function isNeighborLink(node, link) {
+  return link.target.id === node.id || link.source.id === node.id
+}
+
+
+function getNodeColor(node, neighbors) {
+  if (Array.isArray(neighbors) && neighbors.indexOf(node.id) > -1) {
+    return node.level === 1 ? 'blue' : 'green'
+  }
+
+  return node.level === 1 ? 'red' : 'gray'
+}
+
+
+function getLinkColor(node, link) {
+  return isNeighborLink(node, link) ? 'green' : '#E5E5E5'
+}
+
+function getTextColor(node, neighbors) {
+  return Array.isArray(neighbors) && neighbors.indexOf(node.id) > -1 ? 'green' : 'black'
+}
+
+var width = window.innerWidth
+var height = window.innerHeight
+
+var svg = d3.select('svg')
+svg.attr('width', width).attr('height', height)
+
+var linkElements,
+  nodeElements,
+  textElements
+
+// we use svg groups to logically group the elements together
+var linkGroup = svg.append('g').attr('class', 'links')
+var nodeGroup = svg.append('g').attr('class', 'nodes')
+var textGroup = svg.append('g').attr('class', 'texts')
+
+
+var selectedId
+
+
+var linkForce = d3
+  .forceLink()
+  .id(function (link) { return link.id })
+  .strength(function (link) { return link.strength })
+
+var simulation = d3
+  .forceSimulation()
+  .force('link', linkForce)
+  .force('charge', d3.forceManyBody().strength(-60))
+  .force('center', d3.forceCenter(width / 2, height / 2))
+
+var dragDrop = d3.drag().on('start', function (node) {
+  node.fx = node.x
+  node.fy = node.y
+}).on('drag', function (node) {
+  simulation.alphaTarget(0.9).restart()
+  node.fx = d3.event.x
+  node.fy = d3.event.y
+}).on('end', function (node) {
+  if (!d3.event.active) {
+    simulation.alphaTarget(0)
+  }
+  node.fx = null
+  node.fy = null
+})
+
+
+function selectNode(selectedNode) {
+  if (selectedId === selectedNode.id) {
+    selectedId = undefined
+    resetData()
+    updateSimulation()
+  } else {
+    selectedId = selectedNode.id
+    updateData(selectedNode)
+    updateSimulation()
+  }
+
+  var neighbors = getNeighbors(selectedNode)
+
+  // we modify the styles to highlight selected nodes
+  nodeElements.attr('fill', function (node) { return getNodeColor(node, neighbors) })
+  textElements.attr('fill', function (node) { return getTextColor(node, neighbors) })
+  linkElements.attr('stroke', function (link) { return getLinkColor(selectedNode, link) })
+}
+
+// this helper simple adds all nodes and links
+// that are missing, to recreate the initial state
+function resetData() {
+  var nodeIds = nodes.map(function (node) { return node.id })
+
+  baseNodes.forEach(function (node) {
+    if (nodeIds.indexOf(node.id) === -1) {
+      nodes.push(node)
+    }
+  })
+
+  links = baseLinks
+}
+
+// diffing and mutating the data
+function updateData(selectedNode) {
+  var neighbors = getNeighbors(selectedNode)
+  var newNodes = baseNodes.filter(function (node) {
+    return neighbors.indexOf(node.id) > -1 || node.level === 1
+  })
+
+  var diff = {
+    removed: nodes.filter(function (node) { return newNodes.indexOf(node) === -1 }),
+    added: newNodes.filter(function (node) { return nodes.indexOf(node) === -1 })
+  }
+
+  diff.removed.forEach(function (node) { nodes.splice(nodes.indexOf(node), 1) })
+  diff.added.forEach(function (node) { nodes.push(node) })
+
+  links = baseLinks.filter(function (link) {
+    return link.target.id === selectedNode.id || link.source.id === selectedNode.id
+  })
+}
+
+function updateGraph() {
+  // links
+  linkElements = linkGroup.selectAll('line')
+    .data(links, function (link) {
+      return link.target.id + link.source.id
+    })
+
+  linkElements.exit().remove()
+
+  var linkEnter = linkElements
+    .enter().append('line')
+    .attr('stroke-width', 1)
+    .attr('stroke', function (node) { return node.tags == "three" ? 'red' : 'grey' })
+    //.attr('stroke', 'rgba(50, 50, 50, 0.2)')
+
+  linkElements = linkEnter.merge(linkElements)
+
+  // nodes
+  nodeElements = nodeGroup.selectAll('circle')
+    .data(nodes, function (node) { return node.id })
+
+  nodeElements.exit().remove()
+
+  var nodeEnter = nodeElements
+    .enter()
+    .append('circle')
+    .attr('r', 7)
+    .attr('fill', function (node) { return node.level === 1 ? 'red' : 'gray' })
+    .call(dragDrop)
+    // we link the selectNode method here
+    // to update the graph on every click
+    .on('click', selectNode)
+
+  nodeElements = nodeEnter.merge(nodeElements)
+
+  // texts
+  textElements = textGroup.selectAll('text')
+    .data(nodes, function (node) { return node.id })
+
+  textElements.exit().remove()
+
+  var textEnter = textElements
+    .enter()
+    .append('text')
+    .text(function (node) { return node.label })
+    .attr('font-size', 10)
+    .attr('dx', 15)
+    .attr('dy', 4)
+
+  textElements = textEnter.merge(textElements)
+}
+
+function updateSimulation() {
+  updateGraph()
+
+  simulation.nodes(nodes).on('tick', () => {
+    nodeElements
+      .attr('cx', function (node) { return node.x })
+      .attr('cy', function (node) { return node.y })
+    textElements
+      .attr('x', function (node) { return node.x })
+      .attr('y', function (node) { return node.y })
+    linkElements
+      .attr('x1', function (link) { return link.source.x })
+      .attr('y1', function (link) { return link.source.y })
+      .attr('x2', function (link) { return link.target.x })
+      .attr('y2', function (link) { return link.target.y })
+  })
+
+  simulation.force('link').links(links)
+  simulation.alphaTarget(0.9).restart()
+}
+
+// last but not least, we call updateSimulation
+// to trigger the initial render
+updateSimulation()
+
+</script>
+
+</body>
+</html>
