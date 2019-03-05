@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <title>Forrest Whitcomb; Work</title>
+  <link rel="canonical" href="">
+  <link rel="alternate" type="application/rss+xml" href="">
+  <link rel="shortcut icon" href="http://www.iconj.com/ico/p/8/p8dxhzb8pn.ico" type="image/x-icon" />
+  <link rel="stylesheet" type="text/css" href="parisCss.css">
+  <link href='http://fonts.googleapis.com/css?family=Karla:400,700|Vollkorn:400,400i' rel='stylesheet' type='text/css'>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <!--<script src="/uploads/about/lazysizes.min.js" async=""></script>-->
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-48112622-1', 'auto');
+  ga('send', 'pageview');
+  </script>
+
+  <body>
+
+ <div class="site-intro">
+  <div class="site-intro-text ml12">
+    The Wall of Philip II Augustus
+  </div>
+</div>
+
+<div id="container"></div>
+
+<script type="x-shader/x-vertex" id="vertexShader">
+  // uniform float amplitude;
+  // attribute float size;
+  uniform float amplitude;
+
+  attribute vec3 vertexColor;
+
+  varying vec4 varColor;
+
+  void main()
+  {
+  varColor = vec4(vertexColor, 1.0);
+
+  vec4 pos = vec4(position, 1.0);
+  pos.z *= amplitude;
+
+  vec4 mvPosition = modelViewMatrix * pos;
+
+  gl_PointSize = 1.0;
+  gl_Position = projectionMatrix * mvPosition;
+  }
+</script>
+
+<script type="x-shader/x-fragment" id="fragmentShader">
+  varying vec4 varColor;
+
+  void main()
+  {
+  gl_FragColor = varColor;
+  }
+</script>
+
+ <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r62/three.min.js'></script>
+<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/175711/trackball_ctrl_r62.js'></script>
+
+  
+ <script src="font.js"></script>
+    <script  src="paris02.js"></script>
+</body>
+</html>

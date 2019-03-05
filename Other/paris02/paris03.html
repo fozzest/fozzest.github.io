@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="Cyclemon / Experiment" name="description">
+<meta content="cyclemon, cycle, velo, lemon, tour, de, france, cyclisme, roue, roues, cycles, motion, design, graphic, graphisme, illu, illustration, pignon, fixe, hipster, grandpa, gangsta" name="keywords">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Paris Wall</title>
+<link rel="icon" type="image/png" href="images/fav.png" />
+<link href="paris03.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="button.js"></script>
+<script type="text/javascript" src="parallax.js"></script>
+<script type="text/javascript" src="localScroll.js"></script>
+<script type="text/javascript" src="scrollTo.js"></script>
+ 
+
+
+	<script type="text/javascript">
+
+$(window).load(function(){	
+	$('body, html').scrollTop(0);
+	$("#loader").fadeToggle({display:"none"}, "slow");
+});
+</script>
+<script type="text/javascript">
+
+$(document).ready(function(){	
+		
+		
+	//outerHeight (true/false) - Whether or not jQuery should use it's outerHeight option to determine when a section is in the viewport
+	$('#traveler').parallax("50%", 0.5);
+	//$('.bg').parallax("50%", "50%", 0.5, true);
+	$('#third').parallax("50%", 0.5);
+	$('#hipster').parallax("50%", 0.5);
+	$('#fond4').parallax("50%", 0.5);
+	
+	$('#fond19').parallax("50%", 0.5);
+	
+	
+
+
+            function scrollToDiv(element,navheight){
+                var offset = element.offset();
+                var offsetTop = offset.top;
+                var totalScroll = offsetTop - $("header").outerHeight() + "px";
+
+                $('body,html').animate({scrollTop: totalScroll}, 700);
+
+            }
+	
+		$("#n1").css({opacity:'1'}, 1);
+			
+			$("#n1").hover(function(){
+       		$("#b1").fadeToggle(0.5);
+	  });
+	  		$("#n2").hover(function(){
+       		$("#b2").fadeToggle(0.5);
+	  });
+			$("#n3").hover(function(){
+       		$("#b3").fadeToggle(0.5);
+	  });
+	  		$("#n4").hover(function(){
+       		$("#b4").fadeToggle(0.5);
+	  });
+
+	  		$("#n19").hover(function(){
+       		$("#b19").fadeToggle(0.5);
+	  });
+	  		$("#n20").hover(function(){
+       		$("#b20").fadeToggle(0.5);
+	  });
+	  
+/*	  $("#share").hover(function(){
+      $("#content").slideToggle(100)
+	      $("#share a").animate({opacity:'1'}, 1);
+
+  });
+  $("#share").mouseleave(function() {
+	  	   $("#share a").animate({opacity:'0.4'}, 1);
+  });*/
+  
+	 
+  	
+        });
+
+
+</script>
+
+</head>
+
+
+<body>
+
+<div id="loader">
+<div id="load">
+<img alt="roue" src="images/load.png"/>
+
+</div>
+</div>
+
+
+
+
+<div id="menu">
+    <a id="exp" href="#intro"><img alt="experiment" src="images/experiment.png"/></a>
+    <a id="know" href="https://fozzest.github.io/Other/Lab01/paris01.html"><img alt="know more" src="images/more.png"/></a>
+    
+
+    </div>
+    
+    
+    
+    
+
+	<div id="intro">
+    
+		
+	</div>
+    
+
+     
+	<div alt="you're a traveler" id="traveler">
+		<div class="story"><div class="bg"></div>
+	    </div> </div>
+	    
+       
+        
+	</div>
+	<div alt="you're a weirdo" id="third">
+		<div class="story"><div class="bg"></div>
+	    	
+	    </div> 
+	</div> 
+	
+	<div alt="you're a hipster" id="hipster">
+		<div class="story"><div class="bg"></div>
+        
+       </div>
+       </div>
+       <div alt="you're a swagger" id="fond4">
+		<div class="story"><div class="bg"></div>
+        
+       </div>
+       </div>
+
+       
+       
+       
+<footer>
+
+<div class="story">
+<p>Forrest Whitcomb</p>
+</div></footer>
+ 
+       
+</body>
+
+</html>
