@@ -323,7 +323,7 @@ img{
 
 #fond19{
 	background: url(images/06.png) 50% no-repeat fixed;
-	background-color:#000;
+	background-color: #f68076;
     background-size:contain;
     background-repeat: no-repeat;
     background-position: center center;
@@ -336,6 +336,87 @@ img{
 	position:relative;
 	z-index:2;
 }
+
+
+#title02{
+	background: url(images/title02.png) 50% no-repeat fixed;
+	background-color: #FAD79D;
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+	color: white;
+	height: 120%;
+	width:100%;
+	margin: 0 auto;
+	padding-top:0;
+	overflow: hidden;
+	position:relative;
+	z-index:2;
+}
+
+#card01{
+	background: url(images/card01.png) 50% no-repeat fixed;
+	background-color: #BCF5EA;
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+	color: white;
+	height: 120%;
+	width:100%;
+	margin: 0 auto;
+	padding-top:0;
+	overflow: hidden;
+	position:relative;
+	z-index:2;
+}
+#card02{
+	background: url(images/card02.png) 50% no-repeat fixed;
+	background-color: #B1DEED;
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+	color: white;
+	height: 120%;
+	width:100%;
+	margin: 0 auto;
+	padding-top:0;
+	overflow: hidden;
+	position:relative;
+	z-index:2;
+}
+#card03{
+	background: url(images/card03.png) 50% no-repeat fixed;
+	background-color: #000000;
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+	color: white;
+	height: 120%;
+	width:100%;
+	margin: 0 auto;
+	padding-top:0;
+	overflow: hidden;
+	position:relative;
+	z-index:2;
+}
+
+#card04{
+	background: url(images/card04.png) 50% no-repeat fixed;
+	background-color: #abe7f4;
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+	color: white;
+	height: 120%;
+	width:100%;
+	margin: 0 auto;
+	padding-top:0;
+	overflow: hidden;
+	position:relative;
+	z-index:2;
+}
+
+
 
 #fond19 .bg{
 	background: url(images/velo18.png) 50% 113% no-repeat fixed;
