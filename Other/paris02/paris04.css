@@ -148,3 +148,20 @@ img{
 	position:relative;
 	z-index:2;
 }
+
+
+#foot{
+	background: url(images/moreFoot.png) 50% no-repeat ;
+	background-color: #546368;
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+	color: white;
+	height: 50%;
+	width:100%;
+	margin: 0 auto;
+	padding-top:0;
+	overflow: hidden;
+	position:relative;
+	z-index:2;
+}
