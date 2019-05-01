@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FWIA</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Space+Mono:400,700|Vesper+Libre:700" rel="stylesheet">
+
+  <link rel="icon" type="image/png" href="favicomatic/favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="favicomatic/favicon-16x16.png" sizes="16x16" />
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-108448135-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-108448135-1');
+  </script>
+
+
+  <script src="jquery.js"></script>
+  <script src="jquery-ui.js"></script>
+  <script src="scripts.js"></script>
+
+
+</head>
+
+<body>
+
+  <header>
+    <div class="wrapper clearfix">
+      <div id="visibleInMobile">I'm Forrest, and this is my <span class="orangeText">...</span></div>
+      <div class="headerContent">
+
+        <span>I'm Forrest, and this is my</span>
+        <div class="dropdown">
+          <button class="dropbtn">
+            <span id="schoolSelected">Paris</span>
+            <svg width="11px" height="6px" viewBox="0 0 11 6" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <defs></defs>
+                <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="Select-Major/Border" transform="translate(-360.000000, -14.000000)" fill="#FFFFFF">
+                        <g id="Icons/Dropdown/Medium/Down" transform="translate(360.000000, 13.000000)">
+                            <polygon id="Triangle" points="5.5 7 0 1 11 1"></polygon>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+          </button>
+          <div class="dropdown-content">
+            <a href="#" id="semester" name="Paris">Paris</a>
+            <a href="#" id="new" name="Sydney">Sydney</a>
+            <a href="#" id="cd" name="New York City">New York City</a>
+            <a href="#" id="dt" name="San Francisco">San Francisco</a>
+
+
+          </div>
+          <!-- <select id="ddlViewBy">
+              <option value="1">test1</option>
+              <option value="2" selected="selected">test2</option>
+              <option value="3">test3</option>
+          </select> -->
+
+
+        </div>
+        <span>
+          image archive.
+        </span>
+        <p>
+          Explore
+          <span id="insertFiltersHere"><span class="orangeText" id="everything">everything<svg width="11px" height="6px" viewBox="0 0 11 6" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <defs></defs>
+              <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <g id="Select-Major/Border" transform="translate(-360.000000, -14.000000)" fill="#FFC86C">
+                      <g id="Icons/Dropdown/Medium/Down" transform="translate(360.000000, 13.000000)">
+                          <polygon id="Triangle" points="5.5 7 0 1 11 1"></polygon>
+                      </g>
+                  </g>
+              </g>
+          </svg></span></span><span id="displayInitial">.</span>
+        </p>
+      </div>
+
+
+      <div class="filters clearfix">
+        <div class="scrollable">
+        <button class="filter" id="pal" name="palimpsest">
+                Palimpsest
+                <svg width="11px" height="11px" viewBox="0 0 11 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <defs></defs>
+                  <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                      <g id="Icons/Plus" fill="#FFC86C">
+                          <rect id="Rectangle-5" x="4" y="0" width="3" height="11"></rect>
+                          <rect id="Rectangle-5-Copy" transform="translate(5.500000, 5.500000) rotate(-270.000000) translate(-5.500000, -5.500000) " x="4" y="0" width="3" height="11"></rect>
+                      </g>
+                  </g>
+                </svg>
+          </button>
+        <button class="filter" id="food" name="food">
+                Food
+                <svg width="11px" height="11px" viewBox="0 0 11 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <defs></defs>
+                  <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                      <g id="Icons/Plus" fill="#FFC86C">
+                          <rect id="Rectangle-5" x="4" y="0" width="3" height="11"></rect>
+                          <rect id="Rectangle-5-Copy" transform="translate(5.500000, 5.500000) rotate(-270.000000) translate(-5.500000, -5.500000) " x="4" y="0" width="3" height="11"></rect>
+                      </g>
+                  </g>
+                </svg>
+          </button>
+          <button class="filter" id="app-design" name="app design">
+                  Art
+                  <svg width="11px" height="11px" viewBox="0 0 11 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <defs></defs>
+                    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g id="Icons/Plus" fill="#FFC86C">
+                            <rect id="Rectangle-5" x="4" y="0" width="3" height="11"></rect>
+                            <rect id="Rectangle-5-Copy" transform="translate(5.500000, 5.500000) rotate(-270.000000) translate(-5.500000, -5.500000) " x="4" y="0" width="3" height="11"></rect>
+                        </g>
+                    </g>
+                  </svg>
+                </button>
+          <button class="filter" id="arch" name="architecture">
+                    Architecture
+                    <svg width="11px" height="11px" viewBox="0 0 11 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                      <defs></defs>
+                      <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                          <g id="Icons/Plus" fill="#FFC86C">
+                              <rect id="Rectangle-5" x="4" y="0" width="3" height="11"></rect>
+                              <rect id="Rectangle-5-Copy" transform="translate(5.500000, 5.500000) rotate(-270.000000) translate(-5.500000, -5.500000) " x="4" y="0" width="3" height="11"></rect>
+                          </g>
+                      </g>
+                    </svg>
+              </button>
+              <button class="filter" id="beneath" name="beneath">
+                        Beneath
+                        <svg width="11px" height="11px" viewBox="0 0 11 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                          <defs></defs>
+                          <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                              <g id="Icons/Plus" fill="#FFC86C">
+                                  <rect id="Rectangle-5" x="4" y="0" width="3" height="11"></rect>
+                                  <rect id="Rectangle-5-Copy" transform="translate(5.500000, 5.500000) rotate(-270.000000) translate(-5.500000, -5.500000) " x="4" y="0" width="3" height="11"></rect>
+                              </g>
+                          </g>
+                        </svg>
+                  </button>
+        <button class="filter" id="above" name="above">
+                Above
+                <svg width="11px" height="11px" viewBox="0 0 11 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <defs></defs>
+                  <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                      <g id="Icons/Plus" fill="#FFC86C">
+                          <rect id="Rectangle-5" x="4" y="0" width="3" height="11"></rect>
+                          <rect id="Rectangle-5-Copy" transform="translate(5.500000, 5.500000) rotate(-270.000000) translate(-5.500000, -5.500000) " x="4" y="0" width="3" height="11"></rect>
+                      </g>
+                  </g>
+                </svg>
+          </button>
+        <button class="filter" name="decay" id="decay">
+                  Decay
+                  <svg width="11px" height="11px" viewBox="0 0 11 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <defs></defs>
+                    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g id="Icons/Plus" fill="#FFC86C">
+                            <rect id="Rectangle-5" x="4" y="0" width="3" height="11"></rect>
+                            <rect id="Rectangle-5-Copy" transform="translate(5.500000, 5.500000) rotate(-270.000000) translate(-5.500000, -5.500000) " x="4" y="0" width="3" height="11"></rect>
+                        </g>
+                    </g>
+                  </svg>
+            </button>
+
+          <button class="filter" name="repurpose" id="repurpose">
+                  Repurpose
+                  <svg width="11px" height="11px" viewBox="0 0 11 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <defs></defs>
+                    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g id="Icons/Plus" fill="#FFC86C">
+                            <rect id="Rectangle-5" x="4" y="0" width="3" height="11"></rect>
+                            <rect id="Rectangle-5-Copy" transform="translate(5.500000, 5.500000) rotate(-270.000000) translate(-5.500000, -5.500000) " x="4" y="0" width="3" height="11"></rect>
+                        </g>
+                    </g>
+                  </svg>
+            </button>
+           <!-- <button class="filter" name="design studies" id="des-stu">
+                      Design Studies
+                      <svg width="11px" height="11px" viewBox="0 0 11 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <defs></defs>
+                        <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g id="Icons/Plus" fill="#FFC86C">
+                                <rect id="Rectangle-5" x="4" y="0" width="3" height="11"></rect>
+                                <rect id="Rectangle-5-Copy" transform="translate(5.500000, 5.500000) rotate(-270.000000) translate(-5.500000, -5.500000) " x="4" y="0" width="3" height="11"></rect>
+                            </g>
+                        </g>
+                      </svg>
+                </button>
+        <button class="filter" name="drawing" id="drawing">
+                    Drawing
+                    <svg width="11px" height="11px" viewBox="0 0 11 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                      <defs></defs>
+                      <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                          <g id="Icons/Plus" fill="#FFC86C">
+                              <rect id="Rectangle-5" x="4" y="0" width="3" height="11"></rect>
+                              <rect id="Rectangle-5-Copy" transform="translate(5.500000, 5.500000) rotate(-270.000000) translate(-5.500000, -5.500000) " x="4" y="0" width="3" height="11"></rect>
+                          </g>
+                      </g>
+                    </svg>
+              </button>
+              <button class="filter" name="fashion" id="fashion">
+                        Fashion
+                        <svg width="11px" height="11px" viewBox="0 0 11 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                          <defs></defs>
+                          <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                              <g id="Icons/Plus" fill="#FFC86C">
+                                  <rect id="Rectangle-5" x="4" y="0" width="3" height="11"></rect>
+                                  <rect id="Rectangle-5-Copy" transform="translate(5.500000, 5.500000) rotate(-270.000000) translate(-5.500000, -5.500000) " x="4" y="0" width="3" height="11"></rect>
+                              </g>
+                          </g>
+                        </svg>
+                  </button>
+        <button class="filter" name="film" id="film">
+                    Film/Video
+                    <svg width="11px" height="11px" viewBox="0 0 11 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                      <defs></defs>
+                      <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                          <g id="Icons/Plus" fill="#FFC86C">
+                              <rect id="Rectangle-5" x="4" y="0" width="3" height="11"></rect>
+                              <rect id="Rectangle-5-Copy" transform="translate(5.500000, 5.500000) rotate(-270.000000) translate(-5.500000, -5.500000) " x="4" y="0" width="3" height="11"></rect>
+                          </g>
+                      </g>
+                    </svg>
+              </button>
+              <button class="filter" name="graphic design" id="gd">
+                      Graphic Design
+                      <svg width="11px" height="11px" viewBox="0 0 11 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <defs></defs>
+                        <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g id="Icons/Plus" fill="#FFC86C">
+                                <rect id="Rectangle-5" x="4" y="0" width="3" height="11"></rect>
+                                <rect id="Rectangle-5-Copy" transform="translate(5.500000, 5.500000) rotate(-270.000000) translate(-5.500000, -5.500000) " x="4" y="0" width="3" height="11"></rect>
+                            </g>
+                        </g>
+                      </svg>
+                    </button>
+        <button class="filter" name="history" id="history">
+            History
+            <svg width="11px" height="11px" viewBox="0 0 11 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <defs></defs>
+              <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <g id="Icons/Plus" fill="#FFC86C">
+                      <rect id="Rectangle-5" x="4" y="0" width="3" height="11"></rect>
+                      <rect id="Rectangle-5-Copy" transform="translate(5.500000, 5.500000) rotate(-270.000000) translate(-5.500000, -5.500000) " x="4" y="0" width="3" height="11"></rect>
+                  </g>
+              </g>
+            </svg>
+          </button>
+        <button class="filter" name="illustration" id="illustration">
+              Illustration
+              <svg width="11px" height="11px" viewBox="0 0 11 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <defs></defs>
+                <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="Icons/Plus" fill="#FFC86C">
+                        <rect id="Rectangle-5" x="4" y="0" width="3" height="11"></rect>
+                        <rect id="Rectangle-5-Copy" transform="translate(5.500000, 5.500000) rotate(-270.000000) translate(-5.500000, -5.500000) " x="4" y="0" width="3" height="11"></rect>
+                    </g>
+                </g>
+              </svg>
+            </button>
+        <button class="filter" name="narrative" id="narrative">
+                  Narrative
+                  <svg width="11px" height="11px" viewBox="0 0 11 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <defs></defs>
+                    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g id="Icons/Plus" fill="#FFC86C">
+                            <rect id="Rectangle-5" x="4" y="0" width="3" height="11"></rect>
+                            <rect id="Rectangle-5-Copy" transform="translate(5.500000, 5.500000) rotate(-270.000000) translate(-5.500000, -5.500000) " x="4" y="0" width="3" height="11"></rect>
+                        </g>
+                    </g>
+                  </svg>
+                </button>
+                <button class="filter" name="philosophy" id="philosophy">
+                          Philosophy
+                          <svg width="11px" height="11px" viewBox="0 0 11 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <defs></defs>
+                            <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <g id="Icons/Plus" fill="#FFC86C">
+                                    <rect id="Rectangle-5" x="4" y="0" width="3" height="11"></rect>
+                                    <rect id="Rectangle-5-Copy" transform="translate(5.500000, 5.500000) rotate(-270.000000) translate(-5.500000, -5.500000) " x="4" y="0" width="3" height="11"></rect>
+                                </g>
+                            </g>
+                          </svg>
+                        </button>
+        <button class="filter" id="photo-filter" name="photo">
+                  Photo
+                  <svg width="11px" height="11px" viewBox="0 0 11 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <defs></defs>
+                    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g id="Icons/Plus" fill="#FFC86C">
+                            <rect id="Rectangle-5" x="4" y="0" width="3" height="11"></rect>
+                            <rect id="Rectangle-5-Copy" transform="translate(5.500000, 5.500000) rotate(-270.000000) translate(-5.500000, -5.500000) " x="4" y="0" width="3" height="11"></rect>
+                        </g>
+                    </g>
+                  </svg>
+                </button>
+        <button class="filter" name="poster" id="poster">
+                    Poster Design
+                    <svg width="11px" height="11px" viewBox="0 0 11 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                      <defs></defs>
+                      <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                          <g id="Icons/Plus" fill="#FFC86C">
+                              <rect id="Rectangle-5" x="4" y="0" width="3" height="11"></rect>
+                              <rect id="Rectangle-5-Copy" transform="translate(5.500000, 5.500000) rotate(-270.000000) translate(-5.500000, -5.500000) " x="4" y="0" width="3" height="11"></rect>
+                          </g>
+                      </g>
+                    </svg>
+                  </button>
+        <button class="filter" name="printmaking" id="printmaking">
+                      Printmaking
+                      <svg width="11px" height="11px" viewBox="0 0 11 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <defs></defs>
+                        <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g id="Icons/Plus" fill="#FFC86C">
+                                <rect id="Rectangle-5" x="4" y="0" width="3" height="11"></rect>
+                                <rect id="Rectangle-5-Copy" transform="translate(5.500000, 5.500000) rotate(-270.000000) translate(-5.500000, -5.500000) " x="4" y="0" width="3" height="11"></rect>
+                            </g>
+                        </g>
+                      </svg>
+                    </button>
+        <button class="filter" name="product" id="product">
+                        Product
+                        <svg width="11px" height="11px" viewBox="0 0 11 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                          <defs></defs>
+                          <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                              <g id="Icons/Plus" fill="#FFC86C">
+                                  <rect id="Rectangle-5" x="4" y="0" width="3" height="11"></rect>
+                                  <rect id="Rectangle-5-Copy" transform="translate(5.500000, 5.500000) rotate(-270.000000) translate(-5.500000, -5.500000) " x="4" y="0" width="3" height="11"></rect>
+                              </g>
+                          </g>
+                        </svg>
+                      </button>
+        <button class="filter" name="sound" id="sound">
+                      Sound
+                      <svg width="11px" height="11px" viewBox="0 0 11 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <defs></defs>
+                        <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g id="Icons/Plus" fill="#FFC86C">
+                                <rect id="Rectangle-5" x="4" y="0" width="3" height="11"></rect>
+                                <rect id="Rectangle-5-Copy" transform="translate(5.500000, 5.500000) rotate(-270.000000) translate(-5.500000, -5.500000) " x="4" y="0" width="3" height="11"></rect>
+                            </g>
+                        </g>
+                      </svg>
+                    </button>
+                    <button class="filter" name="space" id="space">
+                                  Space
+                                  <svg width="11px" height="11px" viewBox="0 0 11 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <defs></defs>
+                                    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                        <g id="Icons/Plus" fill="#FFC86C">
+                                            <rect id="Rectangle-5" x="4" y="0" width="3" height="11"></rect>
+                                            <rect id="Rectangle-5-Copy" transform="translate(5.500000, 5.500000) rotate(-270.000000) translate(-5.500000, -5.500000) " x="4" y="0" width="3" height="11"></rect>
+                                        </g>
+                                    </g>
+                                  </svg>
+                                </button>
+        <button class="filter" name="typography" id="typography">
+            Typography
+            <svg width="11px" height="11px" viewBox="0 0 11 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <defs></defs>
+              <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <g id="Icons/Plus" fill="#FFC86C">
+                      <rect id="Rectangle-5" x="4" y="0" width="3" height="11"></rect>
+                      <rect id="Rectangle-5-Copy" transform="translate(5.500000, 5.500000) rotate(-270.000000) translate(-5.500000, -5.500000) " x="4" y="0" width="3" height="11"></rect>
+                  </g>
+              </g>
+            </svg>
+          </button>
+        <button class="filter" name="UI/UX" id="uiux">
+              UI/UX
+              <svg width="11px" height="11px" viewBox="0 0 11 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <defs></defs>
+                <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="Icons/Plus" fill="#FFC86C">
+                        <rect id="Rectangle-5" x="4" y="0" width="3" height="11"></rect>
+                        <rect id="Rectangle-5-Copy" transform="translate(5.500000, 5.500000) rotate(-270.000000) translate(-5.500000, -5.500000) " x="4" y="0" width="3" height="11"></rect>
+                    </g>
+                </g>
+              </svg>
+            </button>
+        <button class="filter" name="VR" id="vr">
+              VR
+              <svg width="11px" height="11px" viewBox="0 0 11 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <defs></defs>
+                <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="Icons/Plus" fill="#FFC86C">
+                        <rect id="Rectangle-5" x="4" y="0" width="3" height="11"></rect>
+                        <rect id="Rectangle-5-Copy" transform="translate(5.500000, 5.500000) rotate(-270.000000) translate(-5.500000, -5.500000) " x="4" y="0" width="3" height="11"></rect>
+                    </g>
+                </g>
+              </svg>
+            </button>
+        <button class="filter" name="web design" id="web">
+            Web Design
+            <svg width="11px" height="11px" viewBox="0 0 11 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <defs></defs>
+              <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <g id="Icons/Plus" fill="#FFC86C">
+                      <rect id="Rectangle-5" x="4" y="0" width="3" height="11"></rect>
+                      <rect id="Rectangle-5-Copy" transform="translate(5.500000, 5.500000) rotate(-270.000000) translate(-5.500000, -5.500000) " x="4" y="0" width="3" height="11"></rect>
+                  </g>
+              </g>
+            </svg>
+          </button>
+        <button class="filter" name="writing" id="writing">
+              Writing
+              <svg width="11px" height="11px" viewBox="0 0 11 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <defs></defs>
+                <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="Icons/Plus" fill="#FFC86C">
+                        <rect id="Rectangle-5" x="4" y="0" width="3" height="11"></rect>
+                        <rect id="Rectangle-5-Copy" transform="translate(5.500000, 5.500000) rotate(-270.000000) translate(-5.500000, -5.500000) " x="4" y="0" width="3" height="11"></rect>
+                    </g>
+                </g>
+              </svg>
+            </button> !-->
+            <div class="clearAll">
+              Clear all
+            </div>
+            <div class="done">
+              DONE
+            </div>
+          </div>
+      </div>
+
+
+
+    </div>
+
+
+
+    </div>
+
+  </header>
+
+
+  <div class="sidebars">
+    <div class="leftSidebar">
+       <span id="info">Info</span>
+    </div>
+    
+  </div>
+
+  <div id="loading">
+     <!-- <img src="img/giphy-downsized.gif" alt="Loading" /> -->
+     <svg xmlns="http://www.w3.org/2000/svg"
+       width="80px" height="60px"
+       viewBox="5 0 80 60">
+      <path id="wave"
+          fill="none"
+          stroke="#FFC86C"
+          stroke-width="4"
+          stroke-linecap="round">
+      </path>
+    </svg>
+   </div>
+
+  <div class="mainContent">
+    <div class="wrapper clearfix">
+
+<iframe src="https://www.google.com/maps/d/embed?mid=1fMLNTI08sSdvVkGG2VWreNvrIUZPf8OR&hl=en" width="100%" height="640"></iframe>
+      <div class="row headerRow clearfix">
+
+
+
+        <div class="col firstCol">
+          Title
+          <!-- <svg width="9px" height="5px" viewBox="0 0 9 5" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <defs></defs>
+              <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g id="Icons/Dropdown/Small/Red" fill="#FFC86C">
+                    <polygon id="Triangle-Copy-2" points="4.5 5 0 0 9 0"></polygon>
+                </g>
+              </g>
+            </svg> -->
+        </div>
+        <div class="col secondCol">
+          Description
+        </div>
+        <div class="col thirdCol">
+          Arr
+          <svg width="9px" height="5px" viewBox="0 0 9 5" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <defs></defs>
+              <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <g id="Icons/Dropdown/Small/Red" fill="#FFC86C">
+                      <polygon id="Triangle-Copy-2" points="4.5 5 0 0 9 0"></polygon>
+                  </g>
+              </g>
+          </svg>
+        </div>
+        <div class="col fourthCol">
+          Source
+          <svg width="9px" height="5px" viewBox="0 0 9 5" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <defs></defs>
+              <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <g id="Icons/Dropdown/Small/Red" fill="#FFC86C">
+                      <polygon id="Triangle-Copy-2" points="4.5 5 0 0 9 0"></polygon>
+                  </g>
+              </g>
+          </svg>
+        </div>
+        <div class="col fifthCol">
+          Link to Map
+        </div>
+      </div>
+    </div>
+    <div class="sort clearfix">
+      <div class="wrapper">
+        <div class="row noPadding clearfix">
+          <div class="col firstCol"></div>
+          <div class="col secondCol"></div>
+          <div class="col thirdCol" id="bySchool">
+
+
+            <ul>
+              <li id="amt">
+                <svg width="13px" height="10px" viewBox="0 0 13 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                          <defs></defs>
+                          <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                              <g id="Desktop" transform="translate(-622.000000, -251.000000)" fill="#FFC86C">
+                                  <polygon id="Page-1" points="633.721607 251 626.591413 258.130194 623.278393 254.799169 622 256.077742 626.591413 260.668975 635 252.278393"></polygon>
+                              </g>
+                          </g>
+                      </svg> 1e
+              </li>
+              <li id="adht">
+                <svg width="13px" height="10px" viewBox="0 0 13 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <defs></defs>
+                        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g id="Desktop" transform="translate(-622.000000, -251.000000)" fill="#FFC86C">
+                                <polygon id="Page-1" points="633.721607 251 626.591413 258.130194 623.278393 254.799169 622 256.077742 626.591413 260.668975 635 252.278393"></polygon>
+                            </g>
+                        </g>
+                    </svg> 2e</li>
+              <li id="sce">
+                <svg width="13px" height="10px" viewBox="0 0 13 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <defs></defs>
+                        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g id="Desktop" transform="translate(-622.000000, -251.000000)" fill="#FFC86C">
+                                <polygon id="Page-1" points="633.721607 251 626.591413 258.130194 623.278393 254.799169 622 256.077742 626.591413 260.668975 635 252.278393"></polygon>
+                            </g>
+                        </g>
+                    </svg> 3e
+              </li>
+
+                <li id="elv">
+                <svg width="13px" height="10px" viewBox="0 0 13 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <defs></defs>
+                        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g id="Desktop" transform="translate(-622.000000, -251.000000)" fill="#FFC86C">
+                                <polygon id="Page-1" points="633.721607 251 626.591413 258.130194 623.278393 254.799169 622 256.077742 626.591413 260.668975 635 252.278393"></polygon>
+                            </g>
+                        </g>
+                    </svg> 4e
+              </li>
+              <li id="fash">
+                <svg width="13px" height="10px" viewBox="0 0 13 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <defs></defs>
+                        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g id="Desktop" transform="translate(-622.000000, -251.000000)" fill="#FFC86C">
+                                <polygon id="Page-1" points="633.721607 251 626.591413 258.130194 623.278393 254.799169 622 256.077742 626.591413 260.668975 635 252.278393"></polygon>
+                            </g>
+                        </g>
+                    </svg> 4e
+              </li>
+
+              <li id="lang">
+                <svg width="13px" height="10px" viewBox="0 0 13 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <defs></defs>
+                        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g id="Desktop" transform="translate(-622.000000, -251.000000)" fill="#FFC86C">
+                                <polygon id="Page-1" points="633.721607 251 626.591413 258.130194 623.278393 254.799169 622 256.077742 626.591413 260.668975 635 252.278393"></polygon>
+                            </g>
+                        </g>
+                    </svg> 6e
+              </li>
+              <li id="perf">
+                
+                <svg width="13px" height="10px" viewBox="0 0 13 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <defs></defs>
+                        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g id="Desktop" transform="translate(-622.000000, -251.000000)" fill="#FFC86C">
+                                <polygon id="Page-1" points="633.721607 251 626.591413 258.130194 623.278393 254.799169 622 256.077742 626.591413 260.668975 635 252.278393"></polygon>
+                            </g>
+                        </g>
+                    </svg> 7e
+                    
+                 
+               </li>
+              <li id="ssr" >
+                
+                <svg width="13px" height="10px" viewBox="0 0 13 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <defs></defs>
+                        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g id="Desktop" transform="translate(-622.000000, -251.000000)" fill="#FFC86C">
+                                <polygon id="Page-1" points="633.721607 251 626.591413 258.130194 623.278393 254.799169 622 256.077742 626.591413 260.668975 635 252.278393"></polygon>
+                            </g>
+                        </g>
+                    </svg> 8e
+                    
+                  
+              </li>
+              <li id="pub">
+                <svg width="13px" height="10px" viewBox="0 0 13 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <defs></defs>
+                        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g id="Desktop" transform="translate(-622.000000, -251.000000)" fill="#FFC86C">
+                                <polygon id="Page-1" points="633.721607 251 626.591413 258.130194 623.278393 254.799169 622 256.077742 626.591413 260.668975 635 252.278393"></polygon>
+                            </g>
+                        </g>
+                    </svg> 9e
+              </li>
+
+
+
+                  <li id="eln">
+                
+                <svg width="13px" height="10px" viewBox="0 0 13 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <defs></defs>
+                        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g id="Desktop" transform="translate(-622.000000, -251.000000)" fill="#FFC86C">
+                                <polygon id="Page-1" points="633.721607 251 626.591413 258.130194 623.278393 254.799169 622 256.077742 626.591413 260.668975 635 252.278393"></polygon>
+                            </g>
+                        </g>
+                    </svg> 11e
+                    
+                  
+               </li>
+
+                <li id="sub">
+                <svg width="13px" height="10px" viewBox="0 0 13 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <defs></defs>
+                        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g id="Desktop" transform="translate(-622.000000, -251.000000)" fill="#FFC86C">
+                                <polygon id="Page-1" points="633.721607 251 626.591413 258.130194 623.278393 254.799169 622 256.077742 626.591413 260.668975 635 252.278393"></polygon>
+                            </g>
+                        </g>
+                    </svg> Suburbs
+              </li>
+
+          </div>
+          <!-- </div> -->
+          <div class="col thirdCol"></div>
+          <div class="col fourthCol" id="byType">
+            <ul>
+              <li class="disabled">
+                <a class="hover">
+                <svg width="13px" height="10px" viewBox="0 0 13 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                      <defs></defs>
+                      <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                          <g id="Desktop" transform="translate(-622.000000, -251.000000)" fill="#FFC86C">
+                              <polygon id="Page-1" points="633.721607 251 626.591413 258.130194 623.278393 254.799169 622 256.077742 626.591413 260.668975 635 252.278393"></polygon>
+                          </g>
+                      </g>
+                  </svg> Personal
+                  <span class="onHover" id="comingSoon3"> Feature coming soon!</span>
+                </a>
+              </li>
+              <li class="disabled">
+                <a class="hover">
+                <svg width="13px" height="10px" viewBox="0 0 13 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <defs></defs>
+                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g id="Desktop" transform="translate(-622.000000, -251.000000)" fill="#FFC86C">
+                            <polygon id="Page-1" points="633.721607 251 626.591413 258.130194 623.278393 254.799169 622 256.077742 626.591413 260.668975 635 252.278393"></polygon>
+                        </g>
+                    </g>
+                </svg> Sourced
+                <span class="onHover" id="comingSoon4"> Feature coming soon!</span>
+              </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="wrapper pulledContent">
+
+    </div>
+  </div>
+
+
+  <section class="info">
+    <div class="infoContent">
+
+      <h4 id="back">&lt Back to Images</h4>
+      <h3>Info</h3>
+      <p>My name is Forrest Whitcomb and this is me trying to journal my photos. </p>
+
+      <p>All photos shot on iPhone. </p>
+
+      
+    </div>
+    </p>
+
+
+  </section>
+
+</body>
+
+</html>
