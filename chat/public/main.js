@@ -16,13 +16,7 @@ $(function() {
 
 
 
-var imgArray = new Array();
 
-imgArray[0] = new Image();
-imgArray[0].src = 'uploads/firstPNG.png';
-
-imgArray[1] = new Image();
-imgArray[1].src = 'uploads/PNGPink.png';
 
 /* ... more images ... */
 
@@ -74,6 +68,10 @@ imgArray[1].src = 'uploads/PNGPink.png';
     if (!(event.ctrlKey || event.metaKey || event.altKey)) {
       $currentInput.focus();
     }
+
+
+
+
     // When the client hits ENTER on their keyboard
     if (event.which === 13) {
       if (username) {
@@ -119,14 +117,32 @@ imgArray[1].src = 'uploads/PNGPink.png';
 
 
 
-    socket.on('login', (data) => {
+socket.on('login', (data) => {
       connected = true;
   
 
-  canvas.addEventListener('touchdown', onTouchDown, false);
-  canvas.addEventListener('toucheup', onTouchUp, false);
+   // canvas.addEventListener('touchdown', onTouchDown, false);
+   // canvas.addEventListener('toucheup', onTouchUp, false);
 
-  canvas.addEventListener('touchmove', throttle(onTouchMove, 10), false);
+   // canvas.addEventListener('touchmove', throttle(onTouchMove, 10), false);
+
+//    // Prevent scrolling when touching the canvas
+// document.body.addEventListener("touchstart", function (e) {
+//   if (e.target == canvas) {
+//     e.preventDefault();
+//   }
+// }, false);
+// document.body.addEventListener("touchend", function (e) {
+//   if (e.target == canvas) {
+//     e.preventDefault();
+//   }
+// }, false);
+// document.body.addEventListener("touchmove", function (e) {
+//   if (e.target == canvas) {
+//     e.preventDefault();
+//   }
+// }, false);
+
 
  
   canvas.addEventListener('mousedown', onMouseDown, false);
@@ -158,28 +174,80 @@ function makeStamp(x1, y1, stampPrint)
 
 
 
+var stamp;
+
+window.onload=function(){
+
+  document.getElementById("parisMap").addEventListener("click", clickSelect);
+  document.getElementById("parisWall").addEventListener("click", clickSelectWall);
 
 
 
 
-  function drawLine(x0, y0, x1, y1, color, emit, name, stampPrint){
-    context.beginPath();
-    context.moveTo(x0, y0);
-    context.lineTo(x1, y1);
+
+  function clickSelect() {
+    console.log('hey');
+    document.getElementById("parisMap").innerHTML = "YOU CLICKED ME!"; 
+    stamp = 'uploads/firstPNG.png';
+
+      if (username) {
+        sendMessage();
+        socket.emit('stop typing');
+        typing = false;
+      } else {
+        setUsername();
+      }
+
+  //console.log("button 01");
+}
+
+
+function clickSelectWall() {
+  document.getElementById("parisWall").innerHTML = "YOU CLICKED ME!";
+  console.log("button 02");
+  stamp = 'uploads/PNGPink.png';
+
+      if (username) {
+        sendMessage();
+        socket.emit('stop typing');
+        typing = false;
+      } else {
+        setUsername();
+      }
+
+
+  }
+}
+
+
+function drawLine(x0, y0, x1, y1, color, emit, name, stamp){
+
     context.strokeStyle = color;
     context.lineWidth = 0;
     context.stroke();
     context.closePath();
     context.font = "30px Verdana";
 
-//stamp png
 
 
-  console.log(x1, y1);
+
+// imgArray[0] = new Image();
+// imgArray[0].src = 'uploads/firstPNG.png';
+
+// imgArray[1] = new Image();
+// imgArray[1].src = 'uploads/PNGPink.png';
+
+
+
+  console.log(x0, y0);
   stampPrint = new Image();
-  stampPrint.src = 'uploads/firstPNG.png';
+  //stampPrint.src = 'uploads/firstPNG.png';
+  stampPrint.src = stamp;
+  console.log("246 " +stampPrint.src);
+  //console.log("the stamp is called" + stamp);
   // stampPrint.onload = function(x1, y1){
-  context.drawImage(stampPrint, x1 - 100 , y1 - 100, 200, 200);
+  //context.rotate(Math.random(-1,2));
+  context.drawImage(stampPrint, x0 - 50 , y0 - 100, 200, 200);
   
 
 
@@ -201,6 +269,10 @@ function makeStamp(x1, y1, stampPrint)
     var w = canvas.width;
     var h = canvas.height;
 
+
+
+
+
     if(emit){
       socket.emit('drawing', {
         x0: x0 / w,
@@ -209,7 +281,7 @@ function makeStamp(x1, y1, stampPrint)
         y1: y1 / h,
         color: color,
         name: name,
-        stampPrint: stampPrint
+        stamp: stamp
       });
       console.log(name);
     }
@@ -228,11 +300,14 @@ function makeStamp(x1, y1, stampPrint)
 
   function onMouseDown(e){
 
-    drawing = true;
+    //drawing = true;
+    drawLine(current.x, current.y, e.clientX||e.touches[0].clientX, e.clientY||e.touches[0].clientY, current.color, true, username, stamp);
     current.x = e.clientX||e.touches[0].clientX;
     current.y = e.clientY||e.touches[0].clientY;
     makeStamp(current.x,current.y);
   }
+
+
 
   function onMouseUp(e){
     if (!drawing) { return; }
@@ -240,34 +315,35 @@ function makeStamp(x1, y1, stampPrint)
   }
 
 
-function onTouchDown(e){
+// function onTouchDown(e){
 
-    drawing = true;
-    current.x = e.clientX||e.touches[0].clientX;
-    current.y = e.clientY||e.touches[0].clientY;
-    makeStamp(current.x,current.y);
-//
-}
+//     drawing = true;
 
-function onTouchUp(e){
-    if (!drawing) { return; }
-    drawing = false;
-//
-}
+//     current.x = e.clientX||e.touches[0].clientX;
+//     current.y = e.clientY||e.touches[0].clientY;
+//     makeStamp(current.x,current.y);
+// //
+// }
 
-function onTouchMove(e){
-    if (!drawing) { return; }
-    drawLine(current.x, current.y, e.clientX||e.touches[0].clientX, e.clientY||e.touches[0].clientY, current.color, true, username, makeStamp);
-    current.x = e.clientX||e.touches[0].clientX;
-    current.y = e.clientY||e.touches[0].clientY;
-    makeStamp(current.x,current.y);
-//
-}
+// function onTouchUp(e){
+//     if (!drawing) { return; }
+//     drawing = false;
+// //
+// }
+
+// function onTouchMove(e){
+//     if (!drawing) { return; }
+//     //drawLine(current.x, current.y, e.clientX||e.touches[0].clientX, e.clientY||e.touches[0].clientY, current.color, true, username, makeStamp);
+//     current.x = e.clientX||e.touches[0].clientX;
+//     current.y = e.clientY||e.touches[0].clientY;
+//     makeStamp(current.x,current.y);
+// //
+// }
 
 
   function onMouseMove(e){
     if (!drawing) { return; }
-    drawLine(current.x, current.y, e.clientX||e.touches[0].clientX, e.clientY||e.touches[0].clientY, current.color, true, username, makeStamp);
+    //drawLine(current.x, current.y, e.clientX||e.touches[0].clientX, e.clientY||e.touches[0].clientY, current.color, true, username, makeStamp);
     current.x = e.clientX||e.touches[0].clientX;
     current.y = e.clientY||e.touches[0].clientY;
     makeStamp(current.x,current.y);
@@ -300,9 +376,10 @@ function onTouchMove(e){
     var h = canvas.height;
     //stampPrint();
     console.log(data.name);
+    console.log(data.stamp);
     //console.log("hello world");
-    console.log("stamp data" + data.stamp);
-    drawLine(data.x0 * w, data.y0 * h, data.x1 * w, data.y1 * h, data.color, false, data.name, data.stampPrint);
+    console.log("stamp data" + data.stampPrint);
+    drawLine(data.x0 * w, data.y0 * h, data.x1 * w, data.y1 * h, data.color, false, data.name, data.stamp);
 
   }
 
