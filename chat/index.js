@@ -12,6 +12,7 @@ app.use(express.static(__dirname + '/public'));
 function onConnection(socket){
   socket.on('drawing', function(data){
     console.log(data.name);
+    console.log(data.mouseX);
     //console.log(data.stamp);
   });
   socket.on('drawing', (data) => socket.broadcast.emit('drawing', data));

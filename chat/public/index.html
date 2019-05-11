@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <img src="/uploads/header.png" width="100%">
   <ul class="pages">
     <li class="chat page">
       <div class="chatArea">
@@ -13,31 +14,51 @@
 
 
 
-      </canvas>
+     
         <!-- <ul class="messages"></ul>
       </div>
       <input class="inputMessage" placeholder="Type here..."/> --> 
     </li>
     <li class="login page">
       <div class="form">
+        
+        <h1> wall.socket </h1>
+        <h5> a digital mural </h5>
+         <h5> by forrest whitcomb </h5>
+<br>
+<br>
+<h5> use http://10.1.131.6:3000/ </h5>
+<br>
+
         <h3 class="title"> 1. What Do You Want to Say?</h3>
         <h3 class="title">
 Qu'est-ce que tu veux dire?</h3>
         <input class="usernameInput" type="text" maxlength="150" />
-<h3 class="title"> 2. How Do You Want to Say it</h3>
+
+<br><h3 class="title"> 2. Say it with a...</h3>
         <h3 class="title">
-Comment voulez-vous le dire?</h3>
+Dis le avec un...</h3>
 
           <div class="colors">
 
-    <button id="parisMap" class="button color black " >Map</button>
+    <button id="parisMap" class="button  " >Map</button>
 
-    <button id="parisWall" class="button color red " ">Wall</button>
+    <button id="parisWall" class="button  " ">Wall</button>
 
-    <button class="button color green ">XXX</button>
+    <button  id="parisMortar" class="button  ">Rubble</button>
 
 
-    <button class="button color blue ">XoX</button>
+    <button id="paris04"class="button  ">Basketball</button>
+
+        <br>
+        <br>
+        <br>
+        <br>
+
+         <h5> built with <a href="https://socket.io/">Socket.io</a> </h5>
+
+         <br>
+
 
   </div>
       </div>
@@ -46,6 +67,7 @@ Comment voulez-vous le dire?</h3>
 
   <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
   <script src="/socket.io/socket.io.js"></script>
-  <script src="/main.js"></script>
+    <script src="/main.js"></script>
+
 </body>
 </html>

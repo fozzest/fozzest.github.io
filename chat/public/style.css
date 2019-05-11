@@ -289,6 +289,33 @@ h3{
 font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
 font-size:90px;
 font-weight: 600;
+}
+
+h5{
+  background-image: 'uploads/grad.png' ;
+  background: -webkit-linear-gradient(#b8d2fc, #ffb5f2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
+  
+font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+font-size:40px;
+font-weight: 600;
+margin:10px;
+
+}
+
+h1{
+  background-image: 'uploads/grad.png' ;
+  background: -webkit-linear-gradient(#b8d2fc, #ffb5f2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
+  margin-bottom:30px;
+  
+font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+font-size:150px;
+font-weight: 600;
 
 }
 
@@ -368,27 +395,60 @@ ul {
 }
 
 
-
 .button {
- 
-  border: none;
-  
-  padding: 16px 32px;
-  text-align: center;
-  font-size: 16px;
-  margin: 4px 2px;
-  opacity: 0.6;
-  transition: 0.3s;
   display: inline-block;
-  text-decoration: none;
+  border-radius: 0px;
+  
+  border: 2px solid white;
+  border-color: white;
+  color: black;
+  text-align: center;
+  font-size: 28px;
+  font-weight: 800;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
   cursor: pointer;
+  margin: 5px;
 }
 
+.bt01{
+  background-color: #E1FFBB;
+}
+.bt02{
+  background-color: #f4511e;
+}
+.bt03{
+  background-color: #E4DFB9;
+}
+.bt04{
+  background-color: #9948FF;
+}
 
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
 
-.button:hover {opacity: 1}
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
 
-/* Font */
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
 
 .messages {
   font-size: 150%;
