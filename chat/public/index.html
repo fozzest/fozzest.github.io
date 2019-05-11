@@ -27,7 +27,7 @@
          <h5> by forrest whitcomb </h5>
 <br>
 <br>
-<h5> use http://10.1.131.6:3000/ </h5>
+<h5> use http://10.1.131.6:3000/ </h1>
 <br>
 
         <h3 class="title"> 1. What Do You Want to Say?</h3>
@@ -68,6 +68,13 @@ Dis le avec un...</h3>
   <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
   <script src="/socket.io/socket.io.js"></script>
     <script src="/main.js"></script>
+    <script>
+  var socket = io.connect('http://localhost');
+  socket.on('news', function (data) {
+    console.log(data);
+    socket.emit('my other event', { my: 'data' });
+  });
+    </script>
 
 </body>
 </html>
