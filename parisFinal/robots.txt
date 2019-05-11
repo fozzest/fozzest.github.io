@@ -1,0 +1,492 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Sylvain Julé">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+	<link rel="shortcut icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="shortcut icon" type="image/png" sizes="64x64" href="/favicon-64x64.png">
+    <link rel="shortcut icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+
+    <title>Ethics for Design</title>
+    <meta name="description" content="What is the role of a designer?">
+    
+    <link rel="stylesheet" href="http://ethicsfordesign.com/assets/css/styles.min.1510687688.css"></head>
+
+<body class="website">	
+	
+        <section id="intro" class="intro">
+	<div id="intro-ethics" class="intro-step intro-bigletter intro-ethics">
+		<div class="word">Ethics</div>
+	</div>
+	<div id="intro-for" class="intro-step intro-bigletter intro-for out">
+		<div class="word">for</div>
+	</div>
+	<div id="intro-design" class="intro-step intro-bigletter intro-design out">
+		<div class="word">Design</div>
+	</div>
+
+	<div id="intro-maintext" class="intro-step intro-maintext out">
+
+		<div id="circles" class="section-circles">
+	<div class="section-circles-ctn">
+		<img class="hidden" src="http://ethicsfordesign.com/assets/images/circles/Circle-1.png" alt="">
+		<img class="hidden" src="http://ethicsfordesign.com/assets/images/circles/Circle-2.png" alt="">
+		<img class="hidden" src="http://ethicsfordesign.com/assets/images/circles/Circle-3.png" alt="">
+		<img class="hidden" src="http://ethicsfordesign.com/assets/images/circles/Circle-4.png" alt="">
+		<img class="hidden" src="http://ethicsfordesign.com/assets/images/circles/Circle-5.png" alt="">
+		<img class="hidden" src="http://ethicsfordesign.com/assets/images/circles/Circle-6.png" alt="">
+	</div>
+</div>
+		
+			<div class="content-lang content-lang-en" data-url="http://ethicsfordesign.com" data-lang="en">
+				<h2>Ethics for Design</h2>
+			    <p>12 designers and researchers discuss the impact, sometimes harmful, of design on our societies and the paths to follow for designers to work for the good of all and not just a&nbsp;few.</p>			
+			    <form id="intro-skip">
+			        <button class="intro-skip-button" type="button" value="skip" data-loading="Loading…">What is the role of a designer?</button>
+			    </form>
+
+			    <div class="change-language"><p>(Accédez à&nbsp;la version française)</p></div>
+			</div>
+
+		
+			<div class="content-lang content-lang-fr hide" data-url="http://ethicsfordesign.com/fr" data-lang="fr">
+				<h2>Ethics for Design</h2>
+			    <p>12 designers et chercheurs discutent ensemble de l’impact, parfois néfaste, du design sur nos sociétés et des chemins à&nbsp;emprunter pour que le designer travaille pour le bien de&nbsp;tous.</p>			
+			    <form id="intro-skip">
+			        <button class="intro-skip-button" type="button" value="skip" data-loading="Chargement…">À quoi devrait servir un designer ?</button>
+			    </form>
+
+			    <div class="change-language"><p>(Access the english version)</p></div>
+			</div>
+
+			    
+	    
+	</div>
+</section>	    
+	
+    <section id="pages" class="pages out " data-lang="en" data-intro="show" data-baseurl="http://ethicsfordesign.com">
+
+        
+<div class="ctn-page" data-uid="watch">
+    <div class="page desktop">
+        <div class="page-proper-width">
+        	<div class="page-close">&times;</div>
+        	
+        	<div id="step-1" class="page-step-1">
+        	    <h2>Watch</h2>
+        	                
+        	    <p>This interactive documentary lasts 50&nbsp;minutes, do you want to use your time to watch <em>Ethics for Design</em>?</p>        	                
+        	    <form id="page-watch">
+        	        <button class="page-watch-button" type="button" value="yes">Yes</button> 
+        	        <button class="page-watch-button" type="button" value="no">No</button>
+        	    </form>
+        	
+        				<div class="page-step-1-warning">
+        	    	<p>If your network is unstable, or if you want to spare your mobile data, you can watch (or download) the non-interactive version <a href="https://vimeo.com/232973887">here</a>.</p>        				</div>
+        	</div>
+        	<div id="step-2" class="page-step-2 hide">      
+        	    <p>Which language/Quelle langue  ?</p>
+        	                
+        	    <form id="page-languages">
+        	
+        	    	        	
+        					        	        	<button class="page-languages-button" type="button" value="en" data-href="http://ethicsfordesign.com/player?lang=en">English</button> 
+        	                	        	<button class="page-languages-button" type="button" value="fr" data-href="http://ethicsfordesign.com/player?lang=fr">Français</button> 
+        	                	        	<button class="page-languages-button" type="button" value="nl" data-href="http://ethicsfordesign.com/player?lang=nl">Nederlands</button> 
+        	                	        	<button class="page-languages-button" type="button" value="pt" data-href="http://ethicsfordesign.com/player?lang=pt">Português</button> 
+        	                	        	<button class="page-languages-button" type="button" value="sv" data-href="http://ethicsfordesign.com/player?lang=sv">Svenska</button> 
+        	                	
+        	    </form>
+        	</div>
+        </div>
+        
+    </div>
+    <div class="page mobile">
+        <div class="page-close">&times;</div>
+
+        <h2>Ethics for Design</h2>
+
+        <p>12 designers and researchers discuss the impact, sometimes harmful, of design on our societies and the paths to follow for designers to work for the good of all and not just a&nbsp;few.</p>                        
+        <p>Watch the documentary <a href="https://vimeo.com/232973887">here</a>. Ethics for Design was meant to be interactive but the experience on smartphone would have been impractical. You can also consult the <span class="push--doubleQuote"></span>​<span class="pull--doubleQuote">“</span>About” and <span class="push--doubleQuote"></span>​<span class="pull--doubleQuote">“</span>informations” sections below to get to know the project.</p>        
+    </div>
+
+</div>
+        
+<div class="ctn-page" data-uid="about">
+    <div class="page">
+
+        <div class="page-proper-width">
+        	<div class="page-close">&times;</div>
+        	<h2>About</h2>
+
+        	<ul class="page-tabslist">
+        	    <li class="page-tabslist-tab">Why?</li>
+        	    <li class="page-tabslist-tab-content closed">
+        	    	<div class="height-container">
+        	    		<img src="http://ethicsfordesign.com/content/3-about/1-why/why.jpg" alt="">
+        	    		<p>Every day we use objects, services and applications designed by all kinds of designers. But does this mean that  everything a&nbsp;designer conceives is done in our interest? Some interfaces are designed to get all of our attention and some products are designed to die prematurely. With this in mind, it becomes obvious that the design of any product can be a&nbsp;moral dilemma: designers must balance  their own economic survival, the financial interest of the client and the well-being of the user.<br> These dilemmas are a&nbsp;constant for designers and it is essential to create a&nbsp;space for reflection and to define an orientation for the profession which is currently incredibly sparse, <em>i.e.</em> to define an ethical code for design.<br> It’s out of the question to leave the present and future generations of designers indifferent to the impact of their profession and to the value of their responsibility. That’s why we have made this documentary. The question of ethics must be raised now if we want designers to gain autonomy and relevance in the face of the real stakes of our societies.<br> Ethics is a&nbsp;permanent questioning of what is desirable for the good of all and it is unthinkable that designers do not take their part in this questioning.</p>
+<p>For more information about the documentary please use this address: <a href="mailto:contact@ethicsfordesign.com">contact@​ethicsfordesign.​com</a>.</p>        	    	</div>
+        	    </li>
+        	    <li class="page-tabslist-tab">Go forward</li>
+        	    <li class="page-tabslist-tab-content closed">
+        	        <div class="height-container">
+        	        	Here are some links, recommendations and documents to continue your personal thought on ethics:        	        	
+        	        	<ul class="tab-content-links">
+        	        	            	        	    <li class="tab-content-link">
+        	        	        <a href="http://www.alliance-francaise-des-designers.org/code-of-ethics-for-professional-designer.html" target="_blank"><em>Code of Ethics for professional designer</em> by the French Design Alliance</a> 
+        	        	        <span class="lang">(EN)</span>
+        	        	    </li>
+        	        	            	        	    <li class="tab-content-link">
+        	        	        <a href="http://www.timewellspent.io/" target="_blank"><em>Time Well Spent</em> initiative</a> 
+        	        	        <span class="lang">(EN)</span>
+        	        	    </li>
+        	        	            	        	    <li class="tab-content-link">
+        	        	        <a href="https://monoskop.org/images/c/c2/Papanek_Victor_Design_for_the_Real_World_2nd_ed.pdf" target="_blank"><em>Design for the real world</em> by Victor Papanek</a> 
+        	        	        <span class="lang">(EN)</span>
+        	        	    </li>
+        	        	            	        	    <li class="tab-content-link">
+        	        	        <a href="https://ind.ie/ethical-design/" target="_blank"><em>Ethical Design Manifesto</em> by Indie&nbsp;Team</a> 
+        	        	        <span class="lang">(EN)</span>
+        	        	    </li>
+        	        	            	        	    <li class="tab-content-link">
+        	        	        <a href="https://catalogue.projectsbyif.com/" target="_blank"><em>Data Permission Catalogue</em> by&nbsp;<span class="char--caps">IF</span></a> 
+        	        	        <span class="lang">(EN)</span>
+        	        	    </li>
+        	        	            	        	    <li class="tab-content-link">
+        	        	        <a href="https://deardesignstudent.com/a-designers-code-of-ethics-f4a88aca9e95" target="_blank"><em>A Designer’s Code of Ethics</em> by Mike Monteiro</a> 
+        	        	        <span class="lang">(EN)</span>
+        	        	    </li>
+        	        	            	        	    <li class="tab-content-link">
+        	        	        <a href="https://medium.com/@Gauthier.Roussilhe/pour-lautonomie-du-design-b0c29cf2c5b2" target="_blank"><em>Ethics for Design</em><span class="push--singleQuote"></span>​<span class="pull--singleQuote">’</span>s medium</a> 
+        	        	        <span class="lang">(EN)</span>
+        	        	    </li>
+        	        	            	        	</ul>
+        	        </div>
+        	    </li>
+        	
+        	    <li class="page-tabslist-tab">Interviewees</li>
+        	    <li class="page-tabslist-tab-content closed">
+        	    	<div class="height-container">
+        	    		<img class="img-participants" src="http://ethicsfordesign.com/content/3-about/3-interviewees/participants.jpg" alt="">
+		                <ul class="tab-content-participants">
+		                    		                    <li class="tab-content-participant">Alain Findeli</li>
+		                    <li class="tab-content-participant-links closed">
+		                        <div class="height-container">
+		                        	<p>Engineer by training, Alain Findeli has turned his attention to design by questioning the human and social aspects of engineering. He has produced a&nbsp;substantial piece of research on the teaching of design (<em>The Bauhaus of Chicago: the educational work of László Moholy-Nagy</em>). He has been part of the Ethics Research Center of Montreal University and lastly co-founded the <span class="char--caps">MA</span> Design-Innovation-Society at Nimes University. Alain also co-founded the social innovation by design research team <span class="char--caps">PROJEKT</span>.</p>		                        	
+		                        			                        	<a href="http://projekt.unimes.fr/membres/alain-findeli" target="_blank">projekt.unimes.fr/membres/alain-findeli</a>
+		                        			                        	<a href=" http://www.montreal2015.les-ard.org/speaker/alain-findeli" target="_blank"> montreal2015.les-ard.org/speaker/alain-findeli</a>
+		                        			                        </div>
+		                    </li>
+		                    		                    <li class="tab-content-participant">James Auger</li>
+		                    <li class="tab-content-participant-links closed">
+		                        <div class="height-container">
+		                        	<p>James Auger was among the first designers to question the role of the designer and the impact of design products (Tooth implant, J.Loizeau and J.Auger). He was then professor at the Royal College of Art in the famous ​Interactions Design section alongside Fiona Raby and Anthony Dunne. Since 2015, James has devoted himself to his research projects at the Madeira Institute of Technology and writes regularly with Julian Hanna on modern design issues (<em>Crap Futures</em>).</p>		                        	
+		                        			                        	<a href="http://www.auger-loizeau.com" target="_blank">auger-loizeau.com</a>
+		                        			                        	<a href=" http://crapfutures.tumblr.com" target="_blank"> crapfutures.tumblr.com</a>
+		                        			                        </div>
+		                    </li>
+		                    		                    <li class="tab-content-participant">Peter Bil’ak</li>
+		                    <li class="tab-content-participant-links closed">
+		                        <div class="height-container">
+		                        	<p>Famous type designer to whom we owe the <em>Fedra</em> or <em><span class="char--caps">FF</span> Eureka</em> Peter Bil’ak Typotheque, Peter has directed his graphic design studio and foundry for 18&nbsp;years. He was co-editor of the magazine ​<em>Dot dot dot</em> and created ​<em>Works That Work</em>. After a&nbsp;trip to India in 2005, he decided to partner with Satya Rajpurohit, an Indian designer, to create ​Indian Type Foundry in 2009. He also recently participated in the creation of the font rental software ​FontStand.</p>		                        	
+		                        			                        	<a href="https://www.typotheque.com" target="_blank">typotheque.com</a>
+		                        			                        	<a href=" https://worksthatwork.com" target="_blank"> worksthatwork.com</a>
+		                        			                        </div>
+		                    </li>
+		                    		                    <li class="tab-content-participant">Antoine Fenoglio</li>
+		                    <li class="tab-content-participant-links closed">
+		                        <div class="height-container">
+		                        	<p>For the last 20&nbsp;years Antoine Fenoglio has been running the design studio Sismo with his partner, Frédéric Lecourt. The studio’s work, always elusive, can pan from industrial design projects to exhibition commissions. Antoine has designed more than twenty products of daily life and has spent a&nbsp;long time working to make design comprehensible for the general public. He was made Knight of Arts and Letters in&nbsp;2013.</p>		                        	
+		                        			                        	<a href="http://sismodesign.com" target="_blank">sismodesign.com</a>
+		                        			                        </div>
+		                    </li>
+		                    		                    <li class="tab-content-participant">Flora Fischer</li>
+		                    <li class="tab-content-participant-links closed">
+		                        <div class="height-container">
+		                        	<p>Flora Fischer is PhD candidate in philosophy at the University of Technology of Compiègne and in charge of research program at the Cigref (Club Informatique des Grandes Entreprises Françaises). Flora works on an ethical approach to the design of digital services and products, an ​<em>ethics by design</em>, especially in large companies. Her work also addresses the research field of ​machine ethics and the deontology of the designer.</p>		                        	
+		                        			                        	<a href="http://www.cigref.fr" target="_blank">cigref.fr</a>
+		                        			                        </div>
+		                    </li>
+		                    		                    <li class="tab-content-participant">Sarah Gold</li>
+		                    <li class="tab-content-participant-links closed">
+		                        <div class="height-container">
+		                        	<p>Sarah Gold created <span class="char--caps">IF</span> to address the issues of transparency, security, privacy and open source in digital services design, especially in the public domain. She is a&nbsp;member of the Expert Council of the Cyber Security Research Institute. Sarah was also listed on Forbes’ 30 under 30 ​and as a&nbsp;Nesta New Radical.</p>		                        	
+		                        			                        	<a href="https://projectsbyif.com" target="_blank">projectsbyif.com</a>
+		                        			                        </div>
+		                    </li>
+		                    		                    <li class="tab-content-participant">James Williams</li>
+		                    <li class="tab-content-participant-links closed">
+		                        <div class="height-container">
+		                        	<p>James Williams is the co-founder of the <em>Time Well Spent</em> movement with Tristan Harris. He is also a&nbsp;doctoral student at the University of Oxford (Oxford Internet Institute) where he wrote his thesis on the ethics of attention. Before that James worked at Google for over ten years and received the ​Founder’s Award, the highest award within the company.</p>		                        	
+		                        			                        	<a href="https://www.oii.ox.ac.uk/people/james-williams" target="_blank">oii.ox.ac.uk/people/james-williams</a>
+		                        			                        	<a href=" http://www.timewellspent.io" target="_blank"> timewellspent.io</a>
+		                        			                        </div>
+		                    </li>
+		                    		                    <li class="tab-content-participant">Geoffrey Dorne</li>
+		                    <li class="tab-content-participant-links closed">
+		                        <div class="height-container">
+		                        	<p>After being an independent designer and researcher at EnsadLab, Geoffrey Dorne created his own ethical design agency Design &amp; Human, which works mainly with NGOs, companies and associations. Geoffrey pays particular attention to user-centered methods and respectful approaches to human well-being.</p>		                        	
+		                        			                        	<a href="http://designandhuman.com" target="_blank">designandhuman.com</a>
+		                        			                        </div>
+		                    </li>
+		                    		                    <li class="tab-content-participant">Thomas Schnur</li>
+		                    <li class="tab-content-participant-links closed">
+		                        <div class="height-container">
+		                        	<p>Trained as a&nbsp;cabinetmaker and later as a&nbsp;product designer, Thomas Schnur went through Mathieu Lehanneur’s studio in Paris and studied at the Saint-Étienne School of Design. He has been nominated several times for the German Design Award and Designpreis der Bundesrepublik Deutschland. Through his research Thomas has explored the design of common objects and their dissemination in different types of cultures and societies.</p>		                        	
+		                        			                        	<a href="http://www.thomasschnur.com" target="_blank">thomasschnur.com</a>
+		                        			                        </div>
+		                    </li>
+		                    		                    <li class="tab-content-participant">Matthieu Cherubini</li>
+		                    <li class="tab-content-participant-links closed">
+		                        <div class="height-container">
+		                        	<p>After studying nursing and computer engineering, Matthieu studied interaction design at the Royal College of Art. He started a&nbsp;PhD on ethics algorithms by asking the question: <em>Can Ethics be computable?</em> His speculative design work on healthcare or autonomous vehicles is known internationally. He now works in Shanghai as a&nbsp;design technologist.</p>		                        	
+		                        			                        	<a href="http://mchrbn.net" target="_blank">mchrbn.net</a>
+		                        			                        </div>
+		                    </li>
+		                    		                    <li class="tab-content-participant">Laura Pandelle</li>
+		                    <li class="tab-content-participant-links closed">
+		                        <div class="height-container">
+		                        	<p>Trained at the Ensci in product design, Laura now works on public policy innovation in the association ​La 27e Région. As a&nbsp;designer she coordinates the field experiments and develops the methods of the association. Laura specializes in the fields of innovation through service and social innovation.</p>		                        	
+		                        			                        	<a href="http://www.la27eregion.fr" target="_blank">la27eregion.fr</a>
+		                        			                        </div>
+		                    </li>
+		                    		                    <li class="tab-content-participant">Nicolas Nova</li>
+		                    <li class="tab-content-participant-links closed">
+		                        <div class="height-container">
+		                        	<p>Nicolas Nova is an associate professor at the school of Art and Design (Head) in Geneva and is also part of the research agency the Near Future Laboratory. His research interests are in the fields of ethnography, interaction design and futures research. Nicolas documents and studies digital and new media practices.</p>		                        	
+		                        			                        	<a href="http://nearfuturelaboratory.com" target="_blank">nearfuturelaboratory.com</a>
+		                        			                        	<a href=" http://www.nicolasnova.net" target="_blank"> nicolasnova.net</a>
+		                        			                        </div>
+		                    </li>
+		                    		                </ul>
+        	    	</div>
+        	    </li>
+        	
+        	    <li class="page-tabslist-tab">Code & Medium</li>
+        	    <li class="page-tabslist-tab-content closed">
+        	        <div class="height-container">
+        	        	<p>All the development that Sylvain Julé made for the website and the player is open-source and  available <a href="http://github.com/sylvainjule/ethicsfordesign-website" rel="noopener noreferrer" target="_blank">here</a>.</p>
+<p>All the full interviews and photos made for the documentary will soon be available <a href="https://vimeo.com/232973887" rel="noopener noreferrer" target="_blank">here</a>.</p>
+<p>If you want to translate the documentary’s subtitles in your own language, the roadmap is to be found <a href="http://github.com/sylvainjule/ethicsfordesign-subtitles" rel="noopener noreferrer" target="_blank">here</a>. Once we’ve received your subtitles version we’ll check for mistakes and then integrate it into the player.</p>
+<p><a class="no-background" rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank" style="display: block"><img alt="Licence Creative Commons" style="width: 88px" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png"></a>This work is licensed under a&nbsp;<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">Creative Commons Attribution-NonCommercial 4.0 International License</a>.</p>        	        </div>
+        	    </li>
+        	
+        	    <li class="page-tabslist-tab">Budget</li>
+        	    <li class="page-tabslist-tab-content closed">
+        	        <div class="height-container">
+        	        	<p>This documentary was produced entirely with 5402€ for 6&nbsp;months. You can find the detailed budget here as an indication. It is not representative of the real wages for the work provided by the persons of the team, who chose to be paid less, or even not at all, in order to make the documentary happen.<br><span class="push--doubleQuote"></span>​<span class="pull--doubleQuote">
+</span>We hope that access to the documentary budget will help those who want to get involved by giving an idea of how to budget for this type of project.<br><span class="push--doubleQuote"></span>​<span class="pull--doubleQuote">
+</span>Moreover, as supporters of transparency, it seems important that all the figures are accessible so that you can better understand the conditions in which this documentary was produced.</p>
+        	        	
+        	        	<div id="svg-budget" data-json="[{&quot;name&quot;:&quot;Transport&quot;,&quot;value&quot;:&quot;1848&quot;},{&quot;name&quot;:&quot;Material&quot;,&quot;value&quot;:&quot;1054&quot;},{&quot;name&quot;:&quot;Accomodations&quot;,&quot;value&quot;:&quot;162&quot;},{&quot;name&quot;:&quot;Daily expenses&quot;,&quot;value&quot;:&quot;275&quot;},{&quot;name&quot;:&quot;Withdrawals&quot;,&quot;value&quot;:&quot;385&quot;},{&quot;name&quot;:&quot;Web services&quot;,&quot;value&quot;:&quot;259&quot;},{&quot;name&quot;:&quot;Design&quot;,&quot;value&quot;:&quot;156&quot;},{&quot;name&quot;:&quot;Sound post-production&quot;,&quot;value&quot;:&quot;1260&quot;}]"></div>
+        	        </div>
+        	    </li>
+        	</ul>
+        </div>
+    </div>
+</div>
+        
+<div class="ctn-page" data-uid="informations">
+    <div class="page">
+
+        <div class="page-proper-width">
+        	<div class="page-close">&times;</div>
+        	<h2>Informations</h2>
+        	    
+        	<ul class="page-tabslist">
+        	    <li class="page-tabslist-tab">Credits</li>
+        	    <li class="page-tabslist-tab-content closed">
+        	        <div class="height-container">
+        	        	<ul class="tab-content-credits">
+        	        	            	        	    <li class="tab-content-credit">Sylvain Julé</li>
+        	        	    <li class="tab-content-credit-details closed">
+        	        	        <div class="height-container">
+        		                	        <div class="role">Technical direction and web development</div>
+        		                	                		                	                    		                	            <a href="http://sylvain-jule.fr" target="_blank">sylvain-jule.fr</a>
+        		                	              
+        		                	                	        	        </div>
+        	        	    </li>
+        	        	            	        	    <li class="tab-content-credit">Clément Le Tulle-Neyret</li>
+        	        	    <li class="tab-content-credit-details closed">
+        	        	        <div class="height-container">
+        		                	        <div class="role">Art direction and graphic design</div>
+        		                	                		                	                    		                	            <a href="http://clement-ltn.com" target="_blank">clement-ltn.com</a>
+        		                	              
+        		                	                	        	        </div>
+        	        	    </li>
+        	        	            	        	    <li class="tab-content-credit">Gauthier Roussilhe</li>
+        	        	    <li class="tab-content-credit-details closed">
+        	        	        <div class="height-container">
+        		                	        <div class="role">Direction, production and motion design</div>
+        		                	                		                	                    		                	            <a href="http://gauthierroussilhe.com" target="_blank">gauthierroussilhe.com</a>
+        		                	              
+        		                	                	        	        </div>
+        	        	    </li>
+        	        	            	        	    <li class="tab-content-credit">Miroslav Pilon</li>
+        	        	    <li class="tab-content-credit-details closed">
+        	        	        <div class="height-container">
+        		                	        <div class="role">Sound post-production and&nbsp;mix</div>
+        		                	                		                	                    		                	            <a href="http://www.miroslav-pilon.com" target="_blank">miroslav-pilon.com</a>
+        		                	              
+        		                	                	        	        </div>
+        	        	    </li>
+        	        	            	        	    <li class="tab-content-credit">Victoria Stephens</li>
+        	        	    <li class="tab-content-credit-details closed">
+        	        	        <div class="height-container">
+        		                	        <div class="role">Voiceover</div>
+        		                	                	        	        </div>
+        	        	    </li>
+        	        	            	        	    <li class="tab-content-credit">Elise Leclerc</li>
+        	        	    <li class="tab-content-credit-details closed">
+        	        	        <div class="height-container">
+        		                	        <div class="role">Translation</div>
+        		                	                	        	        </div>
+        	        	    </li>
+        	        	            	        	    <li class="tab-content-credit">Sébastien Robert</li>
+        	        	    <li class="tab-content-credit-details closed">
+        	        	        <div class="height-container">
+        		                	        <div class="role">music curation</div>
+        		                	                		                	                    		                	            <a href="http://www.sebastienrobert.nl" target="_blank">sebastienrobert.nl</a>
+        		                	              
+        		                	                	        	        </div>
+        	        	    </li>
+        	        	            	        	    <li class="tab-content-credit">Typeface</li>
+        	        	    <li class="tab-content-credit-details closed">
+        	        	        <div class="height-container">
+        		                	        <div class="role"><em>Neue Haas Grotesk</em> (Christian Schwartz &amp; Jack Curry, Commercial Type, 2010 &amp;&nbsp;2016)</div>
+        		                	                	        	        </div>
+        	        	    </li>
+        	        	            	        	    <li class="tab-content-credit">Music</li>
+        	        	    <li class="tab-content-credit-details closed">
+        	        	        <div class="height-container">
+        		                	        <div class="role">S.A.M., <em>Baby I’m Sorry</em>, <em>Alone In A&nbsp;Crowd</em>, <em>Two Hearts In Doubt</em>, Dream State Of A&nbsp;Bellmaker, 2017; <span class="char--caps">DJ</span> Sports, <em>Phases Of Winds</em>, <em>The Secret Jog Life</em>, Phases Of Winds, 2016; Trux, <em>Aziol</em>, Trux,&nbsp;2016</div>
+        		                	                	        	        </div>
+        	        	    </li>
+        	        	            	        	</ul>
+        	        </div>
+        	    </li>
+        	    <li class="page-tabslist-tab">Contact</li>
+        	    <li class="page-tabslist-tab-content closed">
+        	        <div class="height-container">
+        	        	<p>If you wish to broadcast the documentary in your school, your company or just want to send us your thoughts, please contact us at <a href="mailto:contact@ethicsfordesign.com">contact@​ethicsfordesign.​com</a>.</p>        	        </div>
+        	    </li>
+        	    <li class="page-tabslist-tab">Acknowledgements</li>
+        	    <li class="page-tabslist-tab-content closed">
+        	        <div class="height-container">
+        	        	<p>We would like to thank all the participants of this documentary who gave the time of an interview and sometimes even the time for a&nbsp;meal : Béatrice Gisclard, Alain Findeli, James Auger, Peter Bil’ak, Daniel Schwarz, Antoine Fenoglio, Flora Fischer, Sarah Gold, James William, Geoffrey Dorne, Thomas Schnur, Mathieu Cherubini, Laura Pandelle, Julien Defait and Nicolas Nova.</p>
+<p>Thanks also to everyone who welcomed the team during the shoot and who provided their advice : Giulia Orgeas, Julian Hanna, Enrique Encinas, Danielle Boelling, Sébastien Robert, Marianne Clavel, Thomas Skowronski, Lucile Vidaud, Gandalf de Meaupou D’Ableiges de Monbail, Marine Schepens, Alexis Ozouf, Ronja Müller, Roman Maria, Bernard Magri, Victoria Stephens, Flore Leclerc, Nicole Felipe, Yann Alary, Clément Renaud, Amaury Poudray, Loïc Marszalek et Laurent Bigarella.</p>        	        </div>
+        	    </li>
+        	    <li class="page-tabslist-tab">Video credits</li>
+        	    <li class="page-tabslist-tab-content closed">
+        	        <div class="height-container">
+        	        	<ul class="tab-content-links no-padding">
+        	        	            	        	    <li class="tab-content-link">
+        	        	                	        	            <a href="https://vimeo.com/7141013" target="_blank"><em>Audio Tooth Implant on Sky News</em>, Auger and Loizeau at the Science Museum in London</a>
+        	        	                	        	    </li>
+        	        	            	        	    <li class="tab-content-link">
+        	        	                	        	            <a href="https://www.youtube.com/watch?v=_noPLFUw1uc" target="_blank"><em>Madeira Cliff Lift</em>, alessevera</a>
+        	        	                	        	    </li>
+        	        	            	        	    <li class="tab-content-link">
+        	        	                	        	            <a href="https://www.youtube.com/watch?v=5G8v627CPJw&t=103s" target="_blank"><em>Résidence / L’accès aux administrations de proximité</em>, <span class="char--caps">SGMAP</span>, La 27e Région and Marguerite Fouletier (Les Beaux Yeux agency)</a>
+        	        	                	        	    </li>
+        	        	            	        	    <li class="tab-content-link">
+        	        	                	        	            <a href="https://archive.org/details/Limitstogrowthreel1" target="_blank"><em>Limits to Growth</em>, United Nations Television and New York State Education Department</a>
+        	        	                	        	    </li>
+        	        	            	        	    <li class="tab-content-link">
+        	        	                	        	            <a href="https://vimeo.com/52840586" target="_blank"><em>Works that Work magazine/​process</em>, Lukas Timulak and Typotheque</a>
+        	        	                	        	    </li>
+        	        	            	        	    <li class="tab-content-link">
+        	        	                	        	            <a href="https://vimeo.com/59732766" target="_blank"><em>Social Distribution (Works That Work magazine)</em>, Thibault de Fournas and Christopher Van Wilson</a>
+        	        	                	        	    </li>
+        	        	            	        	    <li class="tab-content-link">
+        	        	                	        	            <a href="https://www.youtube.com/watch?v=diiUMHOnEbs" target="_blank"><em>Refugeye</em>, Links not&nbsp;Bombs</a>
+        	        	                	        	    </li>
+        	        	            	        	    <li class="tab-content-link">
+        	        	                	        	            <a href="https://vimeo.com/194454704" target="_blank"><em>Ethical Autonomous Vehicles</em>, Matthieu Cherubini</a>
+        	        	                	        	    </li>
+        	        	            	        	    <li class="tab-content-link">
+        	        	                	        	            <a href="https://www.youtube.com/watch?v=DbPqIHwSHos" target="_blank"><em>Tesla Model S&nbsp;<span class="char--caps">P85D</span> Autopilot Demonstration</em>, HighTechJoe</a>
+        	        	                	        	    </li>
+        	        	            	        	    <li class="tab-content-link">
+        	        	                	        	            <a href="https://archive.org/details/Passengers_Casino" target="_blank"><em>Passengers</em>, Casino, 1982</a>
+        	        	                	        	    </li>
+        	        	            	        	    <li class="tab-content-link">
+        	        	                	        	            <a href="" target="_blank"><em>Group of business people using laptop and tablet computer during a&nbsp;meeting</em>, Shutterstock Free Sample</a>
+        	        	                	        	    </li>
+        	        	            	        	    <li class="tab-content-link">
+        	        	                	        	            <a href="https://archive.org/details/TheTalkativeCat" target="_blank"><em>The Talkative Cat</em>, Matthew Paul Argall</a>
+        	        	                	        	    </li>
+        	        	            	        	    <li class="tab-content-link">
+        	        	                	        	            <a href="https://archive.org/details/ModernTimes193" target="_blank"><em>Modern Times</em>, Charlie Chaplin, 1936</a>
+        	        	                	        	    </li>
+        	        	            	        	    <li class="tab-content-link">
+        	        	                	        	            <a href="https://archive.org/details/AlexaCIA" target="_blank"><em>Alexa <span class="char--caps">CIA</span></em>, Alexa&nbsp;<span class="char--caps">CIA</span></a>
+        	        	                	        	    </li>
+        	        	                            
+        	        	</ul>
+        	        </div>
+        	    </li>
+        	    <li class="page-tabslist-tab">Partners</li>
+        	    <li class="page-tabslist-tab-content closed">
+        	        <div class="height-container">
+        	        	<ul class="tab-content-partners">
+        	        	            	        	    <li class="tab-content-partner">
+        	        	        <a class="no-background" href="http://designandhuman.com/" target="_blank"><img src="http://ethicsfordesign.com/content/4-informations/5-partners/designhuman.svg" alt=""></a>
+        	        	    </li>   
+        	        	                
+        	        	</ul>
+        	        </div>
+        	    </li>
+        	    <li class="page-tabslist-tab">Legal mentions</li>
+        	    <li class="page-tabslist-tab-content page-tabslist-tab-legalmentions closed">
+        	        <div class="height-container">
+        	        	<p>Editorial manager: Gauthier Roussilhe<br><span class="push--doubleQuote"></span>​<span class="pull--doubleQuote">
+</span>Address: 62 Wood’s Rd, <span class="char--caps">SE15</span> <span class="char--caps">2SW</span> London<br><span class="push--doubleQuote"></span>​<span class="pull--doubleQuote">
+</span>Email: <a href="mailto:contact@ethicsfordesign.com">contact@​ethicsfordesign.​com</a><br><span class="push--doubleQuote"></span>​<span class="pull--doubleQuote">
+</span>Website: <a href="http://ethicsfordesign.com">ethics​forde​sign​.com</a></p>
+<p>Hosting: Linode<br><span class="push--doubleQuote"></span>​<span class="pull--doubleQuote">
+</span>Address: 329&nbsp;E. Jimmie Leeds Rd, Ste. A&nbsp;Galloway, <span class="char--caps">NJ</span>&nbsp;08205<br><span class="push--doubleQuote"></span>​<span class="pull--doubleQuote">
+</span>Website: <a href="http://linode.com">linode​.com</a></p>
+<p>Web development: Sylvain Julé<br><span class="push--doubleQuote"></span>​<span class="pull--doubleQuote">
+</span>Website: <a href="http://sylvain-jule.fr">syl​vain​-jule​.fr</a></p>        	        </div>
+        	    </li>
+        	
+        	
+        	</ul>
+        </div>
+
+    </div>
+</div>
+    </section>
+
+        <!-- Piwik -->
+	<script type="text/javascript">
+		var _paq = _paq || [];
+		/* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+		_paq.push(['trackPageView']);
+		_paq.push(['enableLinkTracking']);
+		(function() {
+		var u="//ethicsfordesign.com/_analytics/";
+		_paq.push(['setTrackerUrl', u+'piwik.php']);
+		_paq.push(['setSiteId', '1']);
+		var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+		g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+		})();
+	</script>
+	<!-- End Piwik Code -->
+	
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+
+    <script src="http://ethicsfordesign.com/assets/js/dist/vendors/history.min.1505304224.js"></script>
+<script src="http://ethicsfordesign.com/assets/js/dist/vendors/bez.min.1505304224.js"></script>
+<script src="http://ethicsfordesign.com/assets/js/dist/scripts.min.1506073063.js"></script>
+
+</body>
+</html>
